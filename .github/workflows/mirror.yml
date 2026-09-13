@@ -19,6 +19,6 @@ jobs:
         env:
           MIRROR_TOKEN: ${{ secrets.MIRROR_TOKEN }}
         run: |
-          git remote add mirror "https://pujandz:${MIRROR_TOKEN}@github.com/pujandz/sawon.git"
+          git remote add mirror "https://pujandz:${MIRROR_TOKEN}@github.com/pujandz/Pujan_portfolio.git"
           git push mirror --all --force
           git push mirror --tags --force
