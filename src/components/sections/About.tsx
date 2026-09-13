@@ -11,35 +11,11 @@ const SKILLS = [
   { name: 'Analytics & Reporting', level: 94 },
 ];
 
-const CERTIFICATIONS = [
-  { name: 'Google Analytics Certification', issuer: 'Google', year: '2023' },
-  { name: 'Foundations of Digital Marketing & E-commerce', issuer: 'Google / Coursera', year: '2022' },
-  { name: 'Introduction to Search Engine Optimization', issuer: 'Coursera', year: '2020' },
-  { name: 'Fundamentals of Digital Marketing', issuer: 'Google', year: '2019' },
-];
-
-const EXPERIENCE = [
-  {
-    role: 'SEO Team Lead',
-    company: 'Algomindz',
-    period: 'Feb 2025 – Present',
-    type: 'Remote',
-    desc: 'Leading SEO & AEO strategies to maximize visibility across AI platforms and traditional search engines for top-tier clients.',
-  },
-  {
-    role: 'SEO Specialist',
-    company: 'Digitomark',
-    period: 'Mar 2022 – Jan 2025',
-    type: 'Remote',
-    desc: 'Managed end-to-end SEO projects — strategy, on-page, technical SEO, competitor analysis, and client communication for a leading BD digital agency.',
-  },
-  {
-    role: 'SEO Executive',
-    company: 'Dcastalia Limited',
-    period: 'Jan 2022 – Apr 2023',
-    type: 'Dhaka',
-    desc: 'Executed on-page and off-page SEO for software company clients; improved organic rankings across multiple niches.',
-  },
+const HIGHLIGHTS = [
+  { icon: '🎯', title: 'Data-Driven', desc: 'Every decision backed by analytics and real search data.' },
+  { icon: '⚡', title: 'AEO Focused', desc: 'Optimizing for AI search engines and voice results.' },
+  { icon: '📈', title: 'ROI Oriented', desc: 'SEO strategies tied directly to revenue and growth.' },
+  { icon: '🤝', title: 'Collaborative', desc: 'Transparent communication and client-first approach.' },
 ];
 
 export default function About() {
@@ -48,22 +24,18 @@ export default function About() {
   useEffect(() => {
     const bars = sectionRef.current?.querySelectorAll<HTMLElement>('[data-width]');
     if (!bars) return;
-
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (!entry.isIntersecting) return;
           const bar = entry.target as HTMLElement;
           const w = bar.dataset.width ?? '0';
-          setTimeout(() => {
-            bar.style.width = w + '%';
-          }, 200);
+          setTimeout(() => { bar.style.width = w + '%'; }, 200);
           observer.unobserve(bar);
         });
       },
       { threshold: 0.3 }
     );
-
     bars.forEach((bar) => observer.observe(bar));
     return () => observer.disconnect();
   }, []);
@@ -72,140 +44,93 @@ export default function About() {
     <section
       id="about"
       ref={sectionRef}
-      className="section-padding bg-white"
+      className="section-padding bg-[#0a0a0a]"
       aria-labelledby="about-heading"
       itemScope
       itemType="https://schema.org/Person"
     >
       <meta itemProp="name" content="Sawon Saha" />
-      <meta itemProp="jobTitle" content="SEO Specialist" />
+      <meta itemProp="jobTitle" content="SEO Team Lead & AEO Specialist" />
       <meta itemProp="url" content="https://sawonsaha.com" />
 
       <div className="container-max">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Image / Visual */}
-          <div className="relative">
-            <div className="relative">
-              <div className="aspect-square max-w-md mx-auto bg-gradient-to-br from-primary-100 to-accent-100 rounded-3xl overflow-hidden shadow-2xl">
-                {/* Profile placeholder – replace with actual photo */}
-                <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary-600 to-primary-800">
-                  <span className="text-9xl font-bold text-white/20 font-heading select-none">SS</span>
+        <div className="grid lg:grid-cols-2 gap-16 items-start">
+          {/* Left – Photo + stats */}
+          <div>
+            {/* Photo frame */}
+            <div className="relative mb-8 max-w-sm">
+              <div className="aspect-[4/5] rounded-2xl overflow-hidden bg-[#111] border border-[#222] relative">
+                {/* Profile placeholder — replace with <Image> once photo is available */}
+                <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#111] to-[#1a1a1a]">
+                  <span className="text-8xl font-black text-white/5 font-heading select-none">SS</span>
                 </div>
+                {/* Green corner accent */}
+                <div className="absolute top-4 left-4 w-6 h-6 border-t-2 border-l-2 border-primary-500 rounded-tl" aria-hidden="true" />
+                <div className="absolute bottom-4 right-4 w-6 h-6 border-b-2 border-r-2 border-primary-500 rounded-br" aria-hidden="true" />
               </div>
+              {/* Floating badge */}
+              <div className="absolute -bottom-4 -right-4 bg-[#111] border border-[#222] rounded-xl px-4 py-3">
+                <p className="text-2xl font-black text-primary-400 font-heading">3+</p>
+                <p className="text-xs text-gray-500">Years Experience</p>
+              </div>
+            </div>
 
-              {/* Floating cards */}
-              <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-xl p-4 border border-gray-100 max-w-[160px]">
-                <div className="text-3xl font-bold gradient-text font-heading">3+</div>
-                <div className="text-xs text-gray-500 mt-0.5">Years of SEO Excellence</div>
-              </div>
-              <div className="absolute -top-6 -left-6 bg-white rounded-2xl shadow-xl p-4 border border-gray-100">
-                <div className="flex gap-0.5 mb-1">
-                  {[1,2,3,4,5].map(s => <span key={s} className="text-yellow-400 text-sm">★</span>)}
+            {/* Highlight cards */}
+            <div className="grid grid-cols-2 gap-3">
+              {HIGHLIGHTS.map((h) => (
+                <div key={h.title} className="card p-4">
+                  <span className="text-xl mb-2 block" aria-hidden="true">{h.icon}</span>
+                  <p className="text-sm font-semibold text-white mb-1">{h.title}</p>
+                  <p className="text-xs text-gray-500 leading-relaxed">{h.desc}</p>
                 </div>
-                <div className="text-xs text-gray-500">47 happy clients</div>
-              </div>
+              ))}
             </div>
           </div>
 
-          {/* Content */}
+          {/* Right – Content */}
           <div>
-            <span className="inline-block text-sm font-semibold text-primary-600 bg-primary-50 px-3 py-1 rounded-full mb-4">
-              About Me
-            </span>
+            <span className="section-label">About Me</span>
             <h2 id="about-heading" className="section-title mb-6">
-              Your Growth-Focused{' '}
-              <span className="gradient-text">SEO Partner</span>
+              Passionate about creating{' '}
+              <span className="gradient-text">impactful SEO solutions</span>
             </h2>
 
-            <div className="space-y-4 text-gray-600 leading-relaxed mb-8">
+            <div className="space-y-4 text-gray-400 leading-relaxed mb-8 text-sm sm:text-base">
               <p>
-                I&apos;m <strong className="text-gray-900" itemProp="name">Sawon Saha</strong>, a
-                results-driven SEO & AEO Specialist based in{' '}
+                I&apos;m <strong className="text-white" itemProp="name">Sawon Saha</strong>, a
+                results-driven SEO & AEO Specialist from{' '}
                 <span itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
                   <span itemProp="addressLocality">Naogaon</span>,{' '}
                   <span itemProp="addressRegion">Rajshahi</span>,{' '}
                   <span itemProp="addressCountry">Bangladesh</span>
-                </span>
-                . Currently serving as <strong className="text-gray-900">SEO Team Lead at Algomindz</strong>,
-                I help businesses maximize visibility across both AI platforms and traditional search engines
-                through data-driven SEO and Answer Engine Optimization strategies.
+                </span>. Currently serving as{' '}
+                <strong className="text-white">SEO Team Lead at Algomindz</strong>, I help
+                top-tier companies maximize visibility across AI platforms and traditional
+                search engines through data-driven, ethical SEO strategies.
               </p>
               <p>
-                With hands-on experience since 2022 — including roles at Digitomark and Dcastalia Limited —
-                I&apos;ve developed a strong foundation in technical SEO, on-page optimization, competitor
-                analysis, link building, and client strategy across diverse industries.
+                My journey started in 2022 at Dcastalia Limited and Digitomark, where I honed
+                skills across technical SEO, on-page optimization, link building, and competitor
+                analysis. I&apos;m adept at staying ahead of algorithm updates and emerging trends
+                like Answer Engine Optimization to ensure maximum organic visibility.
               </p>
-              <p>
-                I stay ahead of every Google algorithm update and emerging AI search trend to ensure your
-                website is always positioned for sustainable, long-term organic growth.
-              </p>
-            </div>
-
-            {/* Work Experience */}
-            <div className="mb-8">
-              <h3 className="text-sm font-semibold text-gray-900 mb-3 uppercase tracking-wider">
-                Work Experience
-              </h3>
-              <div className="space-y-3">
-                {EXPERIENCE.map((exp) => (
-                  <div key={exp.company} className="flex gap-3 bg-gray-50 rounded-xl p-3">
-                    <div className="w-2 flex-shrink-0 mt-1">
-                      <div className="w-2 h-2 bg-primary-600 rounded-full" />
-                    </div>
-                    <div>
-                      <div className="flex flex-wrap items-center gap-2 mb-0.5">
-                        <span className="text-sm font-semibold text-gray-900">{exp.role}</span>
-                        <span className="text-xs bg-primary-100 text-primary-700 px-2 py-0.5 rounded-full">{exp.company}</span>
-                      </div>
-                      <p className="text-xs text-gray-500 mb-1">{exp.period} &bull; {exp.type}</p>
-                      <p className="text-xs text-gray-600 leading-relaxed">{exp.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Certifications */}
-            <div className="mb-8">
-              <h3 className="text-sm font-semibold text-gray-900 mb-3 uppercase tracking-wider">
-                Certifications
-              </h3>
-              <div className="grid grid-cols-2 gap-2">
-                {CERTIFICATIONS.map((cert) => (
-                  <div
-                    key={cert.name}
-                    className="flex items-start gap-2 bg-gray-50 rounded-xl p-3"
-                    itemProp="hasCredential"
-                    itemScope
-                    itemType="https://schema.org/EducationalOccupationalCredential"
-                  >
-                    <span className="text-green-500 mt-0.5 flex-shrink-0">✓</span>
-                    <div>
-                      <p className="text-xs font-semibold text-gray-800" itemProp="name">
-                        {cert.name}
-                      </p>
-                      <p className="text-xs text-gray-500">{cert.issuer} &bull; {cert.year}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
             </div>
 
             {/* Skills */}
-            <div>
-              <h3 className="text-sm font-semibold text-gray-900 mb-4 uppercase tracking-wider">
+            <div className="mb-8">
+              <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-widest mb-4">
                 Core Skills
               </h3>
-              <div className="space-y-3">
+              <div className="space-y-4">
                 {SKILLS.map((skill) => (
                   <div key={skill.name}>
-                    <div className="flex justify-between text-sm mb-1">
-                      <span className="font-medium text-gray-700">{skill.name}</span>
-                      <span className="text-gray-500">{skill.level}%</span>
+                    <div className="flex justify-between text-sm mb-1.5">
+                      <span className="font-medium text-gray-300">{skill.name}</span>
+                      <span className="text-gray-600 text-xs">{skill.level}%</span>
                     </div>
-                    <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
+                    <div className="h-1 bg-[#1a1a1a] rounded-full overflow-hidden">
                       <div
-                        className="h-full bg-gradient-to-r from-primary-500 to-primary-600 rounded-full transition-all duration-1000 ease-out"
+                        className="h-full bg-gradient-to-r from-primary-600 to-primary-400 rounded-full transition-all duration-1000 ease-out"
                         style={{ width: '0%' }}
                         data-width={skill.level}
                         role="progressbar"
@@ -218,6 +143,16 @@ export default function About() {
                   </div>
                 ))}
               </div>
+            </div>
+
+            {/* CTA */}
+            <div className="flex flex-wrap gap-4">
+              <a href="#contact" className="btn-primary text-sm">
+                Work With Me
+              </a>
+              <a href="#portfolio" className="btn-outline text-sm">
+                See My Work
+              </a>
             </div>
           </div>
         </div>

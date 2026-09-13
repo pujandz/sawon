@@ -12,28 +12,24 @@ export default function Header() {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
-
-      const sections = NAV_LINKS.map((link) => link.href.replace('#', ''));
-      const current = sections.find((section) => {
-        const el = document.getElementById(section);
+      const sections = NAV_LINKS.map((l) => l.href.replace('#', ''));
+      const current = sections.find((s) => {
+        const el = document.getElementById(s);
         if (!el) return false;
         const rect = el.getBoundingClientRect();
         return rect.top <= 100 && rect.bottom >= 100;
       });
       if (current) setActiveSection(current);
     };
-
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const handleNavClick = (href: string) => {
     setIsMobileMenuOpen(false);
-    const id = href.replace('#', '');
-    const el = document.getElementById(id);
+    const el = document.getElementById(href.replace('#', ''));
     if (el) {
-      const offset = 80;
-      const top = el.getBoundingClientRect().top + window.scrollY - offset;
+      const top = el.getBoundingClientRect().top + window.scrollY - 80;
       window.scrollTo({ top, behavior: 'smooth' });
     }
   };
@@ -41,31 +37,18 @@ export default function Header() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100'
-          : 'bg-transparent'
+        isScrolled ? 'bg-[#0a0a0a]/95 backdrop-blur-md border-b border-[#1a1a1a]' : 'bg-transparent'
       }`}
       role="banner"
     >
       <div className="container-max section-padding py-0">
-        <nav
-          className="flex items-center justify-between h-16 lg:h-20"
-          aria-label="Main navigation"
-        >
+        <nav className="flex items-center justify-between h-16 lg:h-20" aria-label="Main navigation">
           {/* Logo */}
-          <Link
-            href="/"
-            className="flex items-center gap-2 group"
-            aria-label={`${SITE_CONFIG.name} – Home`}
-          >
-            <div className="w-9 h-9 bg-gradient-to-br from-primary-600 to-accent-600 rounded-lg flex items-center justify-center text-white font-bold text-lg shadow-md group-hover:scale-105 transition-transform">
+          <Link href="/" className="flex items-center gap-2.5 group" aria-label="Sawon Saha – Home">
+            <div className="w-9 h-9 bg-primary-500 rounded-full flex items-center justify-center text-black font-bold text-base group-hover:bg-primary-400 transition-colors">
               S
             </div>
-            <span
-              className={`font-bold text-xl font-heading transition-colors ${
-                isScrolled ? 'text-gray-900' : 'text-white'
-              }`}
-            >
+            <span className="font-bold text-lg font-heading text-white hidden sm:block">
               Sawon Saha
             </span>
           </Link>
@@ -79,11 +62,7 @@ export default function Header() {
                   <button
                     onClick={() => handleNavClick(link.href)}
                     className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
-                      isActive
-                        ? 'bg-primary-600 text-white'
-                        : isScrolled
-                        ? 'text-gray-700 hover:text-primary-600 hover:bg-primary-50'
-                        : 'text-white/90 hover:text-white hover:bg-white/20'
+                      isActive ? 'text-primary-400' : 'text-gray-400 hover:text-white'
                     }`}
                     aria-current={isActive ? 'page' : undefined}
                   >
@@ -94,55 +73,32 @@ export default function Header() {
             })}
           </ul>
 
-          {/* CTA + Mobile Toggle */}
+          {/* CTA */}
           <div className="flex items-center gap-3">
             <button
               onClick={() => handleNavClick('#contact')}
-              className="hidden sm:inline-flex btn-primary py-2 text-sm shadow-none"
-              aria-label="Hire Sawon Saha as your SEO specialist"
+              className="hidden sm:inline-flex btn-primary py-2 px-5 text-sm"
             >
               Hire Me
             </button>
             <button
-              className={`lg:hidden p-2 rounded-lg transition-colors ${
-                isScrolled ? 'text-gray-700 hover:bg-gray-100' : 'text-white hover:bg-white/20'
-              }`}
+              className="lg:hidden p-2 text-gray-400 hover:text-white transition-colors"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-expanded={isMobileMenuOpen}
-              aria-controls="mobile-menu"
               aria-label="Toggle mobile menu"
             >
-              <span className="sr-only">Menu</span>
-              <div className="w-6 flex flex-col gap-1.5">
-                <span
-                  className={`block h-0.5 bg-current transition-all duration-300 ${
-                    isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''
-                  }`}
-                />
-                <span
-                  className={`block h-0.5 bg-current transition-all duration-300 ${
-                    isMobileMenuOpen ? 'opacity-0 scale-x-0' : ''
-                  }`}
-                />
-                <span
-                  className={`block h-0.5 bg-current transition-all duration-300 ${
-                    isMobileMenuOpen ? '-rotate-45 -translate-y-2' : ''
-                  }`}
-                />
+              <div className="w-5 flex flex-col gap-1.5">
+                <span className={`block h-px bg-current transition-all duration-300 ${isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`} />
+                <span className={`block h-px bg-current transition-all duration-300 ${isMobileMenuOpen ? 'opacity-0' : ''}`} />
+                <span className={`block h-px bg-current transition-all duration-300 ${isMobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
               </div>
             </button>
           </div>
         </nav>
 
         {/* Mobile Menu */}
-        <div
-          id="mobile-menu"
-          className={`lg:hidden overflow-hidden transition-all duration-300 ${
-            isMobileMenuOpen ? 'max-h-96 pb-4' : 'max-h-0'
-          }`}
-          aria-hidden={!isMobileMenuOpen}
-        >
-          <ul className="bg-white rounded-xl shadow-lg border border-gray-100 p-2" role="list">
+        <div className={`lg:hidden overflow-hidden transition-all duration-300 ${isMobileMenuOpen ? 'max-h-96 pb-4' : 'max-h-0'}`}>
+          <ul className="bg-[#111111] rounded-xl border border-[#222222] p-2" role="list">
             {NAV_LINKS.map((link) => {
               const isActive = activeSection === link.href.replace('#', '');
               return (
@@ -150,22 +106,16 @@ export default function Header() {
                   <button
                     onClick={() => handleNavClick(link.href)}
                     className={`w-full text-left px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
-                      isActive
-                        ? 'bg-primary-50 text-primary-700'
-                        : 'text-gray-700 hover:bg-gray-50'
+                      isActive ? 'text-primary-400 bg-primary-500/10' : 'text-gray-400 hover:text-white hover:bg-[#1a1a1a]'
                     }`}
-                    aria-current={isActive ? 'page' : undefined}
                   >
                     {link.label}
                   </button>
                 </li>
               );
             })}
-            <li className="pt-2 border-t border-gray-100 mt-2">
-              <button
-                onClick={() => handleNavClick('#contact')}
-                className="w-full btn-primary justify-center text-sm"
-              >
+            <li className="pt-2 border-t border-[#222222] mt-2">
+              <button onClick={() => handleNavClick('#contact')} className="w-full btn-primary justify-center text-sm">
                 Hire Me
               </button>
             </li>

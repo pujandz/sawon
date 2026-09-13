@@ -6,7 +6,7 @@ export default function Footer() {
 
   return (
     <footer
-      className="bg-gray-950 text-gray-300"
+      className="bg-[#060606] border-t border-[#111]"
       role="contentinfo"
       aria-label="Site footer"
     >
@@ -15,51 +15,39 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-4 group">
-              <div className="w-9 h-9 bg-gradient-to-br from-primary-600 to-accent-600 rounded-lg flex items-center justify-center text-white font-bold text-lg">
+              <div className="w-9 h-9 bg-primary-500 rounded-full flex items-center justify-center text-black font-bold text-base group-hover:bg-primary-400 transition-colors">
                 S
               </div>
               <span className="text-white font-bold text-xl font-heading">Sawon Saha</span>
             </Link>
-            <p className="text-sm leading-relaxed mb-4">
-              SEO Specialist in Bangladesh helping businesses grow organic traffic and revenue
-              through data-driven strategies.
+            <p className="text-sm text-gray-600 leading-relaxed mb-4">
+              SEO & AEO Specialist in Bangladesh helping businesses grow organic traffic and
+              dominate search results through data-driven strategies.
             </p>
             <address className="not-italic text-sm space-y-2">
               <p>
-                <span className="text-gray-500">Email: </span>
-                <a
-                  href={`mailto:${SITE_CONFIG.email}`}
-                  className="hover:text-primary-400 transition-colors"
-                >
+                <a href={`mailto:${SITE_CONFIG.email}`} className="text-gray-600 hover:text-primary-400 transition-colors">
                   {SITE_CONFIG.email}
                 </a>
               </p>
               <p>
-                <span className="text-gray-500">Phone: </span>
-                <a
-                  href={`tel:${SITE_CONFIG.phone.replace(/\s/g, '')}`}
-                  className="hover:text-primary-400 transition-colors"
-                >
+                <a href={`tel:${SITE_CONFIG.phone.replace(/\s|-/g, '')}`} className="text-gray-600 hover:text-primary-400 transition-colors">
                   {SITE_CONFIG.phone}
                 </a>
               </p>
-              <p>
-                <span className="text-gray-500">Location: </span>
-                {SITE_CONFIG.location}
-              </p>
+              <p className="text-gray-600">{SITE_CONFIG.location}</p>
             </address>
           </div>
 
-          {/* Navigation */}
+          {/* Quick Links */}
           <div>
-            <h3 className="text-white font-semibold font-heading mb-4">Navigation</h3>
+            <h3 className="text-white font-semibold font-heading text-sm mb-4 uppercase tracking-wider">
+              Quick Links
+            </h3>
             <ul className="space-y-2" role="list">
               {NAV_LINKS.map((link) => (
                 <li key={link.href}>
-                  <a
-                    href={link.href}
-                    className="text-sm hover:text-primary-400 transition-colors"
-                  >
+                  <a href={link.href} className="text-sm text-gray-600 hover:text-primary-400 transition-colors">
                     {link.label}
                   </a>
                 </li>
@@ -69,15 +57,13 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="text-white font-semibold font-heading mb-4">SEO Services</h3>
+            <h3 className="text-white font-semibold font-heading text-sm mb-4 uppercase tracking-wider">
+              Get In Touch
+            </h3>
             <ul className="space-y-2" role="list">
-              {SERVICES.map((s) => (
+              {SERVICES.slice(0, 5).map((s) => (
                 <li key={s.id}>
-                  <a
-                    href="#services"
-                    className="text-sm hover:text-primary-400 transition-colors"
-                    aria-label={`Learn about ${s.title} service`}
-                  >
+                  <a href="#services" className="text-sm text-gray-600 hover:text-primary-400 transition-colors">
                     {s.title}
                   </a>
                 </li>
@@ -85,9 +71,11 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Social & CTA */}
+          {/* Social */}
           <div>
-            <h3 className="text-white font-semibold font-heading mb-4">Connect</h3>
+            <h3 className="text-white font-semibold font-heading text-sm mb-4 uppercase tracking-wider">
+              Follow Me
+            </h3>
             <ul className="flex gap-3 mb-6" role="list">
               {[
                 { label: 'LinkedIn', href: 'https://linkedin.com/in/sawonsaha', icon: 'in' },
@@ -101,31 +89,25 @@ export default function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`Sawon Saha on ${social.label}`}
-                    className="w-9 h-9 rounded-lg bg-gray-800 hover:bg-primary-600 flex items-center justify-center text-sm font-bold transition-colors"
+                    className="w-9 h-9 rounded-lg border border-[#1a1a1a] hover:border-primary-500/50 hover:text-primary-400 flex items-center justify-center text-gray-600 text-xs font-bold transition-all"
                   >
                     {social.icon}
                   </a>
                 </li>
               ))}
             </ul>
-            <p className="text-sm text-gray-500 mb-3">Ready to grow your organic traffic?</p>
-            <a href="#contact" className="btn-primary text-sm py-2">
+            <p className="text-xs text-gray-700 mb-3">Ready to grow your organic traffic?</p>
+            <a href="#contact" className="btn-primary text-xs py-2 px-4">
               Start a Project
             </a>
           </div>
         </div>
 
-        <div className="border-t border-gray-800 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-gray-600">
+        <div className="border-t border-[#111] pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-700">
           <p>
-            &copy; {year}{' '}
-            <span itemProp="name">{SITE_CONFIG.name}</span>. All rights reserved.
+            &copy; {year} <span itemProp="name">{SITE_CONFIG.name}</span>. All rights reserved.
           </p>
-          <p>
-            SEO Specialist &bull; Dhaka, Bangladesh &bull;{' '}
-            <a href="#" className="hover:text-gray-400 transition-colors">
-              Privacy Policy
-            </a>
-          </p>
+          <p>SEO & AEO Specialist &bull; Naogaon, Rajshahi, Bangladesh</p>
         </div>
       </div>
     </footer>
