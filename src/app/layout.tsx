@@ -8,6 +8,8 @@ import {
 } from '@/lib/schema';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
+import CustomCursor from '@/components/ui/CustomCursor';
+import PageLoader from '@/components/ui/PageLoader';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_CONFIG.url),
@@ -129,6 +131,8 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen flex flex-col">
+        <PageLoader />
+        <CustomCursor />
         <a href="#main-content" className="skip-link">
           Skip to main content
         </a>
