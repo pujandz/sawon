@@ -12,10 +12,34 @@ const SKILLS = [
 ];
 
 const CERTIFICATIONS = [
-  { name: 'Google Analytics 4 Certified', issuer: 'Google', year: '2024' },
-  { name: 'Google Search Ads Certified', issuer: 'Google', year: '2024' },
-  { name: 'HubSpot SEO Certified', issuer: 'HubSpot', year: '2024' },
-  { name: 'SEMrush SEO Toolkit', issuer: 'SEMrush', year: '2023' },
+  { name: 'Google Analytics Certification', issuer: 'Google', year: '2023' },
+  { name: 'Foundations of Digital Marketing & E-commerce', issuer: 'Google / Coursera', year: '2022' },
+  { name: 'Introduction to Search Engine Optimization', issuer: 'Coursera', year: '2020' },
+  { name: 'Fundamentals of Digital Marketing', issuer: 'Google', year: '2019' },
+];
+
+const EXPERIENCE = [
+  {
+    role: 'SEO Team Lead',
+    company: 'Algomindz',
+    period: 'Feb 2025 – Present',
+    type: 'Remote',
+    desc: 'Leading SEO & AEO strategies to maximize visibility across AI platforms and traditional search engines for top-tier clients.',
+  },
+  {
+    role: 'SEO Specialist',
+    company: 'Digitomark',
+    period: 'Mar 2022 – Jan 2025',
+    type: 'Remote',
+    desc: 'Managed end-to-end SEO projects — strategy, on-page, technical SEO, competitor analysis, and client communication for a leading BD digital agency.',
+  },
+  {
+    role: 'SEO Executive',
+    company: 'Dcastalia Limited',
+    period: 'Jan 2022 – Apr 2023',
+    type: 'Dhaka',
+    desc: 'Executed on-page and off-page SEO for software company clients; improved organic rankings across multiple niches.',
+  },
 ];
 
 export default function About() {
@@ -71,7 +95,7 @@ export default function About() {
 
               {/* Floating cards */}
               <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-xl p-4 border border-gray-100 max-w-[160px]">
-                <div className="text-3xl font-bold gradient-text font-heading">5+</div>
+                <div className="text-3xl font-bold gradient-text font-heading">3+</div>
                 <div className="text-xs text-gray-500 mt-0.5">Years of SEO Excellence</div>
               </div>
               <div className="absolute -top-6 -left-6 bg-white rounded-2xl shadow-xl p-4 border border-gray-100">
@@ -96,24 +120,49 @@ export default function About() {
             <div className="space-y-4 text-gray-600 leading-relaxed mb-8">
               <p>
                 I&apos;m <strong className="text-gray-900" itemProp="name">Sawon Saha</strong>, a
-                dedicated SEO specialist based in{' '}
+                results-driven SEO & AEO Specialist based in{' '}
                 <span itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
-                  <span itemProp="addressLocality">Dhaka</span>,{' '}
+                  <span itemProp="addressLocality">Naogaon</span>,{' '}
+                  <span itemProp="addressRegion">Rajshahi</span>,{' '}
                   <span itemProp="addressCountry">Bangladesh</span>
                 </span>
-                . With over 5 years of hands-on experience, I&apos;ve helped 150+ businesses —
-                from local shops to global SaaS companies — achieve measurable organic growth.
+                . Currently serving as <strong className="text-gray-900">SEO Team Lead at Algomindz</strong>,
+                I help businesses maximize visibility across both AI platforms and traditional search engines
+                through data-driven SEO and Answer Engine Optimization strategies.
               </p>
               <p>
-                My approach combines deep technical expertise with a genuine understanding of
-                business goals. I don&apos;t just chase rankings — I build sustainable SEO systems
-                that drive qualified traffic, generate leads, and grow revenue.
+                With hands-on experience since 2022 — including roles at Digitomark and Dcastalia Limited —
+                I&apos;ve developed a strong foundation in technical SEO, on-page optimization, competitor
+                analysis, link building, and client strategy across diverse industries.
               </p>
               <p>
-                I stay ahead of every Google algorithm update and emerging trend (including AI
-                search and Answer Engine Optimization) to ensure your website is always
-                positioned for long-term success.
+                I stay ahead of every Google algorithm update and emerging AI search trend to ensure your
+                website is always positioned for sustainable, long-term organic growth.
               </p>
+            </div>
+
+            {/* Work Experience */}
+            <div className="mb-8">
+              <h3 className="text-sm font-semibold text-gray-900 mb-3 uppercase tracking-wider">
+                Work Experience
+              </h3>
+              <div className="space-y-3">
+                {EXPERIENCE.map((exp) => (
+                  <div key={exp.company} className="flex gap-3 bg-gray-50 rounded-xl p-3">
+                    <div className="w-2 flex-shrink-0 mt-1">
+                      <div className="w-2 h-2 bg-primary-600 rounded-full" />
+                    </div>
+                    <div>
+                      <div className="flex flex-wrap items-center gap-2 mb-0.5">
+                        <span className="text-sm font-semibold text-gray-900">{exp.role}</span>
+                        <span className="text-xs bg-primary-100 text-primary-700 px-2 py-0.5 rounded-full">{exp.company}</span>
+                      </div>
+                      <p className="text-xs text-gray-500 mb-1">{exp.period} &bull; {exp.type}</p>
+                      <p className="text-xs text-gray-600 leading-relaxed">{exp.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
 
             {/* Certifications */}

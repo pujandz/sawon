@@ -1,22 +1,23 @@
 export const SITE_CONFIG = {
   name: 'Sawon Saha',
-  title: 'Sawon Saha – SEO Specialist in Bangladesh',
+  title: 'Sawon Saha – SEO & AEO Specialist in Bangladesh',
   description:
-    'Sawon Saha is a certified SEO specialist in Bangladesh helping businesses grow organic traffic, rank higher on Google, and generate qualified leads through data-driven SEO strategies.',
+    'Results-driven SEO/AEO Specialist with a proven track record in keyword research, on-page optimization, link building, and analytics. Currently SEO Team Lead at Algomindz, helping businesses maximize visibility across AI platforms and traditional search engines.',
   url: 'https://sawonsaha.com',
   ogImage: 'https://sawonsaha.com/og-image.jpg',
-  twitterHandle: '@sawonsaha_seo',
-  email: 'hello@sawonsaha.com',
-  phone: '+880 1700-000000',
-  location: 'Dhaka, Bangladesh',
+  twitterHandle: '@sawonsaha9',
+  email: 'sawon.s907@gmail.com',
+  phone: '+880 1674-484996',
+  location: 'Naogaon, Rajshahi, Bangladesh',
   locale: 'en_US',
   author: {
     name: 'Sawon Saha',
-    jobTitle: 'SEO Specialist',
+    jobTitle: 'SEO Team Lead & AEO Specialist',
     sameAs: [
       'https://linkedin.com/in/sawonsaha',
-      'https://twitter.com/sawonsaha_seo',
-      'https://facebook.com/sawonsaha.seo',
+      'https://twitter.com/sawonsaha9',
+      'https://quora.com/profile/Sawon-Saha-1',
+      'https://medium.com/@sawon.s907',
     ],
   },
 };
@@ -131,8 +132,8 @@ export const SERVICES = [
 ];
 
 export const STATS = [
-  { value: 5, suffix: '+', label: 'Years Experience' },
-  { value: 150, suffix: '+', label: 'Projects Delivered' },
+  { value: 3, suffix: '+', label: 'Years Experience' },
+  { value: 80, suffix: '+', label: 'Projects Delivered' },
   { value: 98, suffix: '%', label: 'Client Satisfaction' },
   { value: 3, suffix: 'x', label: 'Avg. Traffic Growth' },
 ];

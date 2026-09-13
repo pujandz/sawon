@@ -91,8 +91,9 @@ export default function Footer() {
             <ul className="flex gap-3 mb-6" role="list">
               {[
                 { label: 'LinkedIn', href: 'https://linkedin.com/in/sawonsaha', icon: 'in' },
-                { label: 'Twitter / X', href: 'https://twitter.com/sawonsaha_seo', icon: 'X' },
-                { label: 'Facebook', href: 'https://facebook.com/sawonsaha.seo', icon: 'f' },
+                { label: 'Twitter / X', href: 'https://twitter.com/sawonsaha9', icon: 'X' },
+                { label: 'Medium', href: 'https://medium.com/@sawon.s907', icon: 'M' },
+                { label: 'Quora', href: 'https://quora.com/profile/Sawon-Saha-1', icon: 'Q' },
               ].map((social) => (
                 <li key={social.label}>
                   <a

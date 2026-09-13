@@ -38,21 +38,27 @@ export function getPersonSchema() {
     hasCredential: [
       {
         '@type': 'EducationalOccupationalCredential',
-        name: 'Google Analytics Certified',
+        name: 'Google Analytics Certification',
         credentialCategory: 'certification',
         recognizedBy: { '@type': 'Organization', name: 'Google' },
       },
       {
         '@type': 'EducationalOccupationalCredential',
-        name: 'Google Search Ads Certified',
+        name: 'Foundations of Digital Marketing and E-commerce',
         credentialCategory: 'certification',
-        recognizedBy: { '@type': 'Organization', name: 'Google' },
+        recognizedBy: { '@type': 'Organization', name: 'Google / Coursera' },
       },
       {
         '@type': 'EducationalOccupationalCredential',
-        name: 'HubSpot SEO Certified',
+        name: 'Introduction to Search Engine Optimization',
         credentialCategory: 'certification',
-        recognizedBy: { '@type': 'Organization', name: 'HubSpot' },
+        recognizedBy: { '@type': 'Organization', name: 'Coursera' },
+      },
+      {
+        '@type': 'EducationalOccupationalCredential',
+        name: 'The Fundamentals of Digital Marketing',
+        credentialCategory: 'certification',
+        recognizedBy: { '@type': 'Organization', name: 'Google' },
       },
     ],
   };
