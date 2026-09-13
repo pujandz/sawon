@@ -1,3 +1,8 @@
+'use client';
+
+import { motion } from 'framer-motion';
+import { fadeUp, fadeLeft, fadeRight, scaleIn, stagger, VP } from '@/lib/animations';
+
 const JOURNEY = [
   {
     type: 'work',
@@ -85,39 +90,64 @@ export default function Journey() {
       aria-labelledby="journey-heading"
     >
       <div className="container-max">
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="section-label">My Journey</span>
-          <h2 id="journey-heading" className="section-title mb-4">
+        {/* Header */}
+        <motion.div
+          className="text-center max-w-2xl mx-auto mb-16"
+          variants={stagger(0.1)}
+          initial="hidden"
+          whileInView="visible"
+          viewport={VP}
+        >
+          <motion.span variants={fadeUp} className="section-label">My Journey</motion.span>
+          <motion.h2 variants={fadeUp} id="journey-heading" className="section-title mb-4">
             A timeline of my professional experience,{' '}
             <span className="gradient-text">education & achievements</span>
-          </h2>
-        </div>
+          </motion.h2>
+        </motion.div>
 
         <div className="relative max-w-3xl mx-auto">
-          {/* Vertical line */}
-          <div
+          {/* Vertical line — draws in as it scrolls */}
+          <motion.div
             className="absolute left-4 sm:left-1/2 top-0 bottom-0 w-px bg-[#1e1e1e] sm:-translate-x-0.5"
+            initial={{ scaleY: 0, originY: 0 }}
+            whileInView={{ scaleY: 1 }}
+            viewport={{ once: true, amount: 0.05 }}
+            transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
             aria-hidden="true"
           />
 
           <ol className="space-y-10" aria-label="Career and education timeline">
             {JOURNEY.map((item, index) => {
               const isRight = index % 2 !== 0;
+              const cardVariant = isRight ? fadeLeft : fadeRight;
+
               return (
                 <li
                   key={index}
-                  className={`relative grid sm:grid-cols-2 gap-6 sm:gap-12 pl-12 sm:pl-0`}
+                  className="relative grid sm:grid-cols-2 gap-6 sm:gap-12 pl-12 sm:pl-0"
                 >
                   {/* Dot */}
-                  <div
+                  <motion.div
                     className={`absolute left-3 sm:left-1/2 top-5 w-3 h-3 rounded-full border-2 sm:-translate-x-1/2 z-10 ${TYPE_COLOR[item.type]}`}
+                    initial={{ scale: 0, opacity: 0 }}
+                    whileInView={{ scale: 1, opacity: 1 }}
+                    viewport={VP}
+                    transition={{ duration: 0.4, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
                     aria-hidden="true"
                   />
 
-                  {/* Left card (even indices on desktop) */}
+                  {/* Card */}
                   <div className={`${isRight ? 'sm:col-start-1 sm:text-right' : 'sm:col-start-2'} sm:col-span-1`}>
                     {!isRight && <div className="hidden sm:block" aria-hidden="true" />}
-                    <div className={`card ${isRight ? 'sm:ml-0 sm:mr-0' : ''}`}>
+                    <motion.div
+                      className={`card ${isRight ? 'sm:ml-0 sm:mr-0' : ''}`}
+                      variants={cardVariant}
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={VP}
+                      whileHover={{ y: -4, borderColor: 'rgba(34,197,94,0.18)' }}
+                      transition={{ duration: 0.25 }}
+                    >
                       <div className={`flex items-start gap-2 mb-3 ${isRight ? 'sm:flex-row-reverse' : ''}`}>
                         <span
                           className={`text-[10px] font-bold px-2 py-0.5 rounded text-black ${
@@ -143,7 +173,7 @@ export default function Journey() {
                           </li>
                         ))}
                       </ul>
-                    </div>
+                    </motion.div>
                   </div>
 
                   {/* Empty col for alternating layout */}

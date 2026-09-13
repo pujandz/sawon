@@ -1,6 +1,8 @@
 'use client';
 
 import { useRef, useEffect } from 'react';
+import { motion } from 'framer-motion';
+import { fadeUp, fadeLeft, fadeRight, scaleIn, stagger, VP } from '@/lib/animations';
 
 const SKILLS = [
   { name: 'Technical SEO', level: 95 },
@@ -55,40 +57,67 @@ export default function About() {
 
       <div className="container-max">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
-          {/* Left – Photo + stats */}
-          <div>
+          {/* Left – Photo + highlights */}
+          <motion.div
+            variants={fadeLeft}
+            initial="hidden"
+            whileInView="visible"
+            viewport={VP}
+          >
             {/* Photo frame */}
             <div className="relative mb-8 max-w-sm">
               <div className="aspect-[4/5] rounded-2xl overflow-hidden bg-[#111] border border-[#222] relative">
-                {/* Profile placeholder — replace with <Image> once photo is available */}
                 <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#111] to-[#1a1a1a]">
                   <span className="text-8xl font-black text-white/5 font-heading select-none">SS</span>
                 </div>
-                {/* Green corner accent */}
                 <div className="absolute top-4 left-4 w-6 h-6 border-t-2 border-l-2 border-primary-500 rounded-tl" aria-hidden="true" />
                 <div className="absolute bottom-4 right-4 w-6 h-6 border-b-2 border-r-2 border-primary-500 rounded-br" aria-hidden="true" />
               </div>
               {/* Floating badge */}
-              <div className="absolute -bottom-4 -right-4 bg-[#111] border border-[#222] rounded-xl px-4 py-3">
+              <motion.div
+                className="absolute -bottom-4 -right-4 bg-[#111] border border-[#222] rounded-xl px-4 py-3"
+                initial={{ opacity: 0, scale: 0.7, y: 12 }}
+                whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                viewport={VP}
+                transition={{ delay: 0.3, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                whileHover={{ scale: 1.06 }}
+              >
                 <p className="text-2xl font-black text-primary-400 font-heading">3+</p>
                 <p className="text-xs text-gray-500">Years Experience</p>
-              </div>
+              </motion.div>
             </div>
 
             {/* Highlight cards */}
-            <div className="grid grid-cols-2 gap-3">
+            <motion.div
+              className="grid grid-cols-2 gap-3"
+              variants={stagger(0.08)}
+              initial="hidden"
+              whileInView="visible"
+              viewport={VP}
+            >
               {HIGHLIGHTS.map((h) => (
-                <div key={h.title} className="card p-4">
+                <motion.div
+                  key={h.title}
+                  variants={scaleIn}
+                  className="card p-4"
+                  whileHover={{ y: -4, borderColor: 'rgba(34,197,94,0.25)' }}
+                  transition={{ duration: 0.25 }}
+                >
                   <span className="text-xl mb-2 block" aria-hidden="true">{h.icon}</span>
                   <p className="text-sm font-semibold text-white mb-1">{h.title}</p>
                   <p className="text-xs text-gray-500 leading-relaxed">{h.desc}</p>
-                </div>
+                </motion.div>
               ))}
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           {/* Right – Content */}
-          <div>
+          <motion.div
+            variants={fadeRight}
+            initial="hidden"
+            whileInView="visible"
+            viewport={VP}
+          >
             <span className="section-label">About Me</span>
             <h2 id="about-heading" className="section-title mb-6">
               Passionate about creating{' '}
@@ -147,14 +176,24 @@ export default function About() {
 
             {/* CTA */}
             <div className="flex flex-wrap gap-4">
-              <a href="#contact" className="btn-primary text-sm">
+              <motion.a
+                href="#contact"
+                className="btn-primary text-sm"
+                whileHover={{ scale: 1.04, boxShadow: '0 0 24px rgba(34,197,94,0.3)' }}
+                whileTap={{ scale: 0.97 }}
+              >
                 Work With Me
-              </a>
-              <a href="#portfolio" className="btn-outline text-sm">
+              </motion.a>
+              <motion.a
+                href="#portfolio"
+                className="btn-outline text-sm"
+                whileHover={{ scale: 1.04 }}
+                whileTap={{ scale: 0.97 }}
+              >
                 See My Work
-              </a>
+              </motion.a>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
