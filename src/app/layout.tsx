@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_CONFIG.url),
   title: {
     default: SITE_CONFIG.title,
-    template: `%s | ${SITE_CONFIG.name} – SEO Specialist`,
+    template: `%s | ${SITE_CONFIG.name} – SEO & AEO Specialist`,
   },
   description: SITE_CONFIG.description,
   keywords: [
