@@ -56,7 +56,7 @@ export default function Testimonials() {
               role="listitem"
               variants={scaleIn}
               className="card group flex flex-col"
-              whileHover={{ y: -6, borderColor: 'rgba(34,197,94,0.2)' }}
+              whileHover={{ y: -6, borderColor: 'rgba(14,165,233,0.2)' }}
               transition={{ duration: 0.25 }}
               itemScope
               itemType="https://schema.org/Review"

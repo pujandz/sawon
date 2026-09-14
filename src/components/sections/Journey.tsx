@@ -167,7 +167,7 @@ export default function Journey() {
                     className={`card border-l-2 ${
                       job.current ? 'border-l-primary-500' : 'border-l-[var(--border-strong)]'
                     }`}
-                    whileHover={{ y: -3, borderColor: 'rgba(34,197,94,0.25)' }}
+                    whileHover={{ y: -3, borderColor: 'rgba(14,165,233,0.25)' }}
                     transition={{ duration: 0.22 }}
                   >
                     <div className="flex flex-wrap items-start justify-between gap-3 mb-3">

@@ -100,7 +100,7 @@ export default function About() {
                   key={h.title}
                   variants={scaleIn}
                   className="card p-4"
-                  whileHover={{ y: -4, borderColor: 'rgba(34,197,94,0.25)' }}
+                  whileHover={{ y: -4, borderColor: 'rgba(14,165,233,0.25)' }}
                   transition={{ duration: 0.25 }}
                 >
                   <span className="text-xl mb-2 block" aria-hidden="true">{h.icon}</span>
@@ -179,7 +179,7 @@ export default function About() {
               <motion.a
                 href="#contact"
                 className="btn-primary text-sm"
-                whileHover={{ scale: 1.04, boxShadow: '0 0 24px rgba(34,197,94,0.3)' }}
+                whileHover={{ scale: 1.04, boxShadow: '0 0 24px rgba(14,165,233,0.3)' }}
                 whileTap={{ scale: 0.97 }}
               >
                 Work With Me

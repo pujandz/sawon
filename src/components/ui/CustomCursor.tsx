@@ -63,11 +63,11 @@ export default function CustomCursor() {
             width: isHovering ? 46 : isClicking ? 18 : 30,
             height: isHovering ? 46 : isClicking ? 18 : 30,
             borderColor: isClicking
-              ? 'rgba(34,197,94,1)'
+              ? 'rgba(14,165,233,1)'
               : isHovering
-              ? 'rgba(34,197,94,0.7)'
-              : 'rgba(34,197,94,0.5)',
-            backgroundColor: isHovering ? 'rgba(34,197,94,0.08)' : 'transparent',
+              ? 'rgba(14,165,233,0.7)'
+              : 'rgba(14,165,233,0.5)',
+            backgroundColor: isHovering ? 'rgba(14,165,233,0.08)' : 'transparent',
           }}
           transition={{ duration: 0.18, ease: [0.22, 1, 0.36, 1] }}
         />

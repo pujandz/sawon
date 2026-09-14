@@ -99,7 +99,7 @@ export default function Header() {
             <motion.button
               onClick={() => handleNavClick('#contact')}
               className="hidden sm:inline-flex btn-primary py-2 px-5 text-sm"
-              whileHover={{ scale: 1.05, boxShadow: '0 0 20px rgba(34,197,94,0.3)' }}
+              whileHover={{ scale: 1.05, boxShadow: '0 0 20px rgba(14,165,233,0.3)' }}
               whileTap={{ scale: 0.97 }}
             >
               Hire Me

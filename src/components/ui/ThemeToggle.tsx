@@ -11,7 +11,7 @@ export default function ThemeToggle() {
     <motion.button
       onClick={toggle}
       className="relative w-9 h-9 rounded-lg border border-[var(--border)] bg-[var(--bg-surface)] flex items-center justify-center overflow-hidden"
-      whileHover={{ scale: 1.08, borderColor: 'rgba(34,197,94,0.5)' }}
+      whileHover={{ scale: 1.08, borderColor: 'rgba(14,165,233,0.5)' }}
       whileTap={{ scale: 0.93 }}
       aria-label={`Switch to ${isDark ? 'light' : 'dark'} mode`}
     >

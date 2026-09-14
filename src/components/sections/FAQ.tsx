@@ -43,7 +43,7 @@ export default function FAQ() {
               <motion.a
                 href="#contact"
                 className="btn-primary text-sm"
-                whileHover={{ scale: 1.04, boxShadow: '0 0 24px rgba(34,197,94,0.3)' }}
+                whileHover={{ scale: 1.04, boxShadow: '0 0 24px rgba(14,165,233,0.3)' }}
                 whileTap={{ scale: 0.97 }}
               >
                 Ask Me Anything
@@ -69,7 +69,7 @@ export default function FAQ() {
                     className={`border rounded-xl overflow-hidden ${
                       isOpen ? 'border-primary-500/30 bg-[var(--bg-surface)]' : 'border-[var(--border-subtle)] bg-[var(--bg-surface)] hover:border-[var(--border-strong)]'
                     }`}
-                    animate={{ borderColor: isOpen ? 'rgba(34,197,94,0.3)' : undefined }}
+                    animate={{ borderColor: isOpen ? 'rgba(14,165,233,0.3)' : undefined }}
                     transition={{ duration: 0.2 }}
                   >
                     <dt>

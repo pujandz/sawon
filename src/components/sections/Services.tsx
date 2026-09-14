@@ -108,7 +108,7 @@ export default function Services() {
                 exit={{ opacity: 0, scale: 0.85, y: -8 }}
                 transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
                 className="card"
-                whileHover={{ y: -4, borderColor: 'rgba(34,197,94,0.25)' }}
+                whileHover={{ y: -4, borderColor: 'rgba(14,165,233,0.25)' }}
               >
                 <div className="flex justify-between items-center mb-3">
                   <span className="font-semibold text-white text-sm">{tool.name}</span>
@@ -165,7 +165,7 @@ export default function Services() {
               role="listitem"
               variants={fadeUp}
               className="card group cursor-default"
-              whileHover={{ y: -6, borderColor: 'rgba(34,197,94,0.3)' }}
+              whileHover={{ y: -6, borderColor: 'rgba(14,165,233,0.3)' }}
               transition={{ duration: 0.25 }}
               itemScope
               itemType="https://schema.org/Service"
