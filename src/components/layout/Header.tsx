@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { NAV_LINKS, SITE_CONFIG } from '@/lib/constants';
+import ThemeToggle from '@/components/ui/ThemeToggle';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -37,9 +38,10 @@ export default function Header() {
 
   return (
     <motion.header
-      className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${
-        isScrolled ? 'bg-[#0a0a0a]/95 backdrop-blur-md border-b border-[#1a1a1a]' : 'bg-transparent'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled ? 'backdrop-blur-md border-b border-[var(--border-subtle)]' : 'bg-transparent'
       }`}
+      style={isScrolled ? { backgroundColor: 'var(--header-bg)' } : {}}
       role="banner"
       initial={{ y: -72, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
@@ -93,6 +95,7 @@ export default function Header() {
 
           {/* CTA */}
           <div className="flex items-center gap-3">
+            <ThemeToggle />
             <motion.button
               onClick={() => handleNavClick('#contact')}
               className="hidden sm:inline-flex btn-primary py-2 px-5 text-sm"
@@ -139,7 +142,7 @@ export default function Header() {
               transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
               style={{ overflow: 'hidden' }}
             >
-              <ul className="bg-[#111111] rounded-xl border border-[#222222] p-2" role="list">
+              <ul className="bg-[var(--bg-surface)] rounded-xl border border-[var(--border)] p-2" role="list">
                 {NAV_LINKS.map((link, i) => {
                   const isActive = activeSection === link.href.replace('#', '');
                   return (
@@ -152,7 +155,7 @@ export default function Header() {
                       <button
                         onClick={() => handleNavClick(link.href)}
                         className={`w-full text-left px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
-                          isActive ? 'text-primary-400 bg-primary-500/10' : 'text-gray-400 hover:text-white hover:bg-[#1a1a1a]'
+                          isActive ? 'text-primary-400 bg-primary-500/10' : 'text-gray-400 hover:text-white hover:bg-[var(--bg-elevated)]'
                         }`}
                       >
                         {link.label}
@@ -161,7 +164,7 @@ export default function Header() {
                   );
                 })}
                 <motion.li
-                  className="pt-2 border-t border-[#222222] mt-2"
+                  className="pt-2 border-t border-[var(--border)] mt-2"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: NAV_LINKS.length * 0.05 }}

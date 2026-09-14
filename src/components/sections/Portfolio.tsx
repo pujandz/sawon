@@ -8,7 +8,7 @@ export default function Portfolio() {
   return (
     <section
       id="portfolio"
-      className="section-padding bg-[#0a0a0a]"
+      className="section-padding bg-[var(--bg-base)]"
       aria-labelledby="portfolio-heading"
     >
       <div className="container-max">
@@ -47,7 +47,7 @@ export default function Portfolio() {
               role="listitem"
               variants={fadeUp}
               className="card group"
-              whileHover={{ borderColor: 'rgba(255,255,255,0.12)', y: -3 }}
+              whileHover={{ borderColor: 'rgba(34,197,94,0.12)', y: -3 }}
               transition={{ duration: 0.25 }}
               itemScope
               itemType="https://schema.org/CreativeWork"
@@ -59,7 +59,7 @@ export default function Portfolio() {
                   whileHover={{ scale: 1.02 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <div className="aspect-video rounded-xl overflow-hidden bg-[#1a1a1a] border border-[#222] relative flex items-center justify-center">
+                  <div className="aspect-video rounded-xl overflow-hidden bg-[var(--bg-elevated)] border border-[var(--border)] relative flex items-center justify-center">
                     <div className="text-center">
                       <div className="text-4xl mb-2">
                         {index === 0 ? '🛒' : index === 1 ? '💻' : '🏠'}
@@ -102,7 +102,7 @@ export default function Portfolio() {
                     {item.results.map((r) => (
                       <motion.div
                         key={r.metric}
-                        className="bg-[#0a0a0a] border border-[#1a1a1a] rounded-xl p-3 text-center"
+                        className="bg-[var(--bg-base)] border border-[var(--border-subtle)] rounded-xl p-3 text-center"
                         whileHover={{ borderColor: 'rgba(34,197,94,0.2)', scale: 1.03 }}
                         transition={{ duration: 0.2 }}
                       >
@@ -117,7 +117,7 @@ export default function Portfolio() {
                     {item.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="text-[10px] border border-[#222] text-gray-500 px-2.5 py-1 rounded-full"
+                        className="text-[10px] border border-[var(--border)] text-gray-500 px-2.5 py-1 rounded-full"
                       >
                         {tag}
                       </span>

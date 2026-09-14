@@ -46,7 +46,7 @@ export default function About() {
     <section
       id="about"
       ref={sectionRef}
-      className="section-padding bg-[#0a0a0a]"
+      className="section-padding bg-[var(--bg-base)]"
       aria-labelledby="about-heading"
       itemScope
       itemType="https://schema.org/Person"
@@ -66,8 +66,8 @@ export default function About() {
           >
             {/* Photo frame */}
             <div className="relative mb-8 max-w-sm">
-              <div className="aspect-[4/5] rounded-2xl overflow-hidden bg-[#111] border border-[#222] relative">
-                <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#111] to-[#1a1a1a]">
+              <div className="aspect-[4/5] rounded-2xl overflow-hidden bg-[var(--bg-surface)] border border-[var(--border)] relative">
+                <div className="w-full h-full flex items-center justify-center bg-[var(--bg-elevated)]">
                   <span className="text-8xl font-black text-white/5 font-heading select-none">SS</span>
                 </div>
                 <div className="absolute top-4 left-4 w-6 h-6 border-t-2 border-l-2 border-primary-500 rounded-tl" aria-hidden="true" />
@@ -75,7 +75,7 @@ export default function About() {
               </div>
               {/* Floating badge */}
               <motion.div
-                className="absolute -bottom-4 -right-4 bg-[#111] border border-[#222] rounded-xl px-4 py-3"
+                className="absolute -bottom-4 -right-4 bg-[var(--bg-surface)] border border-[var(--border)] rounded-xl px-4 py-3"
                 initial={{ opacity: 0, scale: 0.7, y: 12 }}
                 whileInView={{ opacity: 1, scale: 1, y: 0 }}
                 viewport={VP}
@@ -157,7 +157,7 @@ export default function About() {
                       <span className="font-medium text-gray-300">{skill.name}</span>
                       <span className="text-gray-600 text-xs">{skill.level}%</span>
                     </div>
-                    <div className="h-1 bg-[#1a1a1a] rounded-full overflow-hidden">
+                    <div className="h-1 bg-[var(--bg-elevated)] rounded-full overflow-hidden">
                       <div
                         className="h-full bg-gradient-to-r from-primary-600 to-primary-400 rounded-full transition-all duration-1000 ease-out"
                         style={{ width: '0%' }}

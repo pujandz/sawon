@@ -24,7 +24,7 @@ export default function PageLoader() {
       {loading && (
         <motion.div
           key="loader"
-          className="fixed inset-0 z-[10000] bg-[#0a0a0a] flex items-center justify-center"
+          className="fixed inset-0 z-[10000] bg-[var(--bg-base)] loader-overlay flex items-center justify-center"
           exit={{ y: '-100%' }}
           transition={{ duration: 0.75, ease: EASE }}
         >
@@ -75,7 +75,7 @@ export default function PageLoader() {
 
                 {/* Progress bar */}
                 <motion.div
-                  className="w-52 h-px bg-[#1e1e1e] rounded-full overflow-hidden"
+                  className="w-52 h-px bg-[var(--bg-elevated)] rounded-full overflow-hidden"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.5, duration: 0.3 }}

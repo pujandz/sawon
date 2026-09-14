@@ -10,7 +10,7 @@ export default function Footer() {
 
   return (
     <footer
-      className="bg-[#060606] border-t border-[#111]"
+      className="bg-[var(--bg-deep)] border-t border-[var(--border-faint)]"
       role="contentinfo"
       aria-label="Site footer"
     >
@@ -113,7 +113,7 @@ export default function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`Sawon Saha on ${social.label}`}
-                    className="w-9 h-9 rounded-lg border border-[#1a1a1a] flex items-center justify-center text-gray-600 text-xs font-bold"
+                    className="w-9 h-9 rounded-lg border border-[var(--border-subtle)] flex items-center justify-center text-gray-600 text-xs font-bold"
                     whileHover={{ scale: 1.15, borderColor: 'rgba(34,197,94,0.5)', color: '#4ade80' }}
                     whileTap={{ scale: 0.9 }}
                     transition={{ duration: 0.2 }}
@@ -136,7 +136,7 @@ export default function Footer() {
         </motion.div>
 
         <motion.div
-          className="border-t border-[#111] pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-700"
+          className="border-t border-[var(--border-faint)] pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-700"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={VP}

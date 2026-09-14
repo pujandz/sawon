@@ -188,6 +188,8 @@ export const TESTIMONIALS = [
     image: '/testimonials/rahul.jpg',
     rating: 5,
     text: 'Sawon transformed our online presence. Within 6 months, our organic traffic tripled and we started ranking #1 for our most competitive keywords. His data-driven approach and transparent reporting made all the difference.',
+    source: 'LinkedIn',
+    sourceUrl: 'https://www.linkedin.com/in/sawonsaha',
   },
   {
     id: 2,
@@ -196,6 +198,8 @@ export const TESTIMONIALS = [
     image: '/testimonials/nadia.jpg',
     rating: 5,
     text: 'We hired Sawon after struggling with declining rankings for two years. His technical SEO audit uncovered issues we never knew existed. Six months later, we\'re at our highest organic revenue ever.',
+    source: 'LinkedIn',
+    sourceUrl: 'https://www.linkedin.com/in/sawonsaha',
   },
   {
     id: 3,
@@ -204,6 +208,8 @@ export const TESTIMONIALS = [
     image: '/testimonials/james.jpg',
     rating: 5,
     text: 'Exceptional SEO work! Sawon built our entire content strategy from scratch. We went from zero to 50,000 monthly organic visitors in under a year. Highly recommended for any serious SEO investment.',
+    source: 'LinkedIn',
+    sourceUrl: 'https://www.linkedin.com/in/sawonsaha',
   },
   {
     id: 4,
@@ -212,6 +218,8 @@ export const TESTIMONIALS = [
     image: '/testimonials/fatima.jpg',
     rating: 5,
     text: 'Sawon\'s link building campaigns are genuine white-hat quality. Every backlink came from relevant, authoritative sites. Our Domain Rating jumped from 12 to 51, and rankings followed naturally.',
+    source: 'LinkedIn',
+    sourceUrl: 'https://www.linkedin.com/in/sawonsaha',
   },
 ];
 

@@ -21,7 +21,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="section-padding bg-[#0a0a0a]"
+      className="section-padding bg-[var(--bg-base)]"
       aria-labelledby="contact-heading"
     >
       <div className="container-max">
@@ -100,7 +100,7 @@ export default function Contact() {
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         placeholder="John Doe"
-                        className="w-full px-4 py-3 bg-[#0a0a0a] border border-[#222] rounded-xl text-sm text-white placeholder-gray-700 focus:outline-none focus:border-primary-500/50 transition-colors"
+                        className="w-full px-4 py-3 bg-[var(--bg-base)] border border-[var(--border)] rounded-xl text-sm text-white placeholder-gray-700 focus:outline-none focus:border-primary-500/50 transition-colors"
                         whileFocus={{ borderColor: 'rgba(34,197,94,0.4)' }}
                       />
                     </div>
@@ -113,7 +113,7 @@ export default function Contact() {
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         placeholder="you@company.com"
-                        className="w-full px-4 py-3 bg-[#0a0a0a] border border-[#222] rounded-xl text-sm text-white placeholder-gray-700 focus:outline-none focus:border-primary-500/50 transition-colors"
+                        className="w-full px-4 py-3 bg-[var(--bg-base)] border border-[var(--border)] rounded-xl text-sm text-white placeholder-gray-700 focus:outline-none focus:border-primary-500/50 transition-colors"
                         whileFocus={{ borderColor: 'rgba(34,197,94,0.4)' }}
                       />
                     </div>
@@ -127,11 +127,11 @@ export default function Contact() {
                       id="subject"
                       value={formData.subject}
                       onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                      className="w-full px-4 py-3 bg-[#0a0a0a] border border-[#222] rounded-xl text-sm text-white focus:outline-none focus:border-primary-500/50 transition-colors"
+                      className="w-full px-4 py-3 bg-[var(--bg-base)] border border-[var(--border)] rounded-xl text-sm text-white focus:outline-none focus:border-primary-500/50 transition-colors"
                     >
-                      <option value="" className="bg-[#111]">Select a service…</option>
+                      <option value="" className="bg-[var(--bg-surface)]">Select a service…</option>
                       {SERVICES_LIST.map((s) => (
-                        <option key={s} value={s} className="bg-[#111]">{s}</option>
+                        <option key={s} value={s} className="bg-[var(--bg-surface)]">{s}</option>
                       ))}
                     </select>
                   </div>
@@ -145,7 +145,7 @@ export default function Contact() {
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       placeholder="Tell me about your project, goals, and current SEO situation…"
-                      className="w-full px-4 py-3 bg-[#0a0a0a] border border-[#222] rounded-xl text-sm text-white placeholder-gray-700 focus:outline-none focus:border-primary-500/50 transition-colors resize-none"
+                      className="w-full px-4 py-3 bg-[var(--bg-base)] border border-[var(--border)] rounded-xl text-sm text-white placeholder-gray-700 focus:outline-none focus:border-primary-500/50 transition-colors resize-none"
                     />
                   </div>
 
@@ -208,7 +208,7 @@ export default function Contact() {
                     transition={{ duration: 0.2 }}
                   >
                     <motion.div
-                      className="w-10 h-10 rounded-lg bg-[#111] border border-[#222] flex items-center justify-center flex-shrink-0"
+                      className="w-10 h-10 rounded-lg bg-[var(--bg-surface)] border border-[var(--border)] flex items-center justify-center flex-shrink-0"
                       whileHover={{ borderColor: 'rgba(34,197,94,0.4)', scale: 1.08 }}
                       transition={{ duration: 0.2 }}
                     >
@@ -241,7 +241,7 @@ export default function Contact() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`Sawon Saha on ${s.label}`}
-                    className="w-9 h-9 rounded-lg border border-[#222] bg-[#111] flex items-center justify-center text-gray-600 text-xs font-bold"
+                    className="w-9 h-9 rounded-lg border border-[var(--border)] bg-[var(--bg-surface)] flex items-center justify-center text-gray-600 text-xs font-bold"
                     whileHover={{ scale: 1.15, borderColor: 'rgba(34,197,94,0.5)', color: '#4ade80' }}
                     whileTap={{ scale: 0.9 }}
                     transition={{ duration: 0.2 }}

@@ -12,7 +12,7 @@ export default function FAQ() {
   return (
     <section
       id="faq"
-      className="section-padding bg-[#0d0d0d]"
+      className="section-padding bg-[var(--bg-alt)]"
       aria-labelledby="faq-heading"
     >
       <script
@@ -67,7 +67,7 @@ export default function FAQ() {
                     key={index}
                     variants={fadeUp}
                     className={`border rounded-xl overflow-hidden ${
-                      isOpen ? 'border-primary-500/30 bg-[#111]' : 'border-[#1a1a1a] bg-[#111] hover:border-[#2a2a2a]'
+                      isOpen ? 'border-primary-500/30 bg-[var(--bg-surface)]' : 'border-[var(--border-subtle)] bg-[var(--bg-surface)] hover:border-[var(--border-strong)]'
                     }`}
                     animate={{ borderColor: isOpen ? 'rgba(34,197,94,0.3)' : undefined }}
                     transition={{ duration: 0.2 }}
@@ -85,7 +85,7 @@ export default function FAQ() {
                         </span>
                         <motion.span
                           className={`flex-shrink-0 w-6 h-6 rounded-full border flex items-center justify-center ${
-                            isOpen ? 'border-primary-500 bg-primary-500/10 text-primary-400' : 'border-[#333] text-gray-600'
+                            isOpen ? 'border-primary-500 bg-primary-500/10 text-primary-400' : 'border-[var(--border-strong)] text-gray-600'
                           }`}
                           animate={{ rotate: isOpen ? 45 : 0 }}
                           transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}

@@ -10,6 +10,7 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import CustomCursor from '@/components/ui/CustomCursor';
 import PageLoader from '@/components/ui/PageLoader';
+import ThemeProvider from '@/components/ui/ThemeProvider';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_CONFIG.url),
@@ -107,6 +108,8 @@ export default function RootLayout({
   return (
     <html lang="en" dir="ltr">
       <head>
+        {/* Anti-flash theme script — runs before hydration */}
+        <script dangerouslySetInnerHTML={{ __html: `(function(){var t=localStorage.getItem('theme')||(window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);})();` }} />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
@@ -131,16 +134,18 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen flex flex-col">
-        <PageLoader />
-        <CustomCursor />
-        <a href="#main-content" className="skip-link">
-          Skip to main content
-        </a>
-        <Header />
-        <main id="main-content" className="flex-1">
-          {children}
-        </main>
-        <Footer />
+        <ThemeProvider>
+          <PageLoader />
+          <CustomCursor />
+          <a href="#main-content" className="skip-link">
+            Skip to main content
+          </a>
+          <Header />
+          <main id="main-content" className="flex-1">
+            {children}
+          </main>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

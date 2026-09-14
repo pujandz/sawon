@@ -47,7 +47,7 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="section-padding bg-[#0d0d0d]"
+      className="section-padding bg-[var(--bg-alt)]"
       aria-labelledby="services-heading"
     >
       <div className="container-max">
@@ -86,7 +86,7 @@ export default function Services() {
               className={`px-4 py-1.5 rounded-full text-sm font-medium border transition-colors duration-200 ${
                 activeCategory === cat.id
                   ? 'bg-primary-500 border-primary-500 text-black'
-                  : 'border-[#222] text-gray-400 hover:border-[#333] hover:text-white bg-transparent'
+                  : 'border-[var(--border)] text-gray-400 hover:border-[var(--border-strong)] hover:text-white bg-transparent'
               }`}
               whileHover={{ scale: 1.06 }}
               whileTap={{ scale: 0.94 }}
@@ -114,7 +114,7 @@ export default function Services() {
                   <span className="font-semibold text-white text-sm">{tool.name}</span>
                   <span className="text-xs text-primary-400">{tool.level}%</span>
                 </div>
-                <div className="h-1 bg-[#222] rounded-full overflow-hidden">
+                <div className="h-1 bg-[var(--border)] rounded-full overflow-hidden">
                   <motion.div
                     className="h-full bg-gradient-to-r from-primary-600 to-primary-400 rounded-full"
                     initial={{ width: 0 }}

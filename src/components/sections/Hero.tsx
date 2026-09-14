@@ -45,7 +45,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center overflow-hidden bg-[#0a0a0a]"
+      className="relative min-h-screen flex items-center overflow-hidden bg-[var(--bg-base)]"
       aria-label="Hero – Sawon Saha SEO & AEO Specialist"
     >
       {/* Animated background glows */}
@@ -78,7 +78,7 @@ export default function Hero() {
         >
           {/* Available badge */}
           <motion.div variants={fadeUp}>
-            <div className="inline-flex items-center gap-2 border border-[#222] bg-[#111] text-gray-400 text-xs font-medium px-4 py-2 rounded-full mb-8">
+            <div className="inline-flex items-center gap-2 border border-[var(--border)] bg-[var(--bg-surface)] text-gray-400 text-xs font-medium px-4 py-2 rounded-full mb-8">
               <span className="w-2 h-2 bg-primary-500 rounded-full animate-pulse" aria-hidden="true" />
               Available for new projects
             </div>
@@ -131,7 +131,7 @@ export default function Hero() {
           {/* Social links */}
           <motion.div variants={fadeUp} className="flex items-center gap-4 mb-16">
             <span className="text-xs text-gray-600 uppercase tracking-wider">Follow me</span>
-            <div className="h-px w-8 bg-[#222]" aria-hidden="true" />
+            <div className="h-px w-8 bg-[var(--border)]" aria-hidden="true" />
             <ul className="flex gap-3" role="list">
               {SOCIAL_LINKS.map((s) => (
                 <li key={s.label}>
@@ -140,7 +140,7 @@ export default function Hero() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`Sawon Saha on ${s.label}`}
-                    className="w-9 h-9 rounded-lg border border-[#222] bg-[#111] flex items-center justify-center text-gray-500 text-xs font-bold"
+                    className="w-9 h-9 rounded-lg border border-[var(--border)] bg-[var(--bg-surface)] flex items-center justify-center text-gray-500 text-xs font-bold"
                     whileHover={{ scale: 1.15, borderColor: 'rgba(34,197,94,0.5)', color: '#4ade80' }}
                     whileTap={{ scale: 0.9 }}
                     transition={{ duration: 0.2 }}
@@ -156,7 +156,7 @@ export default function Hero() {
           <motion.div variants={fadeUp}>
             <div ref={statsRef} className="grid grid-cols-3 gap-6 max-w-md" aria-label="Key statistics">
               {STATS.slice(0, 3).map((stat, i) => (
-                <div key={stat.label} className={i < 2 ? 'border-r border-[#222] pr-6' : ''}>
+                <div key={stat.label} className={i < 2 ? 'border-r border-[var(--border)] pr-6' : ''}>
                   <div className="text-3xl sm:text-4xl font-black font-heading text-white mb-1">
                     <span data-count={stat.value} data-suffix={stat.suffix} aria-label={`${stat.value}${stat.suffix}`}>
                       0{stat.suffix}
