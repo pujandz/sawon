@@ -126,7 +126,10 @@ export default function Testimonials() {
                 </motion.div>
                 <div>
                   <p className="text-white font-semibold text-sm" itemProp="name">{t.name}</p>
-                  <p className="text-gray-600 text-xs" itemProp="jobTitle">{t.role}</p>
+                  <p className="text-gray-500 text-xs" itemProp="jobTitle">{t.role}</p>
+                  {t.relationship && (
+                    <p className="text-gray-600 text-[11px] mt-0.5">{t.relationship}</p>
+                  )}
                 </div>
               </footer>
             </motion.blockquote>
