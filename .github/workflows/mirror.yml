@@ -1,4 +1,4 @@
-name: Mirror to pujandz/sawon
+name: Mirror to pujandz/Pujan_portfolio
 
 on:
   push:
@@ -10,16 +10,9 @@ jobs:
   mirror:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout (full history, all branches)
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          persist-credentials: false
-
-      - name: Push mirror to pujandz/sawon
+      - name: Debug secret
         env:
           MIRROR_TOKEN: ${{ secrets.MIRROR_TOKEN }}
         run: |
-          git remote add mirror "https://pujandz:${MIRROR_TOKEN}@github.com/pujandz/sawon.git"
-          git push mirror --all --force
-          git push mirror --tags --force
+          echo "Token length: ${#MIRROR_TOKEN}"
+          echo -n "$MIRROR_TOKEN" | md5sum
