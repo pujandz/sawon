@@ -101,7 +101,7 @@ export default function Contact() {
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         placeholder="John Doe"
                         className="w-full px-4 py-3 bg-[var(--bg-base)] border border-[var(--border)] rounded-xl text-sm text-white placeholder-gray-700 focus:outline-none focus:border-primary-500/50 transition-colors"
-                        whileFocus={{ borderColor: 'rgba(34,197,94,0.4)' }}
+                        whileFocus={{ borderColor: 'rgba(14,165,233,0.4)' }}
                       />
                     </div>
                     <div>
@@ -114,7 +114,7 @@ export default function Contact() {
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         placeholder="you@company.com"
                         className="w-full px-4 py-3 bg-[var(--bg-base)] border border-[var(--border)] rounded-xl text-sm text-white placeholder-gray-700 focus:outline-none focus:border-primary-500/50 transition-colors"
-                        whileFocus={{ borderColor: 'rgba(34,197,94,0.4)' }}
+                        whileFocus={{ borderColor: 'rgba(14,165,233,0.4)' }}
                       />
                     </div>
                   </div>
@@ -153,7 +153,7 @@ export default function Contact() {
                     type="submit"
                     disabled={status === 'sending'}
                     className="w-full btn-primary justify-center py-3.5 text-sm disabled:opacity-60"
-                    whileHover={{ scale: 1.02, boxShadow: '0 0 24px rgba(34,197,94,0.3)' }}
+                    whileHover={{ scale: 1.02, boxShadow: '0 0 24px rgba(14,165,233,0.3)' }}
                     whileTap={{ scale: 0.98 }}
                   >
                     {status === 'sending' ? (
@@ -209,7 +209,7 @@ export default function Contact() {
                   >
                     <motion.div
                       className="w-10 h-10 rounded-lg bg-[var(--bg-surface)] border border-[var(--border)] flex items-center justify-center flex-shrink-0"
-                      whileHover={{ borderColor: 'rgba(34,197,94,0.4)', scale: 1.08 }}
+                      whileHover={{ borderColor: 'rgba(14,165,233,0.4)', scale: 1.08 }}
                       transition={{ duration: 0.2 }}
                     >
                       <span className="text-base" aria-hidden="true">{item.icon}</span>
@@ -242,7 +242,7 @@ export default function Contact() {
                     rel="noopener noreferrer"
                     aria-label={`Sawon Saha on ${s.label}`}
                     className="w-9 h-9 rounded-lg border border-[var(--border)] bg-[var(--bg-surface)] flex items-center justify-center text-gray-600 text-xs font-bold"
-                    whileHover={{ scale: 1.15, borderColor: 'rgba(34,197,94,0.5)', color: '#4ade80' }}
+                    whileHover={{ scale: 1.15, borderColor: 'rgba(14,165,233,0.5)', color: '#38bdf8' }}
                     whileTap={{ scale: 0.9 }}
                     transition={{ duration: 0.2 }}
                   >
@@ -255,7 +255,7 @@ export default function Contact() {
             {/* Availability card */}
             <motion.div
               className="card border-primary-500/20"
-              whileHover={{ borderColor: 'rgba(34,197,94,0.35)', y: -3 }}
+              whileHover={{ borderColor: 'rgba(14,165,233,0.35)', y: -3 }}
               transition={{ duration: 0.25 }}
             >
               <div className="flex items-center gap-2 mb-2">

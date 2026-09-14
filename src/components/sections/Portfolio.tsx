@@ -47,7 +47,7 @@ export default function Portfolio() {
               role="listitem"
               variants={fadeUp}
               className="card group"
-              whileHover={{ borderColor: 'rgba(34,197,94,0.12)', y: -3 }}
+              whileHover={{ borderColor: 'rgba(14,165,233,0.12)', y: -3 }}
               transition={{ duration: 0.25 }}
               itemScope
               itemType="https://schema.org/CreativeWork"
@@ -103,7 +103,7 @@ export default function Portfolio() {
                       <motion.div
                         key={r.metric}
                         className="bg-[var(--bg-base)] border border-[var(--border-subtle)] rounded-xl p-3 text-center"
-                        whileHover={{ borderColor: 'rgba(34,197,94,0.2)', scale: 1.03 }}
+                        whileHover={{ borderColor: 'rgba(14,165,233,0.2)', scale: 1.03 }}
                         transition={{ duration: 0.2 }}
                       >
                         <p className="text-lg font-black gradient-text font-heading">{r.change}</p>

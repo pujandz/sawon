@@ -114,7 +114,7 @@ export default function Footer() {
                     rel="noopener noreferrer"
                     aria-label={`Sawon Saha on ${social.label}`}
                     className="w-9 h-9 rounded-lg border border-[var(--border-subtle)] flex items-center justify-center text-gray-600 text-xs font-bold"
-                    whileHover={{ scale: 1.15, borderColor: 'rgba(34,197,94,0.5)', color: '#4ade80' }}
+                    whileHover={{ scale: 1.15, borderColor: 'rgba(14,165,233,0.5)', color: '#38bdf8' }}
                     whileTap={{ scale: 0.9 }}
                     transition={{ duration: 0.2 }}
                   >
@@ -127,7 +127,7 @@ export default function Footer() {
             <motion.a
               href="#contact"
               className="btn-primary text-xs py-2 px-4"
-              whileHover={{ scale: 1.05, boxShadow: '0 0 16px rgba(34,197,94,0.3)' }}
+              whileHover={{ scale: 1.05, boxShadow: '0 0 16px rgba(14,165,233,0.3)' }}
               whileTap={{ scale: 0.97 }}
             >
               Start a Project

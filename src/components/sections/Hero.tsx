@@ -109,7 +109,7 @@ export default function Hero() {
               href="#portfolio"
               className="btn-primary px-8 py-3.5 text-base"
               aria-label="View Sawon Saha's SEO case studies"
-              whileHover={{ scale: 1.04, boxShadow: '0 0 28px rgba(34,197,94,0.35)' }}
+              whileHover={{ scale: 1.04, boxShadow: '0 0 28px rgba(14,165,233,0.35)' }}
               whileTap={{ scale: 0.97 }}
             >
               View My Work
@@ -141,7 +141,7 @@ export default function Hero() {
                     rel="noopener noreferrer"
                     aria-label={`Sawon Saha on ${s.label}`}
                     className="w-9 h-9 rounded-lg border border-[var(--border)] bg-[var(--bg-surface)] flex items-center justify-center text-gray-500 text-xs font-bold"
-                    whileHover={{ scale: 1.15, borderColor: 'rgba(34,197,94,0.5)', color: '#4ade80' }}
+                    whileHover={{ scale: 1.15, borderColor: 'rgba(14,165,233,0.5)', color: '#38bdf8' }}
                     whileTap={{ scale: 0.9 }}
                     transition={{ duration: 0.2 }}
                   >
