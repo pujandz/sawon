@@ -1,51 +1,53 @@
 const LIVE = 'https://revox.baseecom.com/wp-content/uploads/2026/01';
 
-const PREVIEW_IMAGES = ['c1.png', 'c2.png', 'c7.png', 'c4.png', 'c2.png', 'c3.png', 'c6.png'];
+const PREVIEW_IMAGES = ['c1.png', 'c2.png', 'c7.png', 'c4.png', 'c3.png', 'c6.png'];
 
-const EXPERIENCE = [
+const EXPERIENCE: {
+  company: string;
+  period: string;
+  location: string;
+  role: string;
+  img: string;
+  alt: string;
+  desc?: string;
+  points?: string[];
+}[] = [
   {
     company: 'Algomindz',
-    period: 'Mar 2023 – Present',
+    period: 'Feb 2025 – Present',
+    location: 'Dhaka, Bangladesh (Remote)',
     role: 'SEO Team Lead',
     img: 'info-1.png',
     alt: 'Algomindz',
-    points: [
-      'Lead a team of SEO specialists delivering multi-client organic growth campaigns.',
-      'Built AI-powered AEO strategies to capture Google AI Overview placements.',
-    ],
+    desc: 'Algomindz empowers businesses to thrive in a competitive digital landscape through a strategic blend of Answer Engine Optimization (AEO) and SEO. By combining data-driven insights with ethical marketing, we help top-tier companies maximize visibility across both AI platforms and traditional search engines.',
   },
   {
-    company: 'Freelance / Agency',
-    period: 'Jan 2022 – Feb 2023',
-    role: 'Senior SEO Consultant',
+    company: 'Digitomark',
+    period: 'Mar 2022 – Jan 2025',
+    location: 'Dhaka, Bangladesh (Remote)',
+    role: 'Search Engine Optimization Specialist',
     img: 'info-2.png',
-    alt: 'Freelance',
+    alt: 'Digitomark',
+    desc: 'Digitomark is a leading full-service digital marketing agency based in Bangladesh, renowned for its innovative and result-driven approach in the digital marketing landscape.',
     points: [
-      'Delivered 320%+ organic traffic growth for e-commerce clients in 8 months.',
-      'Executed full-funnel keyword mapping and topic cluster strategies for SaaS brands.',
+      'SEO project management',
+      'Meet with clients to determine their needs',
+      'Developing and implementing SEO strategies',
+      'Onsite SEO & technical SEO',
+      'Competitors analysis',
+      'Improving website performance',
+      'Collaborating with the marketing team',
+      'Keep up to date with latest SEO trends & algorithm updates',
     ],
   },
   {
-    company: 'Digital Marketing Agency',
-    period: 'Jun 2021 – Dec 2021',
-    role: 'SEO Specialist',
+    company: 'Dcastalia Limited',
+    period: 'Jan 2022 – Apr 2023',
+    location: 'Dhaka, Bangladesh',
+    role: 'Search Engine Optimization Executive',
     img: 'info-6.png',
-    alt: 'Agency',
-    points: [
-      'Managed on-page SEO and technical audits for 15+ client websites simultaneously.',
-      'Increased Google Maps rankings from page 3 to top 3 for local service businesses.',
-    ],
-  },
-  {
-    company: 'Content & SEO Studio',
-    period: 'Jan 2021 – May 2021',
-    role: 'SEO Analyst',
-    img: 'info-4.png',
-    alt: 'Studio',
-    points: [
-      'Conducted competitive gap analyses using Ahrefs and SEMrush.',
-      'Produced monthly performance reports tracking KPIs across 10+ client accounts.',
-    ],
+    alt: 'Dcastalia Limited',
+    desc: 'Dcastalia Limited is an honest, transparent, and result-driven Software Development Company in Bangladesh. Delivering a personal, passionate & tailored service to each and every client, based in Bangladesh or abroad.',
   },
 ];
 
@@ -90,16 +92,21 @@ export default function WorkExperience() {
                       </div>
                       <div className="info-content">
                         <h3>{e.company}</h3>
-                        <span>{e.period}</span>
+                        <span>{e.period} &nbsp;·&nbsp; {e.location}</span>
                       </div>
                     </div>
 
                     <div className="info-item">
                       <h5>{e.role}</h5>
                       <div className="text-cont">
-                        {e.points.map((p, i) => (
-                          <p key={i} className={i < e.points.length - 1 ? 'mb-4' : ''}>{p}</p>
-                        ))}
+                        {e.desc && <p className={e.points ? 'mb-4' : ''}>{e.desc}</p>}
+                        {e.points && (
+                          <ul style={{ listStyle: 'disc', paddingLeft: '1.25em', margin: 0 }}>
+                            {e.points.map((p, i) => (
+                              <li key={i} style={{ marginBottom: '6px' }}>{p}</li>
+                            ))}
+                          </ul>
+                        )}
                       </div>
                     </div>
                   </div>
