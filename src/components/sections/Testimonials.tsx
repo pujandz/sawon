@@ -43,29 +43,34 @@ export default function Testimonials() {
           <span className="eyebrow">testimonials</span>
           <h2>What Clients &amp; Colleagues Say</h2>
         </div>
-        {/* slider-active.js / main.js wires up the swiper on .testimonial-wrapper */}
-        <div className="testimonial-wrapper testimonial-slider">
-          {TESTIMONIALS.map((t) => (
-            <div key={t.name} className="testimonial-box-items">
-              <img src={`${LIVE}/quote-icon.png`} alt="Quote" width={40} height={30} />
-              <p>{t.quote}</p>
-              <div className="testimonial-author d-flex align-items-center gap-3">
-                <img
-                  src={`${LIVE}/${t.img}`}
-                  alt={t.name}
-                  width={60}
-                  height={60}
-                  style={{ borderRadius: '50%' }}
-                />
-                <div>
-                  <h4>{t.name}</h4>
-                  <span>{t.role}</span>
-                  <br />
-                  <small style={{ opacity: 0.6 }}>{t.relationship}</small>
+        <div className="testimonial-wrapper testimonial-slider swiper">
+          <div className="swiper-wrapper">
+            {TESTIMONIALS.map((t) => (
+              <div key={t.name} className="swiper-slide">
+                <div className="testimonial-box-items">
+                  <div className="thumb">
+                    <img src={`${LIVE}/${t.img}`} alt={t.name} />
+                    <div className="info-title">
+                      <h4>{t.name}</h4>
+                      <span>{t.role}</span>
+                    </div>
+                  </div>
+                  <div className="content">
+                    <div className="quote-icon">
+                      <img src={`${LIVE}/quote-icon.png`} alt="Quote" width={40} height={30} />
+                    </div>
+                    <p>{t.quote}</p>
+                    <small style={{ opacity: 0.6 }}>{t.relationship}</small>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+          <div className="array-button">
+            <div className="array-prev"><i className="fa-light fa-angle-left"></i></div>
+            <div className="array-next"><i className="fa-light fa-angle-right"></i></div>
+          </div>
+          <div className="swiper-pagination"></div>
         </div>
       </div>
     </section>
