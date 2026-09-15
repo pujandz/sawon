@@ -48,7 +48,7 @@ export default function Hero() {
             <div className="hero-image image-wrapper">
               <img
                 className="animated-image"
-                src={`${LIVE}/hero-image.png`}
+                src="/assets/img/Sawon-Saha.png"
                 alt="Sawon Saha – SEO Specialist"
               />
             </div>

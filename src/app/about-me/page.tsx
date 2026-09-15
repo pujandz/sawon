@@ -32,7 +32,7 @@ export default function AboutMePage() {
           </p>
 
           <div className="about-image">
-            <img src={`${LIVE}/about.jpg`} alt="Sawon Saha" />
+            <img src="/assets/img/Sawon-Saha.png" alt="Sawon Saha" />
           </div>
         </div>
       </section>
