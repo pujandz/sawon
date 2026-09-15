@@ -9,22 +9,37 @@ const ACHIEVEMENTS = [
 
 export default function Award() {
   return (
-    <section className="award-section">
+    <section className="award-section section-padding fix section-bg approach-area">
       <div className="container">
-        <div className="award-wrapper d-flex flex-wrap align-items-center">
-          <div className="award-content">
-            <span className="eyebrow">achievements</span>
-            <h2>Certifications &amp; Milestones</h2>
-            <ul>
-              {ACHIEVEMENTS.map((a) => (
-                <li key={a.year} className="d-flex align-items-center gap-3">
-                  <strong>{a.year}</strong>
-                  <span>{a.text}</span>
-                </li>
-              ))}
-            </ul>
+        <div className="award-wrapper">
+          <div className="row g-4 align-items-center">
+            <div className="col-lg-6">
+              <div className="section-title">
+                <h6 className=" has-icon">
+                  <i aria-hidden="true" className="subtitle-icon fa-solid fa-arrow-up-right"></i>
+                  award winning
+                </h6>
+                <h2 className="hero_title tv_hero_title hero_title_1">
+                  Certifications <span>&amp; Milestones</span>
+                </h2>
+              </div>
+
+              <div className="award-content approach-wrapper-box fix">
+                {ACHIEVEMENTS.map((a) => (
+                  <div key={a.year} className="award-list-items approach-box">
+                    <p>{a.year}</p>
+                    <span>{a.text}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="col-lg-6">
+              <div className="award-image">
+                <img src={`${LIVE}/award.png`} alt="Achievements" />
+              </div>
+            </div>
           </div>
-          <img src={`${LIVE}/award.png`} alt="Achievements" width={420} height={420} />
         </div>
       </div>
     </section>

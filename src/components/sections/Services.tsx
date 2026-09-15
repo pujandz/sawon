@@ -1,81 +1,81 @@
-import Image from 'next/image';
-import Link from 'next/link';
-
 const LIVE = 'https://revox.baseecom.com/wp-content/uploads/2026/01';
 
 const SERVICES = [
   {
     id: 'technical-seo',
     title: 'Technical SEO',
-    excerpt:
-      'Fix crawl errors, improve Core Web Vitals, implement structured data, and ensure flawless indexability — the technical foundation of every successful SEO campaign.',
+    excerpt: 'Fix crawl errors, improve Core Web Vitals, implement structured data, and ensure flawless indexability — the technical foundation of every successful SEO campaign.',
+    delay: '0.3s',
   },
   {
     id: 'on-page-seo',
     title: 'On-Page SEO',
-    excerpt:
-      'Optimize title tags, meta descriptions, headings, internal linking, and content structure so every page ranks for the right queries and satisfies user intent.',
+    excerpt: 'Optimize title tags, meta descriptions, headings, internal linking, and content structure so every page ranks for the right queries and satisfies user intent.',
+    delay: '0.5s',
   },
   {
     id: 'link-building',
     title: 'Link Building',
-    excerpt:
-      'Build high-authority, editorial backlinks through digital PR, guest posting, broken link reclamation, and HARO outreach to boost domain authority and rankings.',
+    excerpt: 'Build high-authority, editorial backlinks through digital PR, guest posting, broken link reclamation, and HARO outreach to boost domain authority and rankings.',
+    delay: '0.7s',
   },
   {
     id: 'local-seo',
     title: 'Local SEO',
-    excerpt:
-      'Dominate local search and Google Maps with GBP optimization, citation building, review strategy, and geo-targeted content for local businesses in Bangladesh and beyond.',
-  },
-  {
-    id: 'keyword-research',
-    title: 'Keyword Research',
-    excerpt:
-      'Uncover high-value keywords your ideal customers are searching using Ahrefs, SEMrush, and GSC — mapped across the full buyer journey for maximum ROI.',
-  },
-  {
-    id: 'seo-audit',
-    title: 'SEO Audit',
-    excerpt:
-      'A comprehensive 200+ point audit covering technical health, on-page factors, backlink profile, content gaps, and competitor analysis with a prioritized action plan.',
+    excerpt: 'Dominate local search and Google Maps with GBP optimization, citation building, review strategy, and geo-targeted content for businesses in Bangladesh and beyond.',
+    delay: '0.9s',
   },
 ];
 
 export default function Services() {
   return (
-    <section className="service-section">
+    <section className="choose-us-section fix section-padding">
       <div className="container">
-        <div className="section-title text-center">
-          <span className="eyebrow">what i do?</span>
-          <h2>Transforming Search Presence Into Sustainable Growth</h2>
-          <p>
-            Data-driven SEO strategies that increase organic traffic,
-            <br />
-            improve rankings, and deliver measurable business results
-            <br />
+        <div className="section-title-area">
+          <div className="section-title">
+            <h6 className="service-subtitle has-icon">
+              <i aria-hidden="true" className="subtitle-icon fa-solid fa-arrow-up-right"></i>
+              what i do?
+            </h6>
+            <h2 className="hero_title tv_hero_title hero_title_1">
+              Transforming Search Presence <span>Into Sustainable Growth</span>
+            </h2>
+          </div>
+
+          <p className="wow fadeInUp" data-wow-delay=".3s">
+            Data-driven SEO strategies that increase organic traffic, <br />
+            improve rankings, and deliver measurable business results <br />
             across both traditional and AI-powered search engines
           </p>
         </div>
 
-        <div className="service-wrapper d-flex flex-wrap">
-          <div className="service-list">
-            {SERVICES.map((s) => (
-              <div key={s.id} className="service-item">
-                <h3>
-                  <Link href={`/services/${s.id}`}>{s.title}</Link>
-                </h3>
-                <p>{s.excerpt}</p>
+        <div className="choose-us-wrapper">
+          <div className="row g-4">
+            <div className="col-lg-6">
+              <ul className="choose-us-box-list">
+                {SERVICES.map((s) => (
+                  <li key={s.id} className="wow fadeInUp" data-wow-delay={s.delay}>
+                    <div className="content">
+                      <h2><a href={`/services/${s.id}`}>{s.title}</a></h2>
+                      <p>{s.excerpt}</p>
+                    </div>
+                    <a href={`/services/${s.id}`} className="arrow-icon">
+                      <i aria-hidden="true" className="fa-solid fa-arrow-up-right"></i>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="col-lg-6">
+              <div className="choose-us-image fix">
+                <img
+                  data-speed=".7"
+                  src={`${LIVE}/choose-us.png`}
+                  alt="SEO Services"
+                />
               </div>
-            ))}
-          </div>
-          <div className="service-thumb">
-            <Image
-              src={`${LIVE}/choose-us.png`}
-              alt="SEO Services"
-              width={520}
-              height={560}
-            />
+            </div>
           </div>
         </div>
       </div>
