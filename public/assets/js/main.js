@@ -1787,7 +1787,7 @@ text_slider.on('slideChangeTransitionStart', function () {
             if (words.length === 0) return; // No words to type
             
             let index = 0;
-            let letterIndex = 0;
+            let letterIndex = 1; // start at 1: substring(0,0) is '' which causes blink
             let isDeleting = false;
             let interval;
 
@@ -1808,6 +1808,7 @@ text_slider.on('slideChangeTransitionStart', function () {
                 } else if (letterIndex < 0) {
                     isDeleting = false;
                     index = (index + 1) % words.length;
+                    letterIndex = 1; // skip empty frame: substring(0,-1) and substring(0,0) are both ''
                     $el.html('&nbsp;'); // hold space during word transition
                     clearInterval(interval);
                     interval = setInterval(typeEffect, 150);
