@@ -121,9 +121,16 @@ export default function RootLayout({
       </head>
       <body>
         <Preloader />
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        <div id="smooth-wrapper">
+          <div id="smooth-content">
+            <Header />
+            <main>{children}</main>
+            <Footer />
+          </div>
+        </div>
+        <a href="#" className="scroll-top">
+          <i className="fa-solid fa-angle-up"></i>
+        </a>
         <ScriptLoader />
       </body>
     </html>
