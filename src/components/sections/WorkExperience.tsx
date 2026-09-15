@@ -51,7 +51,7 @@ const EXPERIENCE = [
 
 export default function WorkExperience() {
   return (
-    <section className="work-experience-section-1 style-2 fix section-padding pt-0">
+    <section className="work-experience-section-1 style-2 fix section-padding">
       <div className="line-shape">
         <img src={`${LIVE}/line-shape.png`} alt="Line Shape" />
       </div>
