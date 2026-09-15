@@ -1808,6 +1808,7 @@ text_slider.on('slideChangeTransitionStart', function () {
                 } else if (letterIndex < 0) {
                     isDeleting = false;
                     index = (index + 1) % words.length;
+                    $el.html('&nbsp;'); // hold space during word transition
                     clearInterval(interval);
                     interval = setInterval(typeEffect, 150);
                 }
