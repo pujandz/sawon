@@ -1,154 +1,86 @@
-'use client';
+import Link from 'next/link';
 
-import { motion } from 'framer-motion';
-import { PORTFOLIO_ITEMS } from '@/lib/constants';
-import { fadeUp, stagger, VP } from '@/lib/animations';
+const LIVE = 'https://revox.baseecom.com/wp-content/uploads/2026/01';
+
+const PROJECTS = [
+  {
+    id: 'ecommerce-seo',
+    category: 'E-Commerce SEO',
+    name: 'BDShop BD',
+    text: 'Technical & On-Page SEO',
+    img: `${LIVE}/portfolio-1.jpg`,
+    delay: '.3s',
+    stats: [
+      { value: '+250%', label: 'Organic Traffic' },
+      { value: '#1', label: 'Rankings' },
+      { value: '180%', label: 'Revenue Growth' },
+    ],
+  },
+  {
+    id: 'local-seo',
+    category: 'Local SEO',
+    name: 'AlgoMindz',
+    text: 'Local & Link Building',
+    img: `${LIVE}/portfolio-2.jpg`,
+    delay: '.5s',
+    stats: [
+      { value: '+320%', label: 'Local Visits' },
+      { value: '50+', label: 'Citations Built' },
+      { value: '4.9★', label: 'Google Rating' },
+    ],
+  },
+];
 
 export default function Portfolio() {
   return (
-    <section
-      id="portfolio"
-      className="section-padding bg-[var(--bg-base)]"
-      aria-labelledby="portfolio-heading"
-    >
-      <div className="container-max">
-        {/* Header */}
-        <motion.div
-          className="text-center max-w-2xl mx-auto mb-16"
-          variants={stagger(0.1)}
-          initial="hidden"
-          whileInView="visible"
-          viewport={VP}
-        >
-          <motion.span variants={fadeUp} className="section-label">Case Studies</motion.span>
-          <motion.h2 variants={fadeUp} id="portfolio-heading" className="section-title mb-4">
-            Featured{' '}
-            <span className="gradient-text">Work</span>
-          </motion.h2>
-          <motion.p variants={fadeUp} className="section-subtitle">
-            A selection of projects I&apos;ve worked on. I&apos;m always looking to work on new, interesting,
-            and meaningful SEO challenges.
-          </motion.p>
-        </motion.div>
+    <section className="portfolio-section section-padding fix">
+      <div className="container">
+        <div className="section-title-area">
+          <div className="section-title">
+            <h6 className="has-icon">
+              <i aria-hidden="true" className="subtitle-icon fa-solid fa-arrow-up-right"></i>
+              my featured projects
+            </h6>
+          </div>
+        </div>
 
-        {/* Projects */}
-        <motion.div
-          className="space-y-6"
-          role="list"
-          aria-label="SEO case studies"
-          variants={stagger(0.14)}
-          initial="hidden"
-          whileInView="visible"
-          viewport={VP}
-        >
-          {PORTFOLIO_ITEMS.map((item, index) => (
-            <motion.article
-              key={item.id}
-              role="listitem"
-              variants={fadeUp}
-              className="card group"
-              whileHover={{ borderColor: 'rgba(14,165,233,0.12)', y: -3 }}
-              transition={{ duration: 0.25 }}
-              itemScope
-              itemType="https://schema.org/CreativeWork"
-            >
-              <div className="grid lg:grid-cols-5 gap-8 items-start">
-                {/* Left – Project image placeholder */}
-                <motion.div
-                  className="lg:col-span-2"
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <div className="aspect-video rounded-xl overflow-hidden bg-[var(--bg-elevated)] border border-[var(--border)] relative flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="text-4xl mb-2">
-                        {index === 0 ? '🛒' : index === 1 ? '💻' : '🏠'}
-                      </div>
-                      <p className="text-xs text-gray-600">{item.industry}</p>
-                    </div>
-                    <div className="absolute top-3 left-3 bg-primary-500 text-black text-[10px] font-bold px-2 py-1 rounded">
-                      {item.tags[0]}
-                    </div>
-                  </div>
-                </motion.div>
+        <div className="row g-4">
+          {PROJECTS.map((p) => (
+            <div key={p.id} className="col-lg-6 wow fadeInUp" data-wow-delay={p.delay}>
+              <div className="view-portfolio-item">
+                <div className="top-head">
+                  <span>{p.category}</span>
+                  <Link href="/portfolio-grid" className="circle-icon">
+                    <i aria-hidden="true" className="fa-solid fa-arrow-up-right"></i>
+                  </Link>
+                </div>
 
-                {/* Right – Details */}
-                <div className="lg:col-span-3">
-                  <div className="flex items-start justify-between gap-4 mb-4">
-                    <div>
-                      <h3
-                        className="text-xl font-bold text-white font-heading group-hover:text-primary-400 transition-colors mb-1"
-                        itemProp="name"
-                      >
-                        {item.client}
-                      </h3>
-                      <p className="text-xs text-gray-600">{item.industry}</p>
-                    </div>
-                    <div className="flex gap-1 text-gray-600 text-xs">
-                      {[...Array(5)].map((_, i) => (
-                        <span key={i} className="text-primary-500">★</span>
-                      ))}
-                    </div>
-                  </div>
+                <div className="thumb">
+                  <img src={p.img} alt={p.name} />
+                </div>
 
-                  <p className="text-sm text-gray-500 leading-relaxed mb-6" itemProp="description">
-                    <strong className="text-gray-300">Challenge: </strong>{item.challenge}
-                    {' · '}
-                    <strong className="text-gray-300">Solution: </strong>{item.solution}
-                  </p>
-
-                  {/* Results */}
-                  <div className="grid grid-cols-3 gap-3">
-                    {item.results.map((r) => (
-                      <motion.div
-                        key={r.metric}
-                        className="bg-[var(--bg-base)] border border-[var(--border-subtle)] rounded-xl p-3 text-center"
-                        whileHover={{ borderColor: 'rgba(14,165,233,0.2)', scale: 1.03 }}
-                        transition={{ duration: 0.2 }}
-                      >
-                        <p className="text-lg font-black gradient-text font-heading">{r.change}</p>
-                        <p className="text-[10px] text-gray-600 mt-0.5">{r.metric}</p>
-                        {r.period && <p className="text-[10px] text-gray-700">in {r.period}</p>}
-                      </motion.div>
-                    ))}
-                  </div>
-
-                  <div className="flex flex-wrap gap-2 mt-4">
-                    {item.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="text-[10px] border border-[var(--border)] text-gray-500 px-2.5 py-1 rounded-full"
-                      >
-                        {tag}
-                      </span>
+                <div className="content">
+                  <h3>{p.name}</h3>
+                  <p className="text">{p.text}</p>
+                  <Link href="/portfolio-grid" className="theme-btn">
+                    View Case Study <i aria-hidden="true" className="fa-solid fa-arrow-up-right"></i>
+                  </Link>
+                  <div className="counter-box">
+                    {p.stats.map((s, i) => (
+                      <>
+                        {i > 0 && <div key={`sep-${i}`} className="border-style"></div>}
+                        <div key={s.label} className="counter-text">
+                          <h5>{s.value}</h5>
+                          <p>{s.label}</p>
+                        </div>
+                      </>
                     ))}
                   </div>
                 </div>
               </div>
-            </motion.article>
+            </div>
           ))}
-        </motion.div>
-
-        {/* View all CTA */}
-        <motion.div
-          className="text-center mt-10"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={VP}
-          transition={{ duration: 0.5, delay: 0.2 }}
-        >
-          <motion.a
-            href="#contact"
-            className="btn-outline text-sm"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.97 }}
-          >
-            View All Projects
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-            </svg>
-          </motion.a>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

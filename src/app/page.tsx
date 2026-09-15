@@ -3,6 +3,7 @@ import Hero from '@/components/sections/Hero';
 import Marquee from '@/components/sections/Marquee';
 import About from '@/components/sections/About';
 import Services from '@/components/sections/Services';
+import Portfolio from '@/components/sections/Portfolio';
 import WorkExperience from '@/components/sections/WorkExperience';
 import Award from '@/components/sections/Award';
 import Pricing from '@/components/sections/Pricing';
@@ -26,6 +27,7 @@ export default function HomePage() {
       <Marquee />
       <About />
       <Services />
+      <Portfolio />
       <WorkExperience />
       <Award />
       <Pricing />
