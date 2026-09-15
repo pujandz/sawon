@@ -4,7 +4,7 @@ const LIVE = 'https://revox.baseecom.com/wp-content/uploads/2025/11';
 
 export default function Portfolio() {
   return (
-    <section className="project-section tp-project-5-2-area fix section-padding">
+    <section className="project-section tp-project-5-2-area fix section-padding pt-0">
       <div className="container">
         <div className="section-title tp-project-5-2-title">
           <h6>my featured projects</h6>
