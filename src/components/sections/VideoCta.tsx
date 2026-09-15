@@ -15,7 +15,7 @@ export default function VideoCta() {
           {/* magnific-popup lightbox initialized by main.js on .popup-video */}
           <a
             href="https://www.youtube.com/watch?v=R0mku_PtK1E"
-            className="popup-video play-btn"
+            className="video-popup play-btn"
           >
             <i className="fa-solid fa-play"></i>
           </a>
