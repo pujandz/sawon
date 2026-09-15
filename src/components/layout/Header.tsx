@@ -15,12 +15,8 @@ export default function Header() {
                 <div className="main-menu">
                   <nav id="mobile-menu" className="menu-main-menu-container">
                     <ul className="defult-header">
-                      <li>
-                        <Link href="/">Home</Link>
-                      </li>
-                      <li>
-                        <Link href="/about-me">About Me</Link>
-                      </li>
+                      <li><Link href="/">Home</Link></li>
+                      <li><Link href="/about-me">About Me</Link></li>
                       <li className="menu-item-has-children">
                         <Link href="/services">Services</Link>
                         <ul className="sub-menu">
@@ -32,15 +28,9 @@ export default function Header() {
                           <li><Link href="/services/seo-audit">SEO Audit</Link></li>
                         </ul>
                       </li>
-                      <li>
-                        <Link href="/portfolio-grid">Portfolio</Link>
-                      </li>
-                      <li>
-                        <Link href="/blog">Blog</Link>
-                      </li>
-                      <li>
-                        <Link href="/contact-us">Contact</Link>
-                      </li>
+                      <li><Link href="/portfolio-grid">Portfolio</Link></li>
+                      <li><Link href="/blog">Blog</Link></li>
+                      <li><Link href="/contact-us">Contact</Link></li>
                     </ul>
                   </nav>
                 </div>
@@ -48,9 +38,9 @@ export default function Header() {
 
               <div className="header-right d-flex justify-content-end align-items-center mt-0">
                 <Link href="/contact-us" className="theme-btn">
-                  Hire Me<i className="fa-solid fa-arrow-up-right"></i>
+                  Hire Me <i className="fa-solid fa-arrow-up-right"></i>
                 </Link>
-                <div className="header__hamburger d-xl-none my-auto">
+                <div className="header__hamburger my-auto">
                   <div className="sidebar__toggle">
                     <img src="/assets/img/bar.svg" alt="menu" />
                   </div>
