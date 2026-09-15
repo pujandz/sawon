@@ -12,31 +12,6 @@ export default function Header() {
               </Link>
 
               <div className="header-right justify-content-end align-items-center">
-                <div className="mean__menu-wrapper d-none">
-                  <div className="main-menu">
-                    <nav id="mobile-menus" className="menu-main-menu-container">
-                      <ul className="defult-header">
-                        <li><Link href="/">Home</Link></li>
-                        <li><Link href="/about-me">About Me</Link></li>
-                        <li className="menu-item-has-children">
-                          <Link href="/services">Services</Link>
-                          <ul className="sub-menu">
-                            <li><Link href="/services">All Services</Link></li>
-                            <li><Link href="/services/technical-seo">Technical SEO</Link></li>
-                            <li><Link href="/services/on-page-seo">On-Page SEO</Link></li>
-                            <li><Link href="/services/link-building">Link Building</Link></li>
-                            <li><Link href="/services/local-seo">Local SEO</Link></li>
-                            <li><Link href="/services/seo-audit">SEO Audit</Link></li>
-                          </ul>
-                        </li>
-                        <li><Link href="/portfolio-grid">Portfolio</Link></li>
-                        <li><Link href="/blog">Blog</Link></li>
-                        <li><Link href="/contact-us">Contact</Link></li>
-                      </ul>
-                    </nav>
-                  </div>
-                </div>
-
                 <Link href="/contact-us" className="theme-btn">
                   Hire Me <i className="fa-solid fa-arrow-up-right"></i>
                 </Link>
