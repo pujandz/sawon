@@ -10,9 +10,20 @@ jobs:
   mirror:
     runs-on: ubuntu-latest
     steps:
-      - name: Debug secret
+      - name: Checkout (full history, all branches)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Push mirror to pujandz/sawon
         env:
           MIRROR_TOKEN: ${{ secrets.MIRROR_TOKEN }}
         run: |
-          echo "Token length: ${#MIRROR_TOKEN}"
-          echo -n "$MIRROR_TOKEN" | md5sum
+          git remote add mirror "https://pujandz:${MIRROR_TOKEN}@github.com/pujandz/sawon.git"
+          git push mirror --all --force
+          git push mirror --tags --force
+          # Also fast-forward the mirror's main branch to whatever commit
+          # just got pushed here, on ANY branch, so Vercel (which deploys
+          # "main" to production) always goes live with the latest work.
+          git push mirror "HEAD:refs/heads/main" --force
