@@ -86,11 +86,18 @@ export default function RootLayout({
   return (
     <html lang="en" dir="ltr">
       <head>
-        {/* Revox theme fonts — must load before main.css which references them */}
+        {/* Fonts — single Google Fonts request for both families.
+            Big Shoulders Display: heading weights 700/800/900.
+            Kanit: body weights 400/500/600/700 (was 18 weights, now 8).
+            Both families share one HTTP/2 connection; cdnfonts CDN removed. */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/big-shoulders-display" />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" />
+        <link rel="dns-prefetch" href="//revox.baseecom.com" />
+        <link rel="dns-prefetch" href="//server1.liushibd.com" />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Kanit:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
+        />
 
         {/* Revox theme CSS — exact order from original theme */}
         <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
