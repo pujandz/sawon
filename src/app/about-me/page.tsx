@@ -2,19 +2,36 @@ import type { Metadata } from 'next';
 import WorkExperience from '@/components/sections/WorkExperience';
 import Testimonials from '@/components/sections/Testimonials';
 
-const LIVE = 'https://revox.baseecom.com/wp-content/uploads/2026/01';
-
 export const metadata: Metadata = {
   title: 'About Sawon Saha – SEO Team Lead & AEO Specialist',
   description: 'Learn about Sawon Saha, a results-driven SEO Team Lead and AEO Specialist from Bangladesh with 3+ years of experience driving organic growth.',
 };
 
 const FAQS = [
-  { q: 'What is your SEO process?', a: 'I start with a deep audit and competitor analysis, then build a custom roadmap with technical fixes, content strategy, and link acquisition — measuring results monthly.' },
-  { q: 'What SEO tools do you use?', a: 'Ahrefs, SEMrush, Google Search Console, Screaming Frog, Moz Pro, Google Analytics 4, and Looker Studio for reporting.' },
-  { q: 'How long until I see SEO results?', a: 'Most campaigns show meaningful improvement in 3–6 months, with significant growth by month 6–12. Technical fixes can show within weeks.' },
-  { q: 'Do you work with international clients?', a: 'Yes — while based in Bangladesh, I work with clients in the US, UK, Canada, Australia, UAE, and more via Zoom, Slack, and email.' },
-  { q: 'What industries do you specialize in?', a: 'E-commerce, SaaS, local services, real estate, healthcare, legal, and B2B sectors — each requiring unique SEO strategies.' },
+  {
+    q: 'What is your SEO process?',
+    a: 'I start with a comprehensive technical audit and competitor analysis, then build a custom roadmap covering technical fixes, on-page optimisation, content strategy, and link acquisition — with monthly performance reviews to track and refine results.',
+  },
+  {
+    q: 'What SEO tools do you use?',
+    a: 'My core stack includes Ahrefs, SEMrush, Google Search Console, Screaming Frog, Moz Pro, Google Analytics 4, and Looker Studio for client reporting.',
+  },
+  {
+    q: 'How long until I see SEO results?',
+    a: 'Technical fixes can show impact within weeks. Most campaigns deliver meaningful ranking improvements in 3–6 months, with strong organic growth typically visible by month 6–12.',
+  },
+  {
+    q: 'Do you work with international clients?',
+    a: 'Yes — while based in Dhaka, Bangladesh, I work remotely with clients across the US, UK, Canada, Australia, UAE, and beyond. Communication via Zoom, Slack, and email keeps projects on track.',
+  },
+  {
+    q: 'What industries do you specialise in?',
+    a: 'E-commerce, SaaS, local services, real estate, healthcare, legal, and B2B — each vertical needs a different SEO approach, and I tailor strategy accordingly.',
+  },
+  {
+    q: 'What is Answer Engine Optimisation (AEO)?',
+    a: 'AEO is the practice of optimising content to appear in AI-generated answers — Google AI Overviews, ChatGPT, Perplexity, and similar. It complements traditional SEO and is increasingly important as AI reshapes how people search.',
+  },
 ];
 
 export default function AboutMePage() {
@@ -27,8 +44,11 @@ export default function AboutMePage() {
           </div>
 
           <p className="about-sub">
-            Hey! <b>I&rsquo;m Sawon Saha.</b> I believe SEO is more than rankings —{' '}
-            <span>it&rsquo;s about connecting businesses with the right people at the right moment.</span>
+            Hey! <b>I&rsquo;m Sawon Saha</b> — an SEO Team Lead &amp; AEO Specialist based in Dhaka, Bangladesh.{' '}
+            <span>
+              With 3+ years across agencies and in-house teams, I help businesses rank higher, attract the right
+              audience, and stay visible as search evolves toward AI-driven answers.
+            </span>
           </p>
 
           <div className="about-image">
