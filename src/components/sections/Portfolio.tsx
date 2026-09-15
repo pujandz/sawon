@@ -1,83 +1,112 @@
 import Link from 'next/link';
 
-const LIVE = 'https://revox.baseecom.com/wp-content/uploads/2026/01';
-
-const PROJECTS = [
-  {
-    id: 'ecommerce-seo',
-    category: 'E-Commerce SEO',
-    name: 'BDShop BD',
-    text: 'Technical & On-Page SEO',
-    img: `${LIVE}/portfolio-1.jpg`,
-    href: '/portfolio-grid',
-  },
-  {
-    id: 'local-seo',
-    category: 'Local SEO',
-    name: 'AlgoMindz',
-    text: 'Local & Link Building',
-    img: `${LIVE}/portfolio-2.jpg`,
-    href: '/portfolio-grid',
-  },
-  {
-    id: 'technical-seo',
-    category: 'Technical SEO',
-    name: 'Client Project',
-    text: 'Technical SEO Audit',
-    img: `${LIVE}/portfolio-3.jpg`,
-    href: '/portfolio-grid',
-  },
-];
+const LIVE = 'https://revox.baseecom.com/wp-content/uploads/2025/11';
 
 export default function Portfolio() {
   return (
-    <div className="gt-vertical-portfolio fix">
-      <div className="swiper gt-vertical-portfolio-slider">
-        <div className="swiper-wrapper">
-          {PROJECTS.map((p) => (
-            <div key={p.id} className="swiper-slide">
-              <div className="slide-inner">
-                <img src={p.img} alt={p.name} />
-              </div>
-              <div className="gt-vertical-portfolio__content">
-                <div className="gt-vertical-portfolio__content-title">
-                  <Link href={p.href}>{p.name}</Link>
-                </div>
-                <div className="hero-content">
-                  <h6>{p.category}</h6>
-                  <p>{p.text}</p>
-                  <Link href={p.href} className="theme-btn">
-                    View Case Study <i aria-hidden="true" className="fa-solid fa-arrow-up-right"></i>
+    <section className="project-section tp-project-5-2-area fix section-padding">
+      <div className="container">
+        <div className="section-title tp-project-5-2-title">
+          <h6>my featured projects</h6>
+          <h2>works</h2>
+        </div>
+
+        {/* Row 1: 2 columns */}
+        <div className="design-choose-item-wrap">
+          <div className="row">
+            <div className="col-xl-6 col-lg-6 col-md-6">
+              <div className="project-box-items design-choose-item-1">
+                <div className="thumb">
+                  <img src={`${LIVE}/project-01-4.jpg`} alt="E-Commerce SEO" />
+                  <div className="content">
+                    <p>E-Commerce / SEO</p>
+                    <h3><Link href="/portfolio-grid">BDShop BD</Link></h3>
+                  </div>
+                  <Link href="/portfolio-grid" className="circle-icon">
+                    <i className="fa-solid fa-arrow-up-right"></i>
                   </Link>
                 </div>
               </div>
             </div>
-          ))}
+            <div className="col-xl-6 col-lg-6 col-md-6">
+              <div className="project-box-items design-choose-item-2">
+                <div className="thumb">
+                  <img src={`${LIVE}/project-02-3.jpg`} alt="Local SEO" />
+                  <div className="content">
+                    <p>Local / SEO</p>
+                    <h3><Link href="/portfolio-grid">AlgoMindz</Link></h3>
+                  </div>
+                  <Link href="/portfolio-grid" className="circle-icon">
+                    <i className="fa-solid fa-arrow-up-right"></i>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        {/* Prev / Next arrows */}
-        <div className="array-button">
-          <div className="array-prev">
-            <i className="fa-solid fa-arrow-up"></i>
-          </div>
-          <div className="array-next">
-            <i className="fa-solid fa-arrow-down"></i>
+        {/* Row 2: full-width featured */}
+        <div className="row">
+          <div className="col-xl-12">
+            <div className="project-box-items top_view">
+              <div className="thumb fix">
+                <img src={`${LIVE}/project-03-4.jpg`} alt="Technical SEO Audit" />
+                <div className="content">
+                  <p>Technical / SEO</p>
+                  <h3><Link href="/portfolio-grid">Technical SEO Audit</Link></h3>
+                </div>
+                <Link href="/portfolio-grid" className="circle-icon">
+                  <i className="fa-solid fa-arrow-up-right"></i>
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* Pagination */}
-        <div className="gt-vertical-portfolio-pagination"></div>
+        {/* Row 3: 2 columns */}
+        <div className="design-choose-item-wrap">
+          <div className="row">
+            <div className="col-xl-6 col-lg-6 col-md-6">
+              <div className="project-box-items design-choose-item-1">
+                <div className="thumb">
+                  <img src={`${LIVE}/project-04-4.jpg`} alt="AEO Strategy" />
+                  <div className="content">
+                    <p>AEO / Strategy</p>
+                    <h3><Link href="/portfolio-grid">AEO Strategy</Link></h3>
+                  </div>
+                  <Link href="/portfolio-grid" className="circle-icon">
+                    <i className="fa-solid fa-arrow-up-right"></i>
+                  </Link>
+                </div>
+              </div>
+            </div>
+            <div className="col-xl-6 col-lg-6 col-md-6">
+              <div className="project-box-items design-choose-item-2">
+                <div className="thumb">
+                  <img src={`${LIVE}/project-05-4.jpg`} alt="Link Building" />
+                  <div className="content">
+                    <p>Link Building / SEO</p>
+                    <h3><Link href="/portfolio-grid">Link Building</Link></h3>
+                  </div>
+                  <Link href="/portfolio-grid" className="circle-icon">
+                    <i className="fa-solid fa-arrow-up-right"></i>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-        {/* Slider arrows bottom-right */}
-        <div className="gt-vertical-portfolio__slider__arrow">
-          <div className="gt-vertical-portfolio__slider__arrow-prev array-prev">
-            <i className="fa-solid fa-arrow-up"></i> PREV
-          </div>
-          <div className="gt-vertical-portfolio__slider__arrow-next array-next">
-            NEXT <i className="fa-solid fa-arrow-down"></i>
-          </div>
+        {/* Bottom buttons */}
+        <div className="project-btn-all wow fadeInUp" data-wow-delay=".3s">
+          <Link href="/portfolio-grid" className="theme-btn">
+            view all works <i aria-hidden="true" className="fa-solid fa-arrow-up-right"></i>
+          </Link>
+          <Link href="/contact-us" className="theme-btn">
+            contact with me <i aria-hidden="true" className="fa-solid fa-arrow-up-right"></i>
+          </Link>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

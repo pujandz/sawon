@@ -27,8 +27,8 @@ export default function HomePage() {
       <Marquee />
       <About />
       <Services />
-      <Portfolio />
       <WorkExperience />
+      <Portfolio />
       <Award />
       <Pricing />
       <Testimonials />
