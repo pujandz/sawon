@@ -1,152 +1,78 @@
-'use client';
-
 import Link from 'next/link';
-import { motion } from 'framer-motion';
-import { SITE_CONFIG, NAV_LINKS, SERVICES } from '@/lib/constants';
-import { fadeUp, stagger, VP } from '@/lib/animations';
 
 export default function Footer() {
-  const year = new Date().getFullYear();
-
   return (
-    <footer
-      className="bg-[var(--bg-deep)] border-t border-[var(--border-faint)]"
-      role="contentinfo"
-      aria-label="Site footer"
-    >
-      <div className="container-max section-padding py-16">
-        <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12"
-          variants={stagger(0.08)}
-          initial="hidden"
-          whileInView="visible"
-          viewport={VP}
-        >
-          {/* Brand */}
-          <motion.div variants={fadeUp} className="lg:col-span-1">
-            <Link href="/" className="flex items-center gap-2 mb-4 group">
-              <motion.div
-                className="w-9 h-9 bg-primary-500 rounded-full flex items-center justify-center text-black font-bold text-base"
-                whileHover={{ scale: 1.1, rotate: 8 }}
-                transition={{ duration: 0.2 }}
-              >
-                S
-              </motion.div>
-              <span className="text-white font-bold text-xl font-heading">Sawon Saha</span>
-            </Link>
-            <p className="text-sm text-gray-600 leading-relaxed mb-4">
-              SEO & AEO Specialist in Bangladesh helping businesses grow organic traffic and
-              dominate search results through data-driven strategies.
-            </p>
-            <address className="not-italic text-sm space-y-2">
-              <p>
-                <a href={`mailto:${SITE_CONFIG.email}`} className="text-gray-600 hover:text-primary-400 transition-colors">
-                  {SITE_CONFIG.email}
+    <footer className="footer-section">
+      <div className="container">
+        <div className="footer-wrapper">
+          <div className="footer-top d-flex flex-wrap justify-content-between">
+            <div className="footer-widget footer-about">
+              <Link href="/" className="footer-logo">
+                <img src="/assets/img/logo/white-icon.svg" alt="Sawon Saha" />
+              </Link>
+              <p>Ready to grow your search traffic?</p>
+              <h3>LET&rsquo;S WORK TOGETHER</h3>
+            </div>
+
+            <div className="footer-widget">
+              <h4>Quick Links</h4>
+              <ul>
+                <li><Link href="/">Home</Link></li>
+                <li><Link href="/about-me">About Me</Link></li>
+                <li><Link href="/services">Services</Link></li>
+                <li><Link href="/portfolio-grid">Portfolio</Link></li>
+                <li><Link href="/blog">Blog</Link></li>
+                <li><Link href="/contact-us">Contact</Link></li>
+              </ul>
+            </div>
+
+            <div className="footer-widget">
+              <h4>Services</h4>
+              <ul>
+                <li><Link href="/services/technical-seo">Technical SEO</Link></li>
+                <li><Link href="/services/on-page-seo">On-Page SEO</Link></li>
+                <li><Link href="/services/link-building">Link Building</Link></li>
+                <li><Link href="/services/local-seo">Local SEO</Link></li>
+                <li><Link href="/services/keyword-research">Keyword Research</Link></li>
+                <li><Link href="/services/seo-audit">SEO Audit</Link></li>
+              </ul>
+            </div>
+
+            <div className="footer-widget">
+              <h4>Contact Me</h4>
+              <ul>
+                <li>
+                  <a href="tel:+8801674484996">+880 1674-484996</a>
+                </li>
+                <li>
+                  <a href="mailto:sawon.s907@gmail.com">sawon.s907@gmail.com</a>
+                </li>
+              </ul>
+              <div className="footer-socials d-flex gap-2" style={{ marginTop: '1rem' }}>
+                <a href="https://linkedin.com/in/sawonsaha" aria-label="LinkedIn">
+                  <i className="fa-brands fa-linkedin-in"></i>
                 </a>
-              </p>
-              <p>
-                <a href={`tel:${SITE_CONFIG.phone.replace(/\s|-/g, '')}`} className="text-gray-600 hover:text-primary-400 transition-colors">
-                  {SITE_CONFIG.phone}
+                <a href="https://twitter.com/sawonsaha9" aria-label="Twitter">
+                  <i className="fa-brands fa-twitter"></i>
                 </a>
-              </p>
-              <p className="text-gray-600">{SITE_CONFIG.location}</p>
-            </address>
-          </motion.div>
+                <a href="https://quora.com/profile/Sawon-Saha-1" aria-label="Quora">
+                  <i className="fa-brands fa-quora"></i>
+                </a>
+                <a href="https://medium.com/@sawon.s907" aria-label="Medium">
+                  <i className="fa-brands fa-medium"></i>
+                </a>
+              </div>
+            </div>
+          </div>
 
-          {/* Quick Links */}
-          <motion.div variants={fadeUp}>
-            <h3 className="text-white font-semibold font-heading text-sm mb-4 uppercase tracking-wider">
-              Quick Links
-            </h3>
-            <ul className="space-y-2" role="list">
-              {NAV_LINKS.map((link) => (
-                <li key={link.href}>
-                  <motion.a
-                    href={link.href}
-                    className="text-sm text-gray-600 hover:text-primary-400 transition-colors"
-                    whileHover={{ x: 4 }}
-                    transition={{ duration: 0.15 }}
-                  >
-                    {link.label}
-                  </motion.a>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-
-          {/* Services */}
-          <motion.div variants={fadeUp}>
-            <h3 className="text-white font-semibold font-heading text-sm mb-4 uppercase tracking-wider">
-              Services
-            </h3>
-            <ul className="space-y-2" role="list">
-              {SERVICES.slice(0, 5).map((s) => (
-                <li key={s.id}>
-                  <motion.a
-                    href="#services"
-                    className="text-sm text-gray-600 hover:text-primary-400 transition-colors"
-                    whileHover={{ x: 4 }}
-                    transition={{ duration: 0.15 }}
-                  >
-                    {s.title}
-                  </motion.a>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-
-          {/* Social */}
-          <motion.div variants={fadeUp}>
-            <h3 className="text-white font-semibold font-heading text-sm mb-4 uppercase tracking-wider">
-              Follow Me
-            </h3>
-            <ul className="flex gap-3 mb-6" role="list">
-              {[
-                { label: 'LinkedIn', href: 'https://linkedin.com/in/sawonsaha', icon: 'in' },
-                { label: 'Twitter / X', href: 'https://twitter.com/sawonsaha9', icon: 'X' },
-                { label: 'Medium', href: 'https://medium.com/@sawon.s907', icon: 'M' },
-                { label: 'Quora', href: 'https://quora.com/profile/Sawon-Saha-1', icon: 'Q' },
-              ].map((social) => (
-                <li key={social.label}>
-                  <motion.a
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`Sawon Saha on ${social.label}`}
-                    className="w-9 h-9 rounded-lg border border-[var(--border-subtle)] flex items-center justify-center text-gray-600 text-xs font-bold"
-                    whileHover={{ scale: 1.15, borderColor: 'rgba(14,165,233,0.5)', color: '#38bdf8' }}
-                    whileTap={{ scale: 0.9 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    {social.icon}
-                  </motion.a>
-                </li>
-              ))}
-            </ul>
-            <p className="text-xs text-gray-700 mb-3">Ready to grow your organic traffic?</p>
-            <motion.a
-              href="#contact"
-              className="btn-primary text-xs py-2 px-4"
-              whileHover={{ scale: 1.05, boxShadow: '0 0 16px rgba(14,165,233,0.3)' }}
-              whileTap={{ scale: 0.97 }}
-            >
-              Start a Project
-            </motion.a>
-          </motion.div>
-        </motion.div>
-
-        <motion.div
-          className="border-t border-[var(--border-faint)] pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-700"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={VP}
-          transition={{ duration: 0.6 }}
-        >
-          <p>
-            &copy; {year} <span itemProp="name">{SITE_CONFIG.name}</span>. All rights reserved.
-          </p>
-          <p>SEO & AEO Specialist &bull; Naogaon, Rajshahi, Bangladesh</p>
-        </motion.div>
+          <div className="footer-bottom text-center d-flex justify-content-between flex-wrap">
+            <p>Copyright &copy; {new Date().getFullYear()} Sawon Saha. All rights reserved.</p>
+            <div className="footer-bottom-links d-flex gap-3">
+              <Link href="/contact-us">Terms &amp; Conditions</Link>
+              <Link href="/contact-us">Privacy Policy</Link>
+            </div>
+          </div>
+        </div>
       </div>
     </footer>
   );

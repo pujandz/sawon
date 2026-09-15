@@ -1,12 +1,16 @@
 import type { Metadata } from 'next';
 import Hero from '@/components/sections/Hero';
+import Marquee from '@/components/sections/Marquee';
 import About from '@/components/sections/About';
 import Services from '@/components/sections/Services';
-import Portfolio from '@/components/sections/Portfolio';
-import Journey from '@/components/sections/Journey';
+import WorkExperience from '@/components/sections/WorkExperience';
+import Award from '@/components/sections/Award';
+import Pricing from '@/components/sections/Pricing';
 import Testimonials from '@/components/sections/Testimonials';
-import FAQ from '@/components/sections/FAQ';
-import Contact from '@/components/sections/Contact';
+import VideoCta from '@/components/sections/VideoCta';
+import News from '@/components/sections/News';
+import Brand from '@/components/sections/Brand';
+import Cta from '@/components/sections/Cta';
 import { SITE_CONFIG } from '@/lib/constants';
 
 export const metadata: Metadata = {
@@ -19,13 +23,17 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <Marquee />
       <About />
       <Services />
-      <Portfolio />
-      <Journey />
+      <WorkExperience />
+      <Award />
+      <Pricing />
       <Testimonials />
-      <FAQ />
-      <Contact />
+      <VideoCta />
+      <News />
+      <Brand />
+      <Cta />
     </>
   );
 }

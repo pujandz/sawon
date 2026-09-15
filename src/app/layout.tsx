@@ -8,9 +8,8 @@ import {
 } from '@/lib/schema';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
-import CustomCursor from '@/components/ui/CustomCursor';
-import PageLoader from '@/components/ui/PageLoader';
-import ThemeProvider from '@/components/ui/ThemeProvider';
+import Preloader from '@/components/layout/Preloader';
+import ScriptLoader from '@/components/layout/ScriptLoader';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_CONFIG.url),
@@ -39,11 +38,9 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
-    nocache: false,
     googleBot: {
       index: true,
       follow: true,
-      noimageindex: false,
       'max-video-preview': -1,
       'max-image-preview': 'large',
       'max-snippet': -1,
@@ -76,27 +73,11 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: SITE_CONFIG.url,
-    languages: {
-      'en-US': SITE_CONFIG.url,
-      'bn-BD': `${SITE_CONFIG.url}/bn`,
-    },
   },
   category: 'SEO Services',
-  classification: 'Business',
-  other: {
-    'geo.region': 'BD-13',
-    'geo.placename': 'Dhaka',
-    'geo.position': '23.8103;90.4125',
-    'ICBM': '23.8103, 90.4125',
-    'og:locale:alternate': 'bn_BD',
-  },
 };
 
 export const viewport: Viewport = {
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#2563eb' },
-    { media: '(prefers-color-scheme: dark)', color: '#1e40af' },
-  ],
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
@@ -108,18 +89,22 @@ export default function RootLayout({
   return (
     <html lang="en" dir="ltr">
       <head>
-        {/* Anti-flash theme script — runs before hydration */}
-        <script dangerouslySetInnerHTML={{ __html: `(function(){var t=localStorage.getItem('theme')||(window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);})();` }} />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap"
-          rel="stylesheet"
-        />
+        {/* Revox theme CSS */}
+        <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="/assets/css/animate.css" />
+        <link rel="stylesheet" href="/assets/css/swiper-bundle.min.css" />
+        <link rel="stylesheet" href="/assets/css/slick.css" />
+        <link rel="stylesheet" href="/assets/css/magnific-popup.css" />
+        <link rel="stylesheet" href="/assets/css/nice-select.css" />
+        <link rel="stylesheet" href="/assets/css/meanmenu.css" />
+        <link rel="stylesheet" href="/assets/css/flaticon.css" />
+        <link rel="stylesheet" href="/assets/css/all.min.css" />
+        <link rel="stylesheet" href="/assets/css/color.css" />
+        <link rel="stylesheet" href="/assets/css/main.css" />
+
         <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
+
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(getPersonSchema()) }}
@@ -133,19 +118,12 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(getWebSiteSchema()) }}
         />
       </head>
-      <body className="min-h-screen flex flex-col">
-        <ThemeProvider>
-          <PageLoader />
-          <CustomCursor />
-          <a href="#main-content" className="skip-link">
-            Skip to main content
-          </a>
-          <Header />
-          <main id="main-content" className="flex-1">
-            {children}
-          </main>
-          <Footer />
-        </ThemeProvider>
+      <body>
+        <Preloader />
+        <Header />
+        <main>{children}</main>
+        <Footer />
+        <ScriptLoader />
       </body>
     </html>
   );

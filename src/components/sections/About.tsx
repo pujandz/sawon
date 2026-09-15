@@ -1,199 +1,67 @@
-'use client';
+import Image from 'next/image';
+import Link from 'next/link';
 
-import { useRef, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { fadeUp, fadeLeft, fadeRight, scaleIn, stagger, VP } from '@/lib/animations';
+const LIVE = 'https://revox.baseecom.com/wp-content/uploads/2026/01';
 
 const SKILLS = [
-  { name: 'Technical SEO', level: 95 },
-  { name: 'On-Page Optimization', level: 98 },
-  { name: 'Link Building', level: 90 },
-  { name: 'Local SEO', level: 92 },
-  { name: 'Content Strategy', level: 88 },
-  { name: 'Analytics & Reporting', level: 94 },
-];
-
-const HIGHLIGHTS = [
-  { icon: '🎯', title: 'Data-Driven', desc: 'Every decision backed by analytics and real search data.' },
-  { icon: '⚡', title: 'AEO Focused', desc: 'Optimizing for AI search engines and voice results.' },
-  { icon: '📈', title: 'ROI Oriented', desc: 'SEO strategies tied directly to revenue and growth.' },
-  { icon: '🤝', title: 'Collaborative', desc: 'Transparent communication and client-first approach.' },
+  { icon: 'figma.png', label: 'Ahrefs', pct: 95 },
+  { icon: 'ps.png', label: 'SEMrush', pct: 93 },
+  { icon: 'ai.png', label: 'Screaming Frog', pct: 88 },
+  { icon: 'sketch.png', label: 'Google Search Console', pct: 98 },
+  { icon: 'xd.png', label: 'Moz Pro', pct: 85 },
 ];
 
 export default function About() {
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const bars = sectionRef.current?.querySelectorAll<HTMLElement>('[data-width]');
-    if (!bars) return;
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          const bar = entry.target as HTMLElement;
-          const w = bar.dataset.width ?? '0';
-          setTimeout(() => { bar.style.width = w + '%'; }, 200);
-          observer.unobserve(bar);
-        });
-      },
-      { threshold: 0.3 }
-    );
-    bars.forEach((bar) => observer.observe(bar));
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <section
-      id="about"
-      ref={sectionRef}
-      className="section-padding bg-[var(--bg-base)]"
-      aria-labelledby="about-heading"
-      itemScope
-      itemType="https://schema.org/Person"
-    >
-      <meta itemProp="name" content="Sawon Saha" />
-      <meta itemProp="jobTitle" content="SEO Team Lead & AEO Specialist" />
-      <meta itemProp="url" content="https://sawonsaha.com" />
+    <section className="about-section">
+      <div className="container">
+        <div className="about-wrapper d-flex flex-wrap">
+          <div className="about-thumb">
+            <span className="about-eyebrow">about myself</span>
+            <ul>
+              <li>3+ years of SEO experience</li>
+              <li>80+ successfully delivered projects</li>
+            </ul>
 
-      <div className="container-max">
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
-          {/* Left – Photo + highlights */}
-          <motion.div
-            variants={fadeLeft}
-            initial="hidden"
-            whileInView="visible"
-            viewport={VP}
-          >
-            {/* Photo frame */}
-            <div className="relative mb-8 max-w-sm">
-              <div className="aspect-[4/5] rounded-2xl overflow-hidden bg-[var(--bg-surface)] border border-[var(--border)] relative">
-                <div className="w-full h-full flex items-center justify-center bg-[var(--bg-elevated)]">
-                  <span className="text-8xl font-black text-white/5 font-heading select-none">SS</span>
+            <div className="about-skills d-flex flex-wrap gap-4">
+              {SKILLS.map((s) => (
+                <div key={s.label} className="about-skill-item text-center">
+                  <Image
+                    src={`${LIVE}/${s.icon}`}
+                    alt={s.label}
+                    width={40}
+                    height={40}
+                  />
+                  <h4>{s.pct}%</h4>
+                  <span>{s.label.split(' ')[0]}</span>
                 </div>
-                <div className="absolute top-4 left-4 w-6 h-6 border-t-2 border-l-2 border-primary-500 rounded-tl" aria-hidden="true" />
-                <div className="absolute bottom-4 right-4 w-6 h-6 border-b-2 border-r-2 border-primary-500 rounded-br" aria-hidden="true" />
-              </div>
-              {/* Floating badge */}
-              <motion.div
-                className="absolute -bottom-4 -right-4 bg-[var(--bg-surface)] border border-[var(--border)] rounded-xl px-4 py-3"
-                initial={{ opacity: 0, scale: 0.7, y: 12 }}
-                whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                viewport={VP}
-                transition={{ delay: 0.3, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                whileHover={{ scale: 1.06 }}
-              >
-                <p className="text-2xl font-black text-primary-400 font-heading">3+</p>
-                <p className="text-xs text-gray-500">Years Experience</p>
-              </motion.div>
-            </div>
-
-            {/* Highlight cards */}
-            <motion.div
-              className="grid grid-cols-2 gap-3"
-              variants={stagger(0.08)}
-              initial="hidden"
-              whileInView="visible"
-              viewport={VP}
-            >
-              {HIGHLIGHTS.map((h) => (
-                <motion.div
-                  key={h.title}
-                  variants={scaleIn}
-                  className="card p-4"
-                  whileHover={{ y: -4, borderColor: 'rgba(14,165,233,0.25)' }}
-                  transition={{ duration: 0.25 }}
-                >
-                  <span className="text-xl mb-2 block" aria-hidden="true">{h.icon}</span>
-                  <p className="text-sm font-semibold text-white mb-1">{h.title}</p>
-                  <p className="text-xs text-gray-500 leading-relaxed">{h.desc}</p>
-                </motion.div>
               ))}
-            </motion.div>
-          </motion.div>
-
-          {/* Right – Content */}
-          <motion.div
-            variants={fadeRight}
-            initial="hidden"
-            whileInView="visible"
-            viewport={VP}
-          >
-            <span className="section-label">About Me</span>
-            <h2 id="about-heading" className="section-title mb-6">
-              Passionate about creating{' '}
-              <span className="gradient-text">impactful SEO solutions</span>
-            </h2>
-
-            <div className="space-y-4 text-gray-400 leading-relaxed mb-8 text-sm sm:text-base">
-              <p>
-                I&apos;m <strong className="text-white" itemProp="name">Sawon Saha</strong>, a
-                results-driven SEO & AEO Specialist from{' '}
-                <span itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
-                  <span itemProp="addressLocality">Naogaon</span>,{' '}
-                  <span itemProp="addressRegion">Rajshahi</span>,{' '}
-                  <span itemProp="addressCountry">Bangladesh</span>
-                </span>. Currently serving as{' '}
-                <strong className="text-white">SEO Team Lead at Algomindz</strong>, I help
-                top-tier companies maximize visibility across AI platforms and traditional
-                search engines through data-driven, ethical SEO strategies.
-              </p>
-              <p>
-                My journey started in 2022 at Dcastalia Limited and Digitomark, where I honed
-                skills across technical SEO, on-page optimization, link building, and competitor
-                analysis. I&apos;m adept at staying ahead of algorithm updates and emerging trends
-                like Answer Engine Optimization to ensure maximum organic visibility.
-              </p>
             </div>
+            <p className="about-tools-label">My Favorite SEO Tools</p>
+          </div>
 
-            {/* Skills */}
-            <div className="mb-8">
-              <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-widest mb-4">
-                Core Skills
-              </h3>
-              <div className="space-y-4">
-                {SKILLS.map((skill) => (
-                  <div key={skill.name}>
-                    <div className="flex justify-between text-sm mb-1.5">
-                      <span className="font-medium text-gray-300">{skill.name}</span>
-                      <span className="text-gray-600 text-xs">{skill.level}%</span>
-                    </div>
-                    <div className="h-1 bg-[var(--bg-elevated)] rounded-full overflow-hidden">
-                      <div
-                        className="h-full bg-gradient-to-r from-primary-600 to-primary-400 rounded-full transition-all duration-1000 ease-out"
-                        style={{ width: '0%' }}
-                        data-width={skill.level}
-                        role="progressbar"
-                        aria-valuenow={skill.level}
-                        aria-valuemin={0}
-                        aria-valuemax={100}
-                        aria-label={`${skill.name}: ${skill.level}%`}
-                      />
-                    </div>
-                  </div>
-                ))}
-              </div>
+          <div className="about-content">
+            <h2>A Professional Overview of My Background and Expertise</h2>
+            <p>
+              A results-driven SEO Team Lead &amp; AEO Specialist based in Bangladesh
+              with 3+ years of experience, crafting search strategies that drive
+              measurable organic growth. Blending technical expertise with
+              content and data analysis.
+            </p>
+            <p>
+              Currently leading the SEO team at Algomindz, I help businesses maximize
+              visibility across both traditional search engines and AI-powered answer
+              engines like Google AI Overviews and Perplexity.
+            </p>
+            <div className="about-btns d-flex gap-3">
+              <Link href="/about-me" className="theme-btn">
+                get to know me
+              </Link>
+              <a href="mailto:sawon.s907@gmail.com" className="theme-btn theme-btn-alt">
+                download cv
+              </a>
             </div>
-
-            {/* CTA */}
-            <div className="flex flex-wrap gap-4">
-              <motion.a
-                href="#contact"
-                className="btn-primary text-sm"
-                whileHover={{ scale: 1.04, boxShadow: '0 0 24px rgba(14,165,233,0.3)' }}
-                whileTap={{ scale: 0.97 }}
-              >
-                Work With Me
-              </motion.a>
-              <motion.a
-                href="#portfolio"
-                className="btn-outline text-sm"
-                whileHover={{ scale: 1.04 }}
-                whileTap={{ scale: 0.97 }}
-              >
-                See My Work
-              </motion.a>
-            </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>
