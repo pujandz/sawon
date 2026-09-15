@@ -33,10 +33,7 @@ export default function Services() {
       <div className="container">
         <div className="section-title-area">
           <div className="section-title">
-            <h6 className="service-subtitle has-icon">
-              <i aria-hidden="true" className="subtitle-icon fa-solid fa-arrow-up-right"></i>
-              what i do?
-            </h6>
+            <h6>what i do?</h6>
             <h2 className="hero_title tv_hero_title hero_title_1">
               Transforming Search Presence <span>Into Sustainable Growth</span>
             </h2>
