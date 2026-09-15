@@ -7,4 +7,10 @@ html { scroll-behavior: smooth; }
 /* Preloader hide after load — main.js removes .preloader from DOM */
 .preloader { z-index: 9999; }
 
+/* Reserve line height for typing text so layout never shifts when empty */
+#typing-text {
+  display: inline-block;
+  min-height: 1.2em;
+}
+
 /* Override iframe restriction set by old X-Frame-Options: DENY */
