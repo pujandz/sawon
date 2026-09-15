@@ -566,7 +566,7 @@ h5.preloader-text {
   }
 }
 h5.preloader-text::after {
-  content: "Revox";
+  content: attr(data-text);
   position: absolute;
   left: 0;
   top: 0;
