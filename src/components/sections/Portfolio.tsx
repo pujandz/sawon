@@ -20,9 +20,9 @@ export default function Portfolio() {
                   <img src={`${LIVE}/project-01-4.jpg`} alt="E-Commerce SEO" />
                   <div className="content">
                     <p>E-Commerce / SEO</p>
-                    <h3><Link href="/portfolio-grid">BDShop BD</Link></h3>
+                    <h3><Link href="/portfolio">BDShop BD</Link></h3>
                   </div>
-                  <Link href="/portfolio-grid" className="circle-icon">
+                  <Link href="/portfolio" className="circle-icon">
                     <i className="fa-solid fa-arrow-up-right"></i>
                   </Link>
                 </div>
@@ -34,9 +34,9 @@ export default function Portfolio() {
                   <img src={`${LIVE}/project-02-3.jpg`} alt="Local SEO" />
                   <div className="content">
                     <p>Local / SEO</p>
-                    <h3><Link href="/portfolio-grid">AlgoMindz</Link></h3>
+                    <h3><Link href="/portfolio">AlgoMindz</Link></h3>
                   </div>
-                  <Link href="/portfolio-grid" className="circle-icon">
+                  <Link href="/portfolio" className="circle-icon">
                     <i className="fa-solid fa-arrow-up-right"></i>
                   </Link>
                 </div>
@@ -53,9 +53,9 @@ export default function Portfolio() {
                 <img src={`${LIVE}/project-03-4.jpg`} alt="Technical SEO Audit" />
                 <div className="content">
                   <p>Technical / SEO</p>
-                  <h3><Link href="/portfolio-grid">Technical SEO Audit</Link></h3>
+                  <h3><Link href="/portfolio">Technical SEO Audit</Link></h3>
                 </div>
-                <Link href="/portfolio-grid" className="circle-icon">
+                <Link href="/portfolio" className="circle-icon">
                   <i className="fa-solid fa-arrow-up-right"></i>
                 </Link>
               </div>
@@ -72,9 +72,9 @@ export default function Portfolio() {
                   <img src={`${LIVE}/project-04-4.jpg`} alt="AEO Strategy" />
                   <div className="content">
                     <p>AEO / Strategy</p>
-                    <h3><Link href="/portfolio-grid">AEO Strategy</Link></h3>
+                    <h3><Link href="/portfolio">AEO Strategy</Link></h3>
                   </div>
-                  <Link href="/portfolio-grid" className="circle-icon">
+                  <Link href="/portfolio" className="circle-icon">
                     <i className="fa-solid fa-arrow-up-right"></i>
                   </Link>
                 </div>
@@ -86,9 +86,9 @@ export default function Portfolio() {
                   <img src={`${LIVE}/project-05-4.jpg`} alt="Link Building" />
                   <div className="content">
                     <p>Link Building / SEO</p>
-                    <h3><Link href="/portfolio-grid">Link Building</Link></h3>
+                    <h3><Link href="/portfolio">Link Building</Link></h3>
                   </div>
-                  <Link href="/portfolio-grid" className="circle-icon">
+                  <Link href="/portfolio" className="circle-icon">
                     <i className="fa-solid fa-arrow-up-right"></i>
                   </Link>
                 </div>
@@ -99,7 +99,7 @@ export default function Portfolio() {
 
         {/* Bottom buttons */}
         <div className="project-btn-all wow fadeInUp" data-wow-delay=".3s">
-          <Link href="/portfolio-grid" className="theme-btn">
+          <Link href="/portfolio" className="theme-btn">
             view all works <i aria-hidden="true" className="fa-solid fa-arrow-up-right"></i>
           </Link>
           <Link href="/contact-us" className="theme-btn">

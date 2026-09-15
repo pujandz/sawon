@@ -157,7 +157,7 @@ export default function WorkDetailPage({ params }: Props) {
                 ))}
               </div>
 
-              <Link href="/portfolio-grid" className="theme-btn" style={{ marginTop: '2rem', display: 'inline-block' }}>
+              <Link href="/portfolio" className="theme-btn" style={{ marginTop: '2rem', display: 'inline-block' }}>
                 ← Back to Portfolio
               </Link>
             </div>

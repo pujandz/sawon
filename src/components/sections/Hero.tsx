@@ -28,7 +28,7 @@ export default function Hero() {
               </h1>
 
               <a
-                href="/portfolio-grid"
+                href="/portfolio"
                 className="theme-btn wow fadeInUp"
                 data-wow-delay=".5s"
               >
