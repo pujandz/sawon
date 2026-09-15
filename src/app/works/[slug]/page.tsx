@@ -120,45 +120,53 @@ export default function WorkDetailPage({ params }: Props) {
 
   return (
     <main>
-      <section className="page-banner">
+      <section className="project-inner-page-wrapper section-padding fix">
         <div className="container">
-          <span className="eyebrow">{project.cat}</span>
           <h1>{project.title}</h1>
-          <p>Client: {project.client}</p>
-        </div>
-      </section>
 
-      <section className="portfolio-details-section">
-        <div className="container">
-          <img src={project.img} alt={project.title} width={900} height={500} style={{ width: '100%', height: 'auto', marginBottom: '3rem' }} />
+          <div className="project-inner-page-box">
+            <div className="thumb">
+              <img src={project.img} alt={project.title} />
+            </div>
+            <div className="content">
+              <span>{project.cat}</span>
+              <h3>Client: {project.client}</h3>
 
-          <div className="portfolio-details-wrapper d-flex flex-wrap gap-4">
-            <div className="portfolio-details-content">
-              <h2>The Challenge</h2>
-              <p>{project.challenge}</p>
+              <p style={{ color: '#888', fontSize: '0.9rem', marginBottom: '1rem', lineHeight: 1.7 }}>
+                <strong style={{ color: 'rgba(255,255,255,0.8)' }}>Challenge:</strong> {project.challenge}
+              </p>
+              <p style={{ color: '#888', fontSize: '0.9rem', marginBottom: '1.5rem', lineHeight: 1.7 }}>
+                <strong style={{ color: 'rgba(255,255,255,0.8)' }}>Solution:</strong> {project.solution}
+              </p>
 
-              <h2 style={{ marginTop: '2rem' }}>The Solution</h2>
-              <p>{project.solution}</p>
+              {project.results.map((r) => (
+                <div key={r.metric} style={{ marginBottom: '0.75rem' }}>
+                  <span style={{ color: 'var(--theme)', fontWeight: 700, fontSize: '1.1rem' }}>{r.change}</span>
+                  <span style={{ color: '#888', fontSize: '0.85rem', marginLeft: '0.5rem' }}>
+                    {r.metric}{r.period ? ` · ${r.period}` : ''}
+                  </span>
+                </div>
+              ))}
 
-              <h2 style={{ marginTop: '2rem' }}>Results</h2>
-              <div className="results-grid d-flex flex-wrap gap-3" style={{ marginTop: '1rem' }}>
-                {project.results.map((r) => (
-                  <div key={r.metric} className="result-item" style={{ padding: '1.5rem', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '8px', minWidth: '200px' }}>
-                    <h3 style={{ color: 'var(--theme-color, #0ea5e9)', fontSize: '1.5rem' }}>{r.change}</h3>
-                    <p>{r.metric}</p>
-                    {r.period && <small style={{ opacity: 0.6 }}>{r.period}</small>}
-                  </div>
-                ))}
-              </div>
-
-              <div className="tags d-flex flex-wrap gap-2" style={{ marginTop: '2rem' }}>
+              <div className="d-flex flex-wrap gap-2" style={{ marginBottom: '2rem', marginTop: '1rem' }}>
                 {project.tags.map((t) => (
-                  <span key={t} style={{ padding: '0.25rem 0.75rem', border: '1px solid rgba(255,255,255,0.2)', borderRadius: '999px', fontSize: '0.85rem' }}>{t}</span>
+                  <span
+                    key={t}
+                    style={{
+                      padding: '0.2rem 0.7rem',
+                      border: '1px solid rgba(255,255,255,0.2)',
+                      borderRadius: '999px',
+                      fontSize: '0.78rem',
+                      color: 'rgba(255,255,255,0.6)',
+                    }}
+                  >
+                    {t}
+                  </span>
                 ))}
               </div>
 
-              <Link href="/portfolio" className="theme-btn" style={{ marginTop: '2rem', display: 'inline-block' }}>
-                ← Back to Portfolio
+              <Link href="/portfolio" className="arrow-icon">
+                <i className="fa-solid fa-arrow-up-right"></i>
               </Link>
             </div>
           </div>

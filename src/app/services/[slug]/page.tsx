@@ -26,44 +26,57 @@ export default function ServiceDetailPage({ params }: Props) {
 
   return (
     <main>
-      <section className="page-banner">
+      <section className="service-inner-wrapper section-padding fix">
         <div className="container">
-          <span style={{ fontSize: '3rem' }}>{service.icon}</span>
           <h1>{service.title}</h1>
-          <p>{service.shortDesc}</p>
-        </div>
-      </section>
 
-      <section className="service-details-section">
-        <div className="container">
-          <div className="service-details-wrapper d-flex flex-wrap gap-4">
-            <div className="service-details-content">
-              <h2>What&rsquo;s Included</h2>
-              <p>{service.description}</p>
-              <ul style={{ marginTop: '1.5rem' }}>
-                {service.features.map((f) => (
-                  <li key={f} style={{ marginBottom: '0.5rem' }}>✓ {f}</li>
-                ))}
-              </ul>
-              <Link href="/contact-us" className="theme-btn" style={{ marginTop: '2rem', display: 'inline-block' }}>
-                Get Started
-              </Link>
+          <div className="project-inner-page-box">
+            <div className="thumb">
+              <img
+                src={`https://revox.baseecom.com/wp-content/uploads/2025/11/project-03-4.jpg`}
+                alt={service.title}
+              />
             </div>
-
-            <div className="service-details-sidebar">
-              <h4>All Services</h4>
-              <ul>
-                {SERVICES.map((s) => (
-                  <li key={s.id}>
-                    <Link
-                      href={`/services/${s.id}`}
-                      style={{ fontWeight: s.id === params.slug ? 700 : 400 }}
-                    >
-                      {s.icon} {s.title}
-                    </Link>
+            <div className="content">
+              <span>{service.title}</span>
+              <h3>{service.shortDesc}</h3>
+              <p style={{ color: '#888', marginBottom: '1.5rem', fontSize: '0.95rem', lineHeight: 1.7 }}>
+                {service.description}
+              </p>
+              <ul style={{ listStyle: 'none', padding: 0, marginBottom: '1.5rem' }}>
+                {service.features.map((f) => (
+                  <li key={f} style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.9rem', marginBottom: '0.5rem' }}>
+                    ✓ {f}
                   </li>
                 ))}
               </ul>
+              <Link href="/contact-us" className="arrow-icon">
+                <i className="fa-solid fa-arrow-up-right"></i>
+              </Link>
+            </div>
+          </div>
+
+          <div style={{ marginTop: '3rem', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '2rem' }}>
+            <h4 style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.85rem', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '1rem' }}>
+              All Services
+            </h4>
+            <div className="d-flex flex-wrap gap-3">
+              {SERVICES.map((s) => (
+                <Link
+                  key={s.id}
+                  href={`/services/${s.id}`}
+                  style={{
+                    padding: '0.4rem 1rem',
+                    borderRadius: '999px',
+                    border: `1px solid ${s.id === params.slug ? 'var(--theme)' : 'rgba(255,255,255,0.2)'}`,
+                    color: s.id === params.slug ? 'var(--theme)' : 'rgba(255,255,255,0.6)',
+                    fontSize: '0.85rem',
+                    textDecoration: 'none',
+                  }}
+                >
+                  {s.title}
+                </Link>
+              ))}
             </div>
           </div>
         </div>

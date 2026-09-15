@@ -13,4 +13,11 @@ html { scroll-behavior: smooth; }
   min-height: 1.2em;
 }
 
+/* budget-btn active state (contact page) */
+.contact-inner-page-wrapper form .form-clt .budget-item .budget-button .budget-btn.active {
+  background-color: var(--theme);
+  color: var(--black);
+  border-color: var(--theme);
+}
+
 /* Override iframe restriction set by old X-Frame-Options: DENY */

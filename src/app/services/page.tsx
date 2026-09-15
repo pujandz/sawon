@@ -1,58 +1,42 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import Pricing from '@/components/sections/Pricing';
 import { SERVICES, STATS } from '@/lib/constants';
+
+const LIVE = 'https://revox.baseecom.com/wp-content/uploads/2026/01';
 
 export const metadata: Metadata = {
   title: 'SEO Services – Sawon Saha',
   description: 'Comprehensive SEO services including Technical SEO, On-Page optimization, Link Building, Local SEO, Keyword Research, and SEO Audits.',
+  robots: { index: false, follow: false },
 };
 
 export default function ServicesPage() {
   return (
     <main>
-      <section className="page-banner">
+      <section className="service-inner-wrapper section-padding fix">
         <div className="container">
           <h1>Driving Search Visibility Through Proven SEO Strategies</h1>
-        </div>
-      </section>
 
-      <section className="counters-section">
-        <div className="container d-flex flex-wrap gap-4">
-          {STATS.map((s) => (
-            <div key={s.label} className="counter-item">
-              <h2>{s.value}{s.suffix}</h2>
-              <p>{s.label}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="service-list-section">
-        <div className="container">
-          <span className="eyebrow">what i do?</span>
-          <h2>Comprehensive SEO Services Tailored to Your Goals</h2>
-          <p>
-            End-to-end search optimization strategies
-            <br />
-            that increase organic visibility, drive qualified traffic,
-            <br />
-            and convert searchers into customers
-          </p>
-
-          <div className="service-cards-grid d-flex flex-wrap gap-4" style={{ marginTop: '3rem' }}>
+          <div className="row g-4" style={{ marginTop: '4rem' }}>
             {SERVICES.map((s) => (
-              <div key={s.id} className="service-card-item">
-                <span className="service-icon" style={{ fontSize: '2rem' }}>{s.icon}</span>
-                <h3>{s.title}</h3>
-                <p>{s.shortDesc}</p>
-                <ul>
-                  {s.features.slice(0, 3).map((f) => (
-                    <li key={f}>{f}</li>
-                  ))}
-                </ul>
-                <a href={`/services/${s.id}`} className="theme-btn" style={{ marginTop: '1rem', display: 'inline-block' }}>
-                  Learn More
-                </a>
+              <div key={s.id} className="col-xl-4 col-lg-6 col-md-6">
+                <div className="project-inner-page-box" style={{ flexDirection: 'column', alignItems: 'flex-start', marginTop: 0 }}>
+                  <div className="content" style={{ maxWidth: '100%' }}>
+                    <span>{s.title}</span>
+                    <h3>{s.shortDesc}</h3>
+                    <ul style={{ listStyle: 'none', padding: 0, marginBottom: '1.5rem' }}>
+                      {s.features.slice(0, 4).map((f) => (
+                        <li key={f} style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.9rem', marginBottom: '0.4rem' }}>
+                          ✓ {f}
+                        </li>
+                      ))}
+                    </ul>
+                    <Link href={`/services/${s.id}`} className="arrow-icon">
+                      <i className="fa-solid fa-arrow-up-right"></i>
+                    </Link>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
