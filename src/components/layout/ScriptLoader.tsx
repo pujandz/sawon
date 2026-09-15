@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 
 const SCRIPTS = [
   '/assets/js/jquery.min.js',
@@ -31,6 +32,27 @@ const SCRIPTS = [
 ];
 
 export default function ScriptLoader() {
+  const pathname = usePathname();
+
+  // Reset scroll to top on every client-side navigation.
+  // GSAP ScrollSmoother keeps its own scroll state across Next.js route
+  // changes; ScrollSmoother.get() retrieves the active instance so we can
+  // reset it without reinitialising all the plugins.
+  useEffect(() => {
+    try {
+      const win = window as any;
+      const smoother = win.ScrollSmoother?.get?.();
+      if (smoother) {
+        smoother.scrollTop(0);
+      } else {
+        window.scrollTo(0, 0);
+      }
+    } catch {
+      window.scrollTo(0, 0);
+    }
+  }, [pathname]);
+
+  // Load scripts once, in dependency order.
   useEffect(() => {
     let cancelled = false;
 

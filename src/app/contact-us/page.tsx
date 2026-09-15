@@ -30,7 +30,15 @@ export default function ContactUsPage() {
 
   return (
     <main>
-      <section className="contact-inner-page-wrapper">
+      {/* Page title — clears the absolute-positioned header and gives
+          consistent top spacing with other inner pages */}
+      <section className="project-inner-page-wrapper section-padding fix">
+        <div className="container">
+          <h1>Contact</h1>
+        </div>
+      </section>
+
+      <section className="contact-inner-page-wrapper" style={{ marginTop: 0 }}>
         <div className="container">
           <div className="row align-items-center">
             <div className="col-xl-5 col-lg-5">
