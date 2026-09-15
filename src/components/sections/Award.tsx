@@ -15,10 +15,7 @@ export default function Award() {
           <div className="row g-4 align-items-center">
             <div className="col-lg-6">
               <div className="section-title">
-                <h6 className=" has-icon">
-                  <i aria-hidden="true" className="subtitle-icon fa-solid fa-arrow-up-right"></i>
-                  award winning
-                </h6>
+                <h6>award winning</h6>
                 <h2 className="hero_title tv_hero_title hero_title_1">
                   Certifications <span>&amp; Milestones</span>
                 </h2>

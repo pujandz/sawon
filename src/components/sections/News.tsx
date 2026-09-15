@@ -38,12 +38,20 @@ export default function News({ posts = [] as Post[] }) {
             ) : (
               posts.map((p) => (
                 <div key={p.slug} className="col-xl-4 col-lg-6">
-                  <article className="news-main-box-items">
-                    <img src={p.img} alt={p.title} width={360} height={240} />
-                    <span className="news-meta">{p.category} &middot; {p.date}</span>
-                    <h3>
-                      <Link href={`/${p.slug}`}>{p.title}</Link>
-                    </h3>
+                  <article className="news-main-box-items tp-service-panel">
+                    <div className="news-content">
+                      <h3>
+                        <Link href={`/${p.slug}`} className="tp_text_invert">{p.title}</Link>
+                      </h3>
+                      <ul>
+                        <li className="client-info">
+                          <span>{p.category}</span> &middot; <span>{p.date}</span>
+                        </li>
+                      </ul>
+                    </div>
+                    <div className="news-image">
+                      <img src={p.img} alt={p.title} width={360} height={240} />
+                    </div>
                   </article>
                 </div>
               ))

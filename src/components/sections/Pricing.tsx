@@ -1,50 +1,22 @@
 import Link from 'next/link';
 
-const PLANS = [
-  {
-    name: 'Starter Plan',
-    price: '$299',
-    period: 'per month',
-    style2: false,
-    delay: '0.3s',
-    features: [
-      'Technical SEO Audit',
-      'On-Page Optimization (up to 10 pages)',
-      'Keyword Research & Mapping',
-      'Monthly Performance Report',
-      'Email Support',
-    ],
-  },
-  {
-    name: 'Growth Plan',
-    price: '$599',
-    period: 'per month',
-    style2: true,
-    delay: '0.5s',
-    features: [
-      'Full Technical SEO',
-      'On-Page Optimization (unlimited pages)',
-      'Link Building (5 links/month)',
-      'Content Strategy & Brief',
-      'Weekly Progress Reports',
-      'Priority Support',
-    ],
-  },
-  {
-    name: 'Enterprise Plan',
-    price: '$999',
-    period: 'per month',
-    style2: false,
-    delay: '0.7s',
-    features: [
-      'Everything in Growth',
-      'Link Building (15+ links/month)',
-      'AEO & AI Search Optimization',
-      'Competitor Gap Analysis',
-      'Dedicated Account Manager',
-      'Custom Strategy Sessions',
-    ],
-  },
+const LIVE = 'https://revox.baseecom.com/wp-content/uploads/2026/01';
+
+const STARTER_FEATURES = [
+  'Technical SEO Audit',
+  'On-Page Optimization (up to 10 pages)',
+  'Keyword Research & Mapping',
+  'Monthly Performance Report',
+  'Email Support',
+];
+
+const GROWTH_FEATURES = [
+  'Full Technical SEO',
+  'On-Page Optimization (unlimited pages)',
+  'Link Building (5 links/month)',
+  'Content Strategy & Brief',
+  'Weekly Progress Reports',
+  'Priority Support',
 ];
 
 export default function Pricing() {
@@ -52,35 +24,79 @@ export default function Pricing() {
     <section className="pricing-section section-padding fix">
       <div className="container">
         <div className="row g-4 align-items-center">
-          {PLANS.map((p) => (
-            <div key={p.name} className="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay={p.delay}>
-              <div className={`pricing-box-items${p.style2 ? ' style-2' : ' active'}`}>
-                <div className="pricing-header">
-                  <h2>{p.price}</h2>
-                  <p>{p.period}</p>
+
+          {/* Starter Plan */}
+          <div className="col-xl-4 col-lg-6 col-md-6 order-2 order-xl-1 wow fadeInUp" data-wow-delay="0.3s">
+            <div className="pricing-box-items active">
+              <div className="pricing-header">
+                <h2>$299</h2>
+                <p>per month</p>
+              </div>
+
+              <Link href="/contact-us" className="circle-icon">
+                <i aria-hidden="true" className="fa-solid fa-arrow-up-right"></i>
+              </Link>
+
+              <ul>
+                {STARTER_FEATURES.map((f) => (
+                  <li key={f}>
+                    <i className="fa-solid fa-circle-arrow-right"></i>
+                    {f}
+                  </li>
+                ))}
+              </ul>
+
+              <h2>Starter Plan</h2>
+            </div>
+          </div>
+
+          {/* Center info column */}
+          <div className="col-xl-4 col-lg-6 col-md-6 order-1 order-xl-2 wow fadeInUp" data-wow-delay="0.5s">
+            <div className="pricing-content">
+              <div className="section-title">
+                <h6>choose your plan</h6>
+                <h2 className="hero_title tv_hero_title hero_title_1">
+                  flexible pricing <span>for</span>{' '}
+                  <span className="no-break">growing businesses</span>
+                </h2>
+              </div>
+              <div className="shape-1">
+                <img src={`${LIVE}/vec-shape.png`} alt="Shape" />
+              </div>
+              <div className="client-info">
+                <div className="client-image">
+                  <img src={`${LIVE}/info.png`} alt="Happy customers" />
                 </div>
-
-                <Link href="/contact-us" className="circle-icon">
-                  <i aria-hidden="true" className="fa-solid fa-arrow-up-right"></i>
-                </Link>
-
-                <ul>
-                  {p.features.map((f) => (
-                    <li key={f}>
-                      <i className="fa-solid fa-circle-arrow-right"></i>
-                      {f}
-                    </li>
-                  ))}
-                </ul>
-
-                <div className="pricing-content">
-                  <div className="pricing-box-professional">
-                    <h4>{p.name}</h4>
-                  </div>
-                </div>
+                <p>join 5 000+ <br />happy customers</p>
               </div>
             </div>
-          ))}
+          </div>
+
+          {/* Growth Plan */}
+          <div className="col-xl-4 col-lg-6 col-md-6 order-3 order-xl-3 wow fadeInUp" data-wow-delay="0.7s">
+            <div className="pricing-box-items style-2">
+              <div className="pricing-header">
+                <h2>$599</h2>
+                <p>per month</p>
+              </div>
+
+              <Link href="/contact-us" className="circle-icon">
+                <i aria-hidden="true" className="fa-solid fa-arrow-up-right"></i>
+              </Link>
+
+              <ul>
+                {GROWTH_FEATURES.map((f) => (
+                  <li key={f}>
+                    <i className="fa-solid fa-circle-arrow-right"></i>
+                    {f}
+                  </li>
+                ))}
+              </ul>
+
+              <h2>Growth Plan</h2>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>

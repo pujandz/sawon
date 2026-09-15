@@ -21,10 +21,7 @@ export default function About() {
             <div className="col-lg-6">
               <div className="about-left-items">
                 <div className="section-title mb-0 wow fadeInUp" data-wow-delay=".3s">
-                  <h6 className="has-icon">
-                    <i aria-hidden="true" className="subtitle-icon fa-solid fa-arrow-up-right"></i>
-                    about myself
-                  </h6>
+                  <h6>about myself</h6>
                 </div>
 
                 <ul className="top-text wow fadeInUp" data-wow-delay=".5s">

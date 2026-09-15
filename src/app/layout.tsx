@@ -128,9 +128,9 @@ export default function RootLayout({
             <Footer />
           </div>
         </div>
-        <a href="#" className="scroll-top">
-          <i className="fa-solid fa-angle-up"></i>
-        </a>
+        <button id="back-top" className="back-to-top show">
+          <i className="fa-regular fa-arrow-up"></i>
+        </button>
         <ScriptLoader />
       </body>
     </html>
