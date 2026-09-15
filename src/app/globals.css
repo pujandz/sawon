@@ -13,6 +13,16 @@ html { scroll-behavior: smooth; }
   min-height: 1.2em;
 }
 
+/* Offcanvas: reduce 200px top/bottom padding so all 6 nav links fit the
+   viewport on typical laptop screens. Logo + close are position:absolute
+   so they are unaffected by padding changes. */
+@media (max-width: 1899px) {
+  .style-offcanvas-2 .offcanvas__info {
+    padding-top: 90px !important;
+    padding-bottom: 60px !important;
+  }
+}
+
 /* budget-btn active state (contact page) */
 .contact-inner-page-wrapper form .form-clt .budget-item .budget-button .budget-btn.active {
   background-color: var(--theme);
