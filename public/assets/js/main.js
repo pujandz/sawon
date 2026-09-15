@@ -1772,15 +1772,14 @@ text_slider.on('slideChangeTransitionStart', function () {
     (function ($) {
         "use strict";
 
-        // Find all hero widgets with typing text
-        $('.elementor-widget-revox_hero_1').each(function() {
-            const $widget = $(this);
-            const $el = $widget.find("#typing-text");
-            
+        // Find typing text element directly
+        (function() {
+            const $el = $("#typing-text");
+
             if (!$el.length) return; // stop if element not exist
-            
-            // Get the typing text from the element's text content
-            const typingText = $el.text().trim();
+
+            // Get the typing text from the element's data-words or text content
+            const typingText = $el.attr('data-words') || $el.text().trim();
             
             // Split by comma for multiple texts
             const words = typingText.split(',').map(word => word.trim()).filter(word => word.length > 0);
@@ -1816,9 +1815,9 @@ text_slider.on('slideChangeTransitionStart', function () {
 
             // Start typing effect
             interval = setInterval(typeEffect, 150);
-        });
+        })();
 
-        
+
     })(jQuery);
     // Type Text Area End
 

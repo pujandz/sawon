@@ -24,7 +24,7 @@ export default function Hero() {
 
               <h1 className="wow fadeInUp" data-wow-delay=".3s">
                 <b>i&apos;m</b> Sawon Saha <br />
-                <strong id="typing-text">SEO Specialist, AEO Expert, Digital Marketer</strong><span>.</span>
+                <strong id="typing-text" data-words="SEO Specialist.,AEO Expert.,Digital Marketer."></strong>
               </h1>
 
               <a
