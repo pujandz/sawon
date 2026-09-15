@@ -1,54 +1,36 @@
 import Link from 'next/link';
 
-const LIVE_IMG = 'https://revox.baseecom.com/wp-content/uploads/2026/01';
+const LIVE = 'https://revox.baseecom.com/wp-content/uploads/2026/01';
+const LIVE_NEWS = 'https://revox.baseecom.com/wp-content/uploads/2025/11';
 
-interface Post {
-  title: string;
-  slug: string;
-  category: string;
-  date: string;
-  img: string;
-  authorImg?: string;
-  authorName?: string;
-  authorRole?: string;
-}
-
-const PLACEHOLDER_POSTS: Post[] = [
+const POSTS = [
   {
-    title: 'How to Build a Winning SEO Strategy in 2025',
+    id: 1,
+    title: 'How to Build a Winning SEO Strategy That Drives Organic Growth in 2025',
     slug: 'blog',
     category: 'SEO Strategy',
     date: 'Jan 15, 2025',
-    img: `${LIVE_IMG}/news-1.jpg`,
-    authorImg: `${LIVE_IMG}/client-1.png`,
-    authorName: 'Sawon Saha',
-    authorRole: 'SEO Specialist',
+    img: `${LIVE_NEWS}/news-img-1-1.jpg`,
   },
   {
-    title: 'AEO vs SEO: What Every Marketer Needs to Know',
+    id: 2,
+    title: 'AEO vs SEO: What Every Marketer Needs to Know About AI Search',
     slug: 'blog',
     category: 'AEO',
-    date: 'Feb 3, 2025',
-    img: `${LIVE_IMG}/news-2.jpg`,
-    authorImg: `${LIVE_IMG}/client-2.png`,
-    authorName: 'Sawon Saha',
-    authorRole: 'AEO Expert',
+    date: 'Feb 03, 2025',
+    img: `${LIVE_NEWS}/news-img-2-1.jpg`,
   },
   {
-    title: 'Technical SEO Audit Checklist for 2025',
+    id: 3,
+    title: 'Technical SEO Audit Checklist: 30 Steps to a Perfectly Optimised Site',
     slug: 'blog',
     category: 'Technical SEO',
     date: 'Mar 20, 2025',
-    img: `${LIVE_IMG}/news-3.jpg`,
-    authorImg: `${LIVE_IMG}/client-3.png`,
-    authorName: 'Sawon Saha',
-    authorRole: 'Digital Marketer',
+    img: `${LIVE_NEWS}/news-img-3-1.jpg`,
   },
 ];
 
-export default function News({ posts = PLACEHOLDER_POSTS as Post[] }) {
-  const items = posts.length > 0 ? posts : PLACEHOLDER_POSTS;
-
+export default function News() {
   return (
     <section className="news-section section-padding fix">
       <div className="container">
@@ -70,26 +52,34 @@ export default function News({ posts = PLACEHOLDER_POSTS as Post[] }) {
 
         <div className="tp-service-pin">
           <div className="row">
-            {items.map((p) => (
-              <div key={p.slug + p.title} className="col-xl-12">
+            {POSTS.map((p) => (
+              <div key={p.id} className="col-xl-12">
                 <article className="news-main-box-items tp-service-panel">
                   <div className="news-content">
-                    <ul>
-                      <li className="client-info">
-                        {p.authorImg && (
-                          <img src={p.authorImg} alt={p.authorName ?? 'Author'} />
-                        )}
-                        <span>{p.authorName ?? p.category}</span>
-                      </li>
-                      <li>{p.date}</li>
-                    </ul>
                     <h3>
-                      <Link href={`/${p.slug}`} className="tp_text_invert">{p.title}</Link>
+                      <Link href={`/${p.slug}`}>{p.title}</Link>
                     </h3>
+                    <ul>
+                      <li>
+                        <div className="client-info">
+                          <img src={`${LIVE}/client-1.png`} alt="Sawon Saha" />
+                          <div className="client-content">
+                            <span className="name">Sawon Saha</span>
+                            <p>Authored By</p>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <span>{p.category}</span>
+                      </li>
+                      <li>
+                        <span className="color-2">{p.date}</span>
+                      </li>
+                    </ul>
                   </div>
                   <div className="news-image">
                     <Link href={`/${p.slug}`}>
-                      <img src={p.img} alt={p.title} />
+                      <img src={p.img} alt={p.title} width={430} height={260} />
                     </Link>
                   </div>
                 </article>
