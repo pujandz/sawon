@@ -34,7 +34,10 @@
 
     ScrollTrigger.create({
       trigger : section,
-      start   : 'top top',
+      // Pin when the section's bottom reaches the viewport's bottom —
+      // at that moment the full semicircle is completely visible before
+      // any company slide starts advancing.
+      start   : 'bottom bottom',
       end     : '+=' + (total - 1) * scrollPerSlide,
       pin     : true,
       // scrub:1 ties the progress smoothly to the scroll wheel — feels like
