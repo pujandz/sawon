@@ -1,7 +1,15 @@
 /**
  * Scroll-linked work experience slider.
- * Pins the section and advances the Swiper one slide per scroll step.
- * Loaded after main.js so Swiper instances already exist.
+ *
+ * Behaviour:
+ *  1. When the section reaches the top of the viewport the page pins —
+ *     normal page scroll stops.
+ *  2. The user keeps scrolling; each full viewport-height of scroll
+ *     advances one company slide (Algomindz → Digitomark → Dcastalia).
+ *  3. After the last slide the section unpins and the page scrolls normally.
+ *
+ * Each slide gets 1.5× the viewport height of scroll distance so the
+ * transition feels deliberate rather than instant.
  */
 (function () {
   'use strict';
@@ -17,25 +25,31 @@
     var section = document.querySelector('.work-experience-section-1');
     if (!section) return;
 
-    // Disable the Swiper keyboard / touch so scroll drives it exclusively.
+    // Prevent Swiper's own touch/drag from competing with scroll.
     swiper.allowTouchMove = false;
+
+    // Each extra slide = 1.5 viewport heights of scroll distance.
+    // With 3 companies that's 3 × 1.5 vh = 4.5 vh total pinned scroll.
+    var scrollPerSlide = window.innerHeight * 1.5;
 
     ScrollTrigger.create({
       trigger : section,
       start   : 'top top',
-      // Each extra slide = one full viewport height of scrollable distance.
-      end     : '+=' + (total - 1) * window.innerHeight,
+      end     : '+=' + (total - 1) * scrollPerSlide,
       pin     : true,
-      scrub   : 0.5,
+      // scrub:1 ties the progress smoothly to the scroll wheel — feels like
+      // the slide is "attached" to the finger/wheel rather than snapping.
+      scrub   : 1,
       snap    : {
+        // Snap to each slide's exact position after the user stops scrolling.
         snapTo   : 1 / (total - 1),
-        duration : { min: 0.2, max: 0.5 },
-        ease     : 'power1.inOut',
+        duration : { min: 0.4, max: 0.8 },
+        ease     : 'power2.inOut',
       },
       onUpdate: function (self) {
         var idx = Math.min(total - 1, Math.round(self.progress * (total - 1)));
         if (swiper.activeIndex !== idx) {
-          swiper.slideTo(idx, 400, false);
+          swiper.slideTo(idx, 500, false);
         }
       },
     });
