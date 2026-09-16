@@ -76,6 +76,9 @@ export default function ScriptLoader() {
       // Phase 4 — main.js needs everything above
       await loadScript('/assets/js/main.js');
 
+      // Phase 4b — scroll-linked experience slider (needs Swiper from main.js)
+      await loadScript('/assets/js/scroll-experience.js');
+
       // Phase 5 — three.js (1.8 MB) and webgl.js loaded last, non-blocking.
       // Does not delay any user-visible content.
       loadScript('/assets/js/three.js').then(() =>
