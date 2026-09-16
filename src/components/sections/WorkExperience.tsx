@@ -1,9 +1,9 @@
 const LIVE = 'https://revox.baseecom.com/wp-content/uploads/2026/01'; // line-shape decorative image
 
 const COMPANIES = [
-  '/assets/img/companies/algomindz.svg',
-  '/assets/img/companies/digitomark.svg',
-  '/assets/img/companies/dcastalia.svg',
+  '/assets/img/companies/Algomindz.png',
+  '/assets/img/companies/Digitomark.png',
+  '/assets/img/companies/Dcastalia.png',
 ];
 
 const EXPERIENCE: {
