@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <circle cx="100" cy="100" r="100" fill="#0f0f0f"/>
+  <!-- D letterform (compact, left side) -->
+  <rect x="30" y="48" width="15" height="104" fill="#b5ff00" rx="2"/>
+  <path d="M45 48 Q102 48 102 100 Q102 152 45 152 L45 136 Q84 136 84 100 Q84 64 45 64 Z" fill="#b5ff00"/>
+  <!-- C letterform (right side) -->
+  <path d="M170 72 Q170 52 148 52 Q118 52 118 100 Q118 148 148 148 Q170 148 170 128 L154 128 Q154 134 148 134 Q134 134 134 100 Q134 66 148 66 Q154 66 154 72 Z" fill="#b5ff00"/>
+</svg>
