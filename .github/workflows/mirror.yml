@@ -23,7 +23,3 @@ jobs:
           git remote add mirror "https://pujandz:${MIRROR_TOKEN}@github.com/pujandz/sawon.git"
           git push mirror --all --force
           git push mirror --tags --force
-          # Also fast-forward the mirror's main branch to whatever commit
-          # just got pushed here, on ANY branch, so Vercel (which deploys
-          # "main" to production) always goes live with the latest work.
-          git push mirror "HEAD:refs/heads/main" --force
