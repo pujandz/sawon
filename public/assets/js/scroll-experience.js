@@ -23,23 +23,24 @@
     if (total <= 1) return;
 
     var section = document.querySelector('.work-experience-section-1');
-    if (!section) return;
+    var wrap    = document.querySelector('.feature-work-experience-wrap');
+    if (!section || !wrap) return;
 
     // Prevent Swiper's own touch/drag from competing with scroll.
     swiper.allowTouchMove = false;
 
     // Each extra slide = 1.5 viewport heights of scroll distance.
-    // With 3 companies that's 3 × 1.5 vh = 4.5 vh total pinned scroll.
     var scrollPerSlide = window.innerHeight * 1.5;
 
     ScrollTrigger.create({
-      trigger : section,
-      // Pin when the section's bottom reaches the viewport's bottom —
-      // at that moment the full semicircle is completely visible before
-      // any company slide starts advancing.
+      // Use the semicircle wrap as the trigger so "bottom bottom" fires
+      // exactly when the VISUAL arc bottom reaches the viewport bottom —
+      // i.e. the full semicircle is in view before any slide advances.
+      trigger : wrap,
       start   : 'bottom bottom',
       end     : '+=' + (total - 1) * scrollPerSlide,
-      pin     : true,
+      // Pin the whole section (not just the wrap).
+      pin     : section,
       // scrub:1 ties the progress smoothly to the scroll wheel — feels like
       // the slide is "attached" to the finger/wheel rather than snapping.
       scrub   : 1,
