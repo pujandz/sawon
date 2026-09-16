@@ -1,6 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
-  <circle cx="100" cy="100" r="100" fill="#0f0f0f"/>
-  <!-- D letterform -->
-  <rect x="55" y="42" width="18" height="116" fill="#b5ff00" rx="2"/>
-  <path d="M73 42 Q148 42 148 100 Q148 158 73 158 L73 140 Q124 140 124 100 Q124 60 73 60 Z" fill="#b5ff00"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <rect width="200" height="200" fill="#000"/>
+  <!-- Symmetric quarter-circle mark (two mirrored D-like forms top + two arcs bottom) -->
+  <!-- Top-left: large quarter-circle arc, opening bottom-right -->
+  <path d="M30,30 L30,100 Q30,45 95,45 L95,30 Z" fill="white"/>
+  <!-- Top-right: large quarter-circle arc, opening bottom-left (mirrored) -->
+  <path d="M170,30 L170,100 Q170,45 105,45 L105,30 Z" fill="white"/>
+  <!-- Bottom-left: small arc, opening top-right -->
+  <path d="M30,170 L30,120 Q30,155 65,155 L65,170 Z" fill="white"/>
+  <!-- Bottom-right: small arc, opening top-left (mirrored) -->
+  <path d="M170,170 L170,120 Q170,155 135,155 L135,170 Z" fill="white"/>
 </svg>
