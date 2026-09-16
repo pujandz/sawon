@@ -46,11 +46,14 @@ export default function Hero() {
 
           <div className="col-xl-4 order-2 order-xl-1">
             <div className="hero-image image-wrapper">
-              <img
-                className="animated-image"
-                src="/assets/img/Sawon-Saha.png"
-                alt="Sawon Saha – SEO Specialist"
-              />
+              <picture>
+                <source srcSet="/assets/img/Sawon-Saha.webp" type="image/webp" />
+                <img
+                  className="animated-image"
+                  src="/assets/img/Sawon-Saha.png"
+                  alt="Sawon Saha – SEO Specialist"
+                />
+              </picture>
             </div>
           </div>
 

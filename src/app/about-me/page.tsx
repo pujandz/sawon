@@ -52,7 +52,10 @@ export default function AboutMePage() {
           </p>
 
           <div className="about-image">
-            <img src="/assets/img/Sawon-Saha.png" alt="Sawon Saha" />
+            <picture>
+              <source srcSet="/assets/img/Sawon-Saha.webp" type="image/webp" />
+              <img src="/assets/img/Sawon-Saha.png" alt="Sawon Saha" />
+            </picture>
           </div>
         </div>
       </section>
