@@ -23,41 +23,37 @@ const EXPERIENCE: {
     role: 'SEO Team Lead',
     img: COMPANIES[0],
     alt: 'Algomindz',
-    desc: 'Algomindz empowers businesses to thrive in a competitive digital landscape through a strategic blend of Answer Engine Optimization (AEO) and SEO. By combining data-driven insights with ethical marketing, we help top-tier companies maximize visibility across both AI platforms and traditional search engines.',
+    desc: 'Algomindz helps top-tier businesses maximise visibility across AI platforms and traditional search engines through a strategic blend of AEO and data-driven SEO.',
   },
   {
     company: 'Digitomark',
     period: 'Mar 2022 – Jan 2025',
     location: 'Dhaka, Bangladesh (Remote)',
-    role: 'Search Engine Optimization Specialist',
+    role: 'SEO Specialist',
     img: COMPANIES[1],
     alt: 'Digitomark',
-    desc: 'Digitomark is a leading full-service digital marketing agency based in Bangladesh, renowned for its innovative and result-driven approach in the digital marketing landscape.',
+    desc: 'A leading full-service digital marketing agency in Bangladesh known for innovative, result-driven campaigns.',
     points: [
-      'SEO project management',
-      'Meet with clients to determine their needs',
+      'SEO project management & client consulting',
       'Developing and implementing SEO strategies',
-      'Onsite SEO & technical SEO',
-      'Competitors analysis',
-      'Improving website performance',
-      'Collaborating with the marketing team',
-      'Keep up to date with latest SEO trends & algorithm updates',
+      'Technical SEO & on-site optimisation',
+      'Competitor analysis & performance reporting',
     ],
   },
   {
     company: 'Dcastalia Limited',
     period: 'Jan 2022 – Apr 2023',
     location: 'Dhaka, Bangladesh',
-    role: 'Search Engine Optimization Executive',
+    role: 'SEO Executive',
     img: COMPANIES[2],
     alt: 'Dcastalia Limited',
-    desc: 'Dcastalia Limited is an honest, transparent, and result-driven Software Development Company in Bangladesh. Delivering a personal, passionate & tailored service to each and every client, based in Bangladesh or abroad.',
+    desc: 'A transparent, result-driven software development company in Bangladesh delivering tailored digital solutions.',
   },
 ];
 
 export default function WorkExperience() {
   return (
-    <section className="work-experience-section-1 style-2 fix section-padding">
+    <section className="work-experience-section-1 style-2 section-padding">
       <div className="line-shape">
         <img src={`${LIVE}/line-shape.png`} alt="Line Shape" />
       </div>
