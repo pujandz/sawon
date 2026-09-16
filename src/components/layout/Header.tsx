@@ -8,7 +8,7 @@ export default function Header() {
           <div className="mega-menu-wrapper">
             <div className="header-main">
               <Link href="/" className="offcanvas__logo">
-                <img src="/assets/img/logo/white-icon.svg" alt="Sawon Saha" />
+                <img src="/assets/img/logo/white-icon.png" alt="Sawon Saha" />
               </Link>
 
               <div className="header-right justify-content-end align-items-center">
@@ -31,7 +31,7 @@ export default function Header() {
         <div className="header-offcanvas-border">
           <div className="offcanvas__info">
             <Link href="/" className="offcanvas__logo">
-              <img src="/assets/img/logo/white-icon.svg" alt="Sawon Saha" />
+              <img src="/assets/img/logo/white-icon.png" alt="Sawon Saha" />
             </Link>
             <div className="offcanvas__close">
               <button>
@@ -78,17 +78,6 @@ export default function Header() {
                     <ul>
                       <li><Link href="/">Home</Link></li>
                       <li><Link href="/about-me">About Me</Link></li>
-                      <li className="menu-item-has-children">
-                        <Link href="/services">Services</Link>
-                        <ul className="sub-menu">
-                          <li><Link href="/services">All Services</Link></li>
-                          <li><Link href="/services/technical-seo">Technical SEO</Link></li>
-                          <li><Link href="/services/on-page-seo">On-Page SEO</Link></li>
-                          <li><Link href="/services/link-building">Link Building</Link></li>
-                          <li><Link href="/services/local-seo">Local SEO</Link></li>
-                          <li><Link href="/services/seo-audit">SEO Audit</Link></li>
-                        </ul>
-                      </li>
                       <li><Link href="/portfolio">Portfolio</Link></li>
                       <li><Link href="/blog">Blog</Link></li>
                       <li><Link href="/contact-us">Contact</Link></li>

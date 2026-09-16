@@ -1,4 +1,3 @@
-const LIVE = 'https://revox.baseecom.com/wp-content/uploads/2026/01';
 
 const TESTIMONIALS = [
   {
@@ -29,7 +28,7 @@ const TESTIMONIALS = [
 
 export default function Testimonials() {
   return (
-    <section className="testimonial-section fix section-padding pt-0">
+    <section className="testimonial-section fix section-padding">
       <div className="container">
         <div className="testimonial-wrapper">
           <div className="array-button">
@@ -49,7 +48,7 @@ export default function Testimonials() {
                 <div key={t.name} className="swiper-slide">
                   <div className="testimonial-box-items">
                     <div className="thumb">
-                      <img src={`${LIVE}/${t.img}`} alt={t.name} />
+                      <img src={`/assets/img/testimonials/${t.img}`} alt={t.name} />
                       <div className="info-title">
                         <h4>{t.name}</h4>
                         <span>{t.role}</span>
@@ -58,11 +57,11 @@ export default function Testimonials() {
 
                     <div className="content">
                       <div className="quote-icon">
-                        <img src={`${LIVE}/quote-icon.png`} alt="Quote Icon" />
+                        <img src={"/assets/img/decorations/quote-icon.png"} alt="Quote Icon" />
                       </div>
                       <p>{t.quote}</p>
                       <div className="clutech-image">
-                        <img src={`${LIVE}/clutech.png`} alt="Company Logo" />
+                        <img src={"/assets/img/decorations/clutech.png"} alt="Company Logo" />
                       </div>
                     </div>
                   </div>

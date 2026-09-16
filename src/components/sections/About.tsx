@@ -1,4 +1,3 @@
-const LIVE = 'https://revox.baseecom.com/wp-content/uploads/2026/01';
 
 const SKILLS = [
   { icon: 'figma.png', label: 'Ahrefs', pct: 95, extra: 'pl-none' },
@@ -12,7 +11,7 @@ export default function About() {
   return (
     <section className="about-section section-padding">
       <div className="circle-shape">
-        <img src={`${LIVE}/circle-shape.png`} alt="Circle shape" />
+        <img src={"/assets/img/decorations/circle-shape.png"} alt="Circle shape" />
       </div>
 
       <div className="container">
@@ -33,7 +32,7 @@ export default function About() {
                   {SKILLS.map((s) => (
                     <div key={s.label} className="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-6">
                       <div className={`skill-counter${s.extra ? ' ' + s.extra : ''}`}>
-                        <img src={`${LIVE}/${s.icon}`} alt="Skill icon" />
+                        <img src={`/assets/img/decorations/${s.icon}`} alt="Skill icon" />
                         <div className="content">
                           <h2><span className="count">{s.pct}</span>%</h2>
                           <p>{s.label}</p>
@@ -50,7 +49,7 @@ export default function About() {
                 <h4 className="title"><span>My</span> Favorite SEO Tools</h4>
 
                 <div className="vec-shape">
-                  <img src={`${LIVE}/vec-shape.png`} alt="Vector shape" />
+                  <img src={"/assets/img/decorations/vec-shape.png"} alt="Vector shape" />
                 </div>
               </div>
             </div>

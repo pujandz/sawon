@@ -18,7 +18,7 @@
   --body: #060606;
   --black: #000;
   --white: #fff;
-  --theme: #BFF747;
+  --theme: #6C5DFA;
   --header: #FFF;
   --text: #888;
   --border: #FCFCFC;
@@ -2747,7 +2747,7 @@ h5.preloader-text::after {
 }
 .section-title-2 h6 {
   border-radius: 6px;
-  background: rgba(191, 247, 71, 0.1);
+  background: rgba(108, 93, 250, 0.1);
   display: inline-block;
   padding: 8px 15px;
   line-height: 1;
@@ -3746,7 +3746,7 @@ h5.preloader-text::after {
   }
 }
 .page-wrap-item .hero-3 h3 {
-  color: #BFF747;
+  color: #6C5DFA;
   font-size: 100px;
   font-weight: 700;
   line-height: 1;
@@ -5859,7 +5859,7 @@ h5.preloader-text::after {
 .video-wrapper .text-tansprot {
   text-align: center;
   -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: rgba(191, 247, 71, 0.8);
+  -webkit-text-stroke-color: rgba(108, 93, 250, 0.8);
   font-size: 160px;
   font-weight: 700;
   display: inline-block;
@@ -6337,7 +6337,7 @@ h5.preloader-text::after {
   left: 0;
   content: "";
   border-radius: 30px 0 0 30px;
-  background: #BFF747;
+  background: #6C5DFA;
   width: 7px;
   height: 100%;
   transition: all 0.4s ease-in-out;
@@ -7096,7 +7096,7 @@ h5.preloader-text::after {
   line-height: 1;
 }
 .feature-work-experience-main-slider .client-info-items .info-content span {
-  color: #BFF747;
+  color: #6C5DFA;
   text-align: center;
   font-size: 14px;
   font-weight: 500;
@@ -10571,14 +10571,14 @@ h5.preloader-text::after {
 }
 .pricing-box-items.style-2 .pricing-header span {
   border-radius: 100px;
-  background: rgba(191, 247, 71, 0.1);
+  background: rgba(108, 93, 250, 0.1);
   color: var(--theme);
   line-height: 1;
   padding: 10px;
 }
 .pricing-box-items:hover {
   border-radius: 10px;
-  border: 1px solid #BFF747;
+  border: 1px solid #6C5DFA;
   background: #1A1A1A;
 }
 .pricing-box-items:hover .pricing-header h2 {
@@ -10593,7 +10593,7 @@ h5.preloader-text::after {
 }
 .pricing-box-items.active {
   border-radius: 10px;
-  border: 1px solid #BFF747;
+  border: 1px solid #6C5DFA;
   background: #1A1A1A;
 }
 .pricing-box-items.active .pricing-header h2 {
@@ -10713,7 +10713,7 @@ h5.preloader-text::after {
 }
 .news-main-box-items .news-content ul li span {
   border-radius: 4px;
-  background: #C9F31D;
+  background: #6C5DFA;
   padding: 5px 10px;
   line-height: 1;
   color: rgb(6, 6, 6);
@@ -10722,7 +10722,7 @@ h5.preloader-text::after {
 }
 .news-main-box-items .news-content ul li span.color-2 {
   border-radius: 4px;
-  background: rgba(191, 247, 71, 0.1);
+  background: rgba(108, 93, 250, 0.1);
   color: var(--theme);
 }
 .news-main-box-items .news-image img {
@@ -10754,7 +10754,7 @@ h5.preloader-text::after {
 }
 .news-box-items-2 .thumb ul li span {
   border-radius: 4px;
-  background: #C9F31D;
+  background: #6C5DFA;
   padding: 5px 10px;
   line-height: 1;
   color: rgb(6, 6, 6);
@@ -10763,7 +10763,7 @@ h5.preloader-text::after {
 }
 .news-box-items-2 .thumb ul li span.color-2 {
   border-radius: 4px;
-  background: rgba(191, 247, 71, 0.1);
+  background: rgba(108, 93, 250, 0.1);
   color: var(--theme);
 }
 .news-box-items-2 .content {
@@ -10844,7 +10844,7 @@ h5.preloader-text::after {
 }
 .news-style-item-3 .content ul li span {
   border-radius: 4px;
-  background: #C9F31D;
+  background: #6C5DFA;
   padding: 6px 10px;
   line-height: 1;
   color: rgb(6, 6, 6);
@@ -10853,7 +10853,7 @@ h5.preloader-text::after {
 }
 .news-style-item-3 .content ul li span.color-2 {
   border-radius: 4px;
-  background: rgba(191, 247, 71, 0.1);
+  background: rgba(108, 93, 250, 0.1);
   color: var(--theme);
 }
 .news-style-item-3 .content h3 {
@@ -10989,7 +10989,7 @@ h5.preloader-text::after {
 }
 .news-standard-box-items .content .client-info-area ul li span {
   border-radius: 4px;
-  background: #C9F31D;
+  background: #6C5DFA;
   padding: 5px 10px;
   line-height: 1;
   color: rgb(6, 6, 6);
@@ -10998,7 +10998,7 @@ h5.preloader-text::after {
 }
 .news-standard-box-items .content .client-info-area ul li span.color-2 {
   border-radius: 4px;
-  background: rgba(191, 247, 71, 0.1);
+  background: rgba(108, 93, 250, 0.1);
   color: var(--theme);
 }
 

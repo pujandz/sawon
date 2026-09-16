@@ -43,7 +43,7 @@ export default function AboutMePage() {
             <h1>About Me</h1>
           </div>
 
-          <p className="about-sub">
+          <p className="about-sub text_reveal_full">
             Hey! <b>I&rsquo;m Sawon Saha</b> — an SEO Team Lead &amp; AEO Specialist based in Dhaka, Bangladesh.{' '}
             <span>
               With 3+ years across agencies and in-house teams, I help businesses rank higher, attract the right
@@ -53,8 +53,8 @@ export default function AboutMePage() {
 
           <div className="about-image">
             <picture>
-              <source srcSet="/assets/img/Sawon-Saha.webp" type="image/webp" />
-              <img src="/assets/img/Sawon-Saha.png" alt="Sawon Saha" />
+              <source srcSet="/assets/img/sawon-saha.webp" type="image/webp" />
+              <img src="/assets/img/Sawon%20Saha.png" alt="Sawon Saha" loading="lazy" />
             </picture>
           </div>
         </div>

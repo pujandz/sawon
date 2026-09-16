@@ -2,15 +2,12 @@ import type { Metadata } from 'next';
 import Hero from '@/components/sections/Hero';
 import Marquee from '@/components/sections/Marquee';
 import About from '@/components/sections/About';
-import Services from '@/components/sections/Services';
 import Portfolio from '@/components/sections/Portfolio';
 import WorkExperience from '@/components/sections/WorkExperience';
 import Award from '@/components/sections/Award';
-import Pricing from '@/components/sections/Pricing';
 import Testimonials from '@/components/sections/Testimonials';
-import VideoCta from '@/components/sections/VideoCta';
 import News from '@/components/sections/News';
-import Brand from '@/components/sections/Brand';
+import TrustedBrandsSection from '@/components/sections/TrustedBrandsSection';
 import Cta from '@/components/sections/Cta';
 import { SITE_CONFIG } from '@/lib/constants';
 
@@ -26,15 +23,12 @@ export default function HomePage() {
       <Hero />
       <Marquee />
       <About />
-      <Services />
       <WorkExperience />
+      <TrustedBrandsSection />
       <Portfolio />
       <Award />
-      <Pricing />
       <Testimonials />
-      <VideoCta />
       <News />
-      <Brand />
       <Cta />
     </>
   );

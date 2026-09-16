@@ -7,49 +7,47 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-const LIVE = 'https://revox.baseecom.com/wp-content/uploads/2025/11';
-
 const PROJECTS = [
   {
     title: 'E-Commerce SEO Recovery',
     slug: 'ecommerce-seo-recovery',
     cat: 'E-Commerce SEO',
-    img: `${LIVE}/project-01-4.jpg`,
+    img: '/assets/img/portfolio/project-01-4.jpg',
     result: '+320% organic traffic in 8 months',
   },
   {
     title: 'SaaS Brand Authority Building',
     slug: 'saas-brand-authority',
     cat: 'SaaS SEO',
-    img: `${LIVE}/project-02-3.jpg`,
+    img: '/assets/img/portfolio/project-02-3.jpg',
     result: 'DA 0 → 42 in 12 months',
   },
   {
     title: 'Local Service Business Maps Ranking',
     slug: 'local-service-maps-ranking',
     cat: 'Local SEO',
-    img: `${LIVE}/project-03-4.jpg`,
+    img: '/assets/img/portfolio/project-03-4.jpg',
     result: 'Page 3 → #1 in Google Maps',
   },
   {
     title: 'Fintech Content Strategy',
     slug: 'fintech-content-strategy',
     cat: 'SaaS SEO',
-    img: `${LIVE}/project-04-4.jpg`,
+    img: '/assets/img/portfolio/project-04-4.jpg',
     result: '+890% organic sign-ups',
   },
   {
     title: 'Bangladesh Retail Chain Local SEO',
     slug: 'bangladesh-retail-local-seo',
     cat: 'Local SEO',
-    img: `${LIVE}/project-05-4.jpg`,
+    img: '/assets/img/portfolio/project-05-4.jpg',
     result: '+560% calls from Google Maps',
   },
   {
     title: 'Fashion E-Commerce Growth',
     slug: 'fashion-ecommerce-growth',
     cat: 'E-Commerce SEO',
-    img: `${LIVE}/project-01-4.jpg`,
+    img: '/assets/img/portfolio/project-01-4.jpg',
     result: '+180 keywords in Top 10',
   },
 ];

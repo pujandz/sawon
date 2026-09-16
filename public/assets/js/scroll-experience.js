@@ -33,10 +33,9 @@
     var scrollPerSlide = window.innerHeight * 1.5;
 
     ScrollTrigger.create({
-      // Pin when the dome (wrap) top reaches the viewport top — the heading
-      // sits above the pinned area, with its last line peeking at the top edge.
+      // Pin when the dome's flat bottom aligns with the viewport bottom.
       trigger : wrap,
-      start   : 'top top',
+      start   : 'bottom bottom',
       end     : '+=' + (total - 1) * scrollPerSlide,
       pin     : section,
       scrub   : 1,

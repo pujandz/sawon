@@ -92,14 +92,18 @@ export default function RootLayout({
             Both families share one HTTP/2 connection; cdnfonts CDN removed. */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="dns-prefetch" href="//revox.baseecom.com" />
-        <link rel="dns-prefetch" href="//server1.liushibd.com" />
+        <link
+          rel="preload"
+          href="/assets/img/sawon-saha.webp"
+          as="image"
+          type="image/webp"
+          fetchPriority="high"
+        />
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Kanit:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
         />
 
-        {/* Revox theme CSS — exact order from original theme */}
         <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
         <link rel="stylesheet" href="/assets/css/all.min.css" />
         <link rel="stylesheet" href="/assets/css/animate.css" />
@@ -110,7 +114,8 @@ export default function RootLayout({
         <link rel="stylesheet" href="/assets/css/slick.css" />
         <link rel="stylesheet" href="/assets/css/main.css" />
 
-        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/assets/img/logo/white-icon.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/assets/img/logo/white-icon.png" />
         <link rel="manifest" href="/manifest.json" />
 
         <script
@@ -138,6 +143,7 @@ export default function RootLayout({
         <button id="back-top" className="back-to-top show">
           <i className="fa-regular fa-arrow-up"></i>
         </button>
+        <div id="scroll-progress-bar"></div>
         <ScriptLoader />
       </body>
     </html>

@@ -1,5 +1,20 @@
-/* Revox theme CSS — loaded via <link> tags in layout.tsx.
-   This file is kept minimal: no Tailwind base reset (Bootstrap handles it). */
+/* Site-level overrides — loaded via <link> tags in layout.tsx.
+   Kept minimal: no Tailwind base reset (Bootstrap handles it). */
+
+/* Primary brand colour override */
+:root { --theme: #6C5DFA !important; }
+
+/* Scroll progress bar — fixed at top of viewport */
+#scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: var(--theme);
+  z-index: 99999;
+  pointer-events: none;
+}
 
 /* Scroll behaviour */
 html { scroll-behavior: smooth; }
@@ -25,19 +40,19 @@ html { scroll-behavior: smooth; }
   min-height: 1.2em;
 }
 
-/* Offcanvas: reduce 200px top/bottom padding so all 6 nav links fit the
-   viewport on typical laptop screens. Logo + close are position:absolute
-   so they are unaffected by padding changes. */
-@media (max-width: 1899px) {
+/* Offcanvas: reduce padding so all nav links fit at any screen height */
+.style-offcanvas-2 .offcanvas__info {
+  padding-top: 90px !important;
+  padding-bottom: 60px !important;
+}
+@media (max-height: 700px) {
   .style-offcanvas-2 .offcanvas__info {
-    padding-top: 90px !important;
-    padding-bottom: 60px !important;
+    padding-top: 70px !important;
+    padding-bottom: 40px !important;
   }
 }
 
-/* Work experience: company logos inside circular balls must show in full,
-   not be zoomed-in/cropped. */
-
+/* Company logos inside circular balls must show in full, not be cropped. */
 /* Preview balls (floating around the semicircle) — 60×60px circles */
 .feature-work-experience-preview-slider-item img {
   object-fit: contain !important;
@@ -61,6 +76,100 @@ html { scroll-behavior: smooth; }
   height: 100%;
   object-fit: contain !important;
 }
+
+/* Prevent any section from causing horizontal scroll */
+body { overflow-x: hidden; }
+
+/* Hero: exactly one viewport tall, content never overflows */
+.hero-section.hero-1 {
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding-top: 80px;
+  padding-bottom: 0;
+  box-sizing: border-box;
+}
+.hero-section.hero-1 > .container { width: 100%; }
+
+/* Portrait: fills from content top to section bottom edge */
+.hero-1 .hero-image {
+  max-height: calc(100dvh - 80px);
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 0;
+}
+.hero-1 .hero-image img {
+  max-height: 100%;
+  width: auto !important;
+  object-fit: contain;
+  object-position: bottom center;
+}
+
+/* Below xl columns stack — switch to scroll instead of fixed height */
+@media (max-width: 1199px) {
+  .hero-section.hero-1 {
+    height: auto;
+    min-height: 100dvh;
+    align-items: flex-start;
+    padding-top: 130px;
+    padding-bottom: 60px;
+  }
+  .hero-1 .hero-image {
+    max-height: 60vw;
+  }
+}
+@media (max-width: 767px) {
+  .hero-section.hero-1 { padding-top: 110px; }
+  .hero-1 .hero-image { max-height: 80vw; }
+}
+@media (max-width: 575px) {
+  .hero-1 .hero-image { max-height: 100vw; max-width: 100% !important; }
+}
+
+/* Portrait width caps — 20% larger than theme defaults */
+@media (max-width: 1600px) {
+  .hero-1 .hero-image { max-width: 660px !important; }
+}
+@media (max-width: 1399px) {
+  .hero-1 .hero-image { max-width: 528px !important; }
+}
+
+/* Logo: square icon mark — override theme's 130px to a compact nav size */
+.header-1 .offcanvas__logo img {
+  width: 58px !important;
+  height: 58px !important;
+  object-fit: contain;
+}
+/* Footer logo — constrain to match nav scale */
+.footer-logo img {
+  width: 48px !important;
+  height: 48px !important;
+  object-fit: contain;
+}
+/* Offcanvas sidebar logo slightly larger */
+.style-offcanvas-2 .offcanvas__logo img {
+  width: 56px !important;
+  height: 56px !important;
+  object-fit: contain;
+}
+
+/* CTA icon — flex-centre the FA envelope in the circle */
+.cta-text-items .icon {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  line-height: 1 !important;
+}
+.cta-text-items .icon i {
+  font-size: 52px;
+  color: var(--white);
+}
+
+/* Marquee star icon — size matches original star.png */
+.marquee-star { display: inline-flex; align-items: center; justify-content: center; }
+.marquee-star i { font-size: 14px; color: var(--theme); }
 
 /* budget-btn active state (contact page) */
 .contact-inner-page-wrapper form .form-clt .budget-item .budget-button .budget-btn.active {

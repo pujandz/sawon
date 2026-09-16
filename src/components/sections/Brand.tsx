@@ -1,4 +1,3 @@
-const LIVE = 'https://revox.baseecom.com/wp-content/uploads/2026/01';
 
 const BRANDS = [
   { file: 'brand-1.png', alt: 'Brand 1' },
@@ -23,7 +22,7 @@ export default function Brand() {
           {BRANDS.map((b, i) => (
             <div key={i} className="col-xl-3 col-lg-4 col-md-6 col-sm-6">
               <div className="brand-box">
-                <img src={`${LIVE}/${b.file}`} alt={b.alt} />
+                <img src={`${CDN}/${b.file}`} alt={b.alt} />
               </div>
             </div>
           ))}

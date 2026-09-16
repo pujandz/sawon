@@ -2,11 +2,8 @@
 
 import { useState } from 'react';
 
-const LIVE = 'https://revox.baseecom.com/wp-content/uploads/2026/01';
-const BUDGETS = ['$299/mo', '$599/mo', '$999/mo', 'Custom'];
 
 export default function ContactUsPage() {
-  const [budget, setBudget] = useState(BUDGETS[0]);
   const [status, setStatus] = useState<null | 'sending' | 'sent' | 'error'>(null);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -14,7 +11,6 @@ export default function ContactUsPage() {
     setStatus('sending');
     const form = new FormData(e.currentTarget);
     const payload = Object.fromEntries(form.entries());
-    (payload as Record<string, string>).budget = budget;
 
     try {
       const res = await fetch('/api/contact', {
@@ -43,7 +39,7 @@ export default function ContactUsPage() {
           <div className="row align-items-center">
             <div className="col-xl-5 col-lg-5">
               <div className="contact-image">
-                <img src={`${LIVE}/contact.png`} alt="Sawon Saha" />
+                <img src={"/assets/img/decorations/contact.png"} alt="Sawon Saha" />
                 <ul>
                   <li>3+ Years <b>SEO Experience</b></li>
                   <li>80+ Projects <b>Delivered</b></li>
@@ -66,23 +62,6 @@ export default function ContactUsPage() {
                     </div>
                     <div className="col-md-6">
                       <input type="tel" name="phone" placeholder="Phone Number" />
-                    </div>
-                    <div className="col-12">
-                      <div className="budget-item">
-                        <h4>Monthly Budget</h4>
-                        <div className="budget-button">
-                          {BUDGETS.map((b) => (
-                            <button
-                              key={b}
-                              type="button"
-                              className={`budget-btn${budget === b ? ' active' : ''}`}
-                              onClick={() => setBudget(b)}
-                            >
-                              {b}
-                            </button>
-                          ))}
-                        </div>
-                      </div>
                     </div>
                     <div className="col-12">
                       <textarea name="message" placeholder="Tell me about your SEO goals..." />
@@ -111,17 +90,6 @@ export default function ContactUsPage() {
         </div>
       </section>
 
-      <section className="googpemap-2">
-        <div className="container">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3632.937219038!2d88.9523!3d24.8103!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDQ4JzM3LjEiTiA4OMKwNTcnMDguMyJF!5e0!3m2!1sen!2sbd!4v1641984054261!5m2!1sen!2sbd"
-            style={{ border: 0 }}
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            title="Naogaon, Bangladesh"
-          />
-        </div>
-      </section>
     </main>
   );
 }

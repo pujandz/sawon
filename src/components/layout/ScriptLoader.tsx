@@ -98,8 +98,8 @@ export default function ScriptLoader() {
 
       // Failsafe: if window.load already fired before main.js registered
       // its $(window).on("load") handler, the preloader never got dismissed.
-      // Give main.js 300ms to run its own animation; then force-dismiss.
-      setTimeout(safelyDismissPreloader, 300);
+      // Fire immediately — main.js has had its chance by this point.
+      safelyDismissPreloader();
 
       // Phase 5 — three.js (1.8 MB) and webgl.js loaded last, non-blocking.
       // Does not delay any user-visible content.
@@ -108,8 +108,8 @@ export default function ScriptLoader() {
       );
     }
 
-    // Hard cap: preloader must be gone within 5 seconds no matter what.
-    const hardCap = setTimeout(safelyDismissPreloader, 5000);
+    // Hard cap: preloader must be gone within 3 seconds no matter what.
+    const hardCap = setTimeout(safelyDismissPreloader, 3000);
     boot().finally(() => clearTimeout(hardCap));
   }, []);
 

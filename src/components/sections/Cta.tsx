@@ -1,34 +1,33 @@
 import Link from 'next/link';
 
-const LIVE = 'https://revox.baseecom.com/wp-content/uploads/2026/01';
 
 export default function Cta() {
   return (
-    <section className="cta-section section-padding fix pt-0">
+    <section className="cta-section section-padding fix">
       <div className="shape-1">
-        <img src={`${LIVE}/line-shape.png`} alt="Shape 1" />
+        <img src={"/assets/img/decorations/line-shape.png"} alt="Shape 1" />
       </div>
       <div className="shape-2">
-        <img src={`${LIVE}/shape-1.png`} alt="Shape 2" />
+        <img src={"/assets/img/decorations/shape-1.png"} alt="Shape 2" />
       </div>
       <div className="shape-3">
-        <img src={`${LIVE}/shape-2.png`} alt="Shape 3" />
+        <img src={"/assets/img/decorations/shape-2.png"} alt="Shape 3" />
       </div>
       <div className="shape-4">
-        <img src={`${LIVE}/shape-3.png`} alt="Shape 4" />
+        <img src={"/assets/img/decorations/shape-3.png"} alt="Shape 4" />
       </div>
       <div className="shape-5">
-        <img src={`${LIVE}/shape-4.png`} alt="Shape 5" />
+        <img src={"/assets/img/decorations/shape-4.png"} alt="Shape 5" />
       </div>
       <div className="shape-6">
-        <img src={`${LIVE}/shape-5.png`} alt="Shape 6" />
+        <img src={"/assets/img/decorations/shape-5.png"} alt="Shape 6" />
       </div>
 
       <div className="row">
         <div className="col-xl-12">
           <div className="cta-text-items text-center">
             <div className="icon">
-              <img src={`${LIVE}/cta-icon.svg`} alt="CTA Icon" />
+              <i className="fa-regular fa-envelope"></i>
             </div>
 
             <h2 className="text_invert-2">have an SEO PROJECT in mind?</h2>

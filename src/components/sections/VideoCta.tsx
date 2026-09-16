@@ -1,4 +1,3 @@
-const LIVE = 'https://revox.baseecom.com/wp-content/uploads/2026/01';
 
 export default function VideoCta() {
   return (
@@ -7,7 +6,7 @@ export default function VideoCta() {
         <div className="video-thumb fix">
           <img
             data-speed="0.8"
-            src={`${LIVE}/video-image.jpg`}
+            src={"/assets/img/decorations/video-image.jpg"}
             alt="Video Background"
           />
           <div className="video">

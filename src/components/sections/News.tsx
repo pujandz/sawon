@@ -1,7 +1,5 @@
 import Link from 'next/link';
 
-const LIVE = 'https://revox.baseecom.com/wp-content/uploads/2026/01';
-const LIVE_NEWS = 'https://revox.baseecom.com/wp-content/uploads/2025/11';
 
 const POSTS = [
   {
@@ -10,7 +8,6 @@ const POSTS = [
     slug: 'blog',
     category: 'SEO Strategy',
     date: 'Jan 15, 2025',
-    img: `${LIVE_NEWS}/news-img-1-1.jpg`,
   },
   {
     id: 2,
@@ -18,7 +15,6 @@ const POSTS = [
     slug: 'blog',
     category: 'AEO',
     date: 'Feb 03, 2025',
-    img: `${LIVE_NEWS}/news-img-2-1.jpg`,
   },
   {
     id: 3,
@@ -26,7 +22,6 @@ const POSTS = [
     slug: 'blog',
     category: 'Technical SEO',
     date: 'Mar 20, 2025',
-    img: `${LIVE_NEWS}/news-img-3-1.jpg`,
   },
 ];
 
@@ -55,14 +50,14 @@ export default function News() {
             {POSTS.map((p) => (
               <div key={p.id} className="col-xl-12">
                 <article className="news-main-box-items tp-service-panel">
-                  <div className="news-content">
-                    <h3>
+                  <div className="news-content" style={{ width: '100%' }}>
+                    <h3 style={{ color: 'var(--theme)' }}>
                       <Link href={`/${p.slug}`}>{p.title}</Link>
                     </h3>
                     <ul>
                       <li>
                         <div className="client-info">
-                          <img src={`${LIVE}/client-1.png`} alt="Sawon Saha" />
+                          <img src={"/assets/img/decorations/contact.png"} alt="Sawon Saha" />
                           <div className="client-content">
                             <span className="name">Sawon Saha</span>
                             <p>Authored By</p>
@@ -76,11 +71,6 @@ export default function News() {
                         <span className="color-2">{p.date}</span>
                       </li>
                     </ul>
-                  </div>
-                  <div className="news-image">
-                    <Link href={`/${p.slug}`}>
-                      <img src={p.img} alt={p.title} width={430} height={260} />
-                    </Link>
                   </div>
                 </article>
               </div>

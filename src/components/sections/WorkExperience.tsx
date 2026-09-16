@@ -1,10 +1,13 @@
-const LIVE = 'https://revox.baseecom.com/wp-content/uploads/2026/01'; // line-shape decorative image
 
 const COMPANIES = [
   '/assets/img/companies/Algomindz.png',
   '/assets/img/companies/Digitomark.png',
   '/assets/img/companies/Dcastalia.png',
 ];
+
+// 9 slides so GSAP circular positioning (radius=450, 1050px wrapper) places
+// 5 balls in the visible top arc of the dome (wrap height=585px clips the rest).
+const PREVIEW_SLIDES = [...COMPANIES, ...COMPANIES, ...COMPANIES];
 
 const EXPERIENCE: {
   company: string;
@@ -48,45 +51,26 @@ export default function WorkExperience() {
   return (
     <section className="work-experience-section-1 style-2 section-padding">
       <div className="line-shape">
-        <img src={`${LIVE}/line-shape.png`} alt="Line Shape" />
+        <img src={"/assets/img/decorations/line-shape.png"} alt="Line Shape" />
       </div>
 
       <div className="container">
         <div className="section-title text-center">
           <h6>work experience</h6>
-          <h2 className="hero_title tv_hero_title hero_title_1">
+          <h2 className="hero_title">
             A proven SEO specialist <span>with 3+ years</span> of expertise
           </h2>
         </div>
 
-        {/* Outer shell: sizes to the wrap, balls sit here as siblings so they
-            are NOT clipped by the wrap's overflow:hidden. */}
-        <div style={{ position: 'relative' }}>
-          {([
-            { src: COMPANIES[0], alt: EXPERIENCE[0].company, left: 'calc(18% - 36px)', top: 'calc(42% - 36px)' },
-            { src: COMPANIES[1], alt: EXPERIENCE[1].company, left: 'calc(50% - 36px)', top: '-20px'            },
-            { src: COMPANIES[2], alt: EXPERIENCE[2].company, left: 'calc(82% - 36px)', top: 'calc(42% - 36px)' },
-          ]).map(({ src, alt, left, top }) => (
-            <div key={alt} style={{
-              position: 'absolute', left, top,
-              width: 72, height: 72, borderRadius: '50%', overflow: 'hidden',
-              background: '#1c1c1c', border: '2px solid rgba(255,255,255,0.12)',
-              zIndex: 5,
-            }}>
-              <img src={src} alt={alt} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
-            </div>
-          ))}
-
-        <div className="feature-work-experience-wrap fix" style={{ position: 'relative' }}>
-          {/* Thumbs Swiper: main.js needs .fw_preview_slider_active to init
-              the main Swiper with fade. No feature-work-experience-preview-slider
-              class so GSAP circular positioning never runs. */}
-          <div style={{ position: 'absolute', width: 0, height: 0, overflow: 'hidden', zIndex: -1 }}>
-            <div className="fw_preview_slider_active">
+        <div className="feature-work-experience-wrap fix">
+          <div className="feature-work-experience-preview">
+            <div className="feature-work-experience-preview-slider fw_preview_slider_active">
               <div className="swiper-wrapper">
-                {COMPANIES.map((src, i) => (
+                {PREVIEW_SLIDES.map((src, i) => (
                   <div key={i} className="swiper-slide">
-                    <img src={src} alt="" aria-hidden="true" />
+                    <div className="feature-work-experience-preview-slider-item">
+                      <img src={src} alt="" aria-hidden="true" />
+                    </div>
                   </div>
                 ))}
               </div>
@@ -120,7 +104,7 @@ export default function WorkExperience() {
             </div>
           </div>
         </div>
-        </div>{/* end outer shell */}
+
       </div>
     </section>
   );

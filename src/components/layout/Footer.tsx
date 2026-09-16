@@ -8,7 +8,6 @@ export default function Footer() {
           <ul className="footer-menu-list">
             <li><Link href="/">home</Link></li>
             <li><Link href="/about-me">ABOUT ME</Link></li>
-            <li><Link href="/services">SERVICES</Link></li>
             <li><Link href="/portfolio">PORTFOLIO</Link></li>
             <li><Link href="/blog">news &amp; blog</Link></li>
             <li><Link href="/contact-us">CONTACT US</Link></li>
@@ -40,7 +39,7 @@ export default function Footer() {
           <p>Copyright &copy; <span>Sawon Saha</span></p>
 
           <Link href="/" className="footer-logo">
-            <img src="/assets/img/logo/white-icon.svg" alt="Sawon Saha" />
+            <img src="/assets/img/logo/white-icon.png" alt="Sawon Saha" />
           </Link>
 
           <ul>

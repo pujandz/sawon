@@ -819,6 +819,18 @@
 
     
 
+    // Scroll progress bar
+    gsap.to("#scroll-progress-bar", {
+        width: "100%",
+        ease: "none",
+        scrollTrigger: {
+            trigger: "#smooth-content",
+            start: "top top",
+            end: "bottom bottom",
+            scrub: 0.3,
+        }
+    });
+
     // Update ScrollTrigger when smoother refreshes
     ScrollTrigger.addEventListener("refresh", () => smoother.refresh());
     }
@@ -999,7 +1011,7 @@
         // Initial style
         gsap.set('.wt-about-title2', {
             opacity: 0,
-            color: '#BFF747',
+            color: '#6C5DFA',
             // textDecoration removed
         });
 
@@ -1022,7 +1034,7 @@
         let chars = mySplitText.chars;
 
         // Animation
-        let endGradient = chroma.scale(['#BFF747', '#BFF747', '#BFF747', '#BFF747', '#BFF747']);
+        let endGradient = chroma.scale(['#6C5DFA', '#6C5DFA', '#6C5DFA', '#6C5DFA', '#6C5DFA']);
         cta.to(chars, {
             duration: 0.5,
             scaleY: 0.6,
@@ -1057,7 +1069,7 @@
             duration: 0.8
         }, 0.7);
         cta.to(chars, {
-            color: '#BFF747',
+            color: '#6C5DFA',
             duration: 1.4,
             stagger: 0.05
         });
@@ -1455,6 +1467,23 @@ text_slider.on('slideChangeTransitionStart', function () {
         });
     });
      
+    /* Full-block text reveal — whole element brightens as one unit */
+    if (document.querySelector(".text_reveal_full")) {
+        gsap.fromTo(".text_reveal_full",
+            { color: "rgba(255,255,255,0.15)" },
+            {
+                color: "rgba(255,255,255,1)",
+                ease: "none",
+                scrollTrigger: {
+                    trigger: ".text_reveal_full",
+                    scrub: 1,
+                    start: "top 85%",
+                    end: "bottom 40%",
+                }
+            }
+        );
+    }
+
      /* ================================
        Des Portfolio Anim Js Start
     ================================ */

@@ -1,5 +1,3 @@
-const LIVE = 'https://revox.baseecom.com/wp-content/uploads/2026/01';
-
 const ITEMS = [
   'TECHNICAL SEO',
   'ON-PAGE OPTIMIZATION',
@@ -19,6 +17,12 @@ const ITEMS = [
   'CONVERSION GROWTH',
 ];
 
+const Star = () => (
+  <span className="marquee-star" aria-hidden="true">
+    <i className="fa-solid fa-star-of-life"></i>
+  </span>
+);
+
 export default function Marquee() {
   return (
     <section className="marquee-section fix">
@@ -27,7 +31,7 @@ export default function Marquee() {
           <div className="marquee-content">
             {ITEMS.map((item) => (
               <div key={item} className="marquee-text">
-                <img src={`${LIVE}/star.png`} alt="Star Icon" />
+                <Star />
                 <h3>{item}</h3>
               </div>
             ))}
@@ -35,7 +39,7 @@ export default function Marquee() {
           <div className="marquee-content" aria-hidden="true">
             {ITEMS.map((item) => (
               <div key={`dup-${item}`} className="marquee-text">
-                <img src={`${LIVE}/star.png`} alt="Star Icon" />
+                <Star />
                 <h3>{item}</h3>
               </div>
             ))}
@@ -43,7 +47,7 @@ export default function Marquee() {
           <div className="marquee-content" aria-hidden="true">
             {ITEMS.map((item) => (
               <div key={`dup2-${item}`} className="marquee-text">
-                <img src={`${LIVE}/star.png`} alt="Star Icon" />
+                <Star />
                 <h3>{item}</h3>
               </div>
             ))}
