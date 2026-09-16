@@ -30,70 +30,97 @@ export default function ContactUsPage() {
 
   return (
     <main>
-      <section className="contact-section">
-        <div className="container d-flex flex-wrap">
-          <div className="contact-thumb">
-            <img src={`${LIVE}/contact.png`} alt="Contact" width={480} height={520} />
-            <ul>
-              <li>3+ years of <strong>SEO experience</strong></li>
-              <li>80+ successfully <strong>projects delivered</strong></li>
-            </ul>
-          </div>
+      {/* Page title — clears the absolute-positioned header and gives
+          consistent top spacing with other inner pages */}
+      <section className="project-inner-page-wrapper section-padding fix">
+        <div className="container">
+          <h1>Contact</h1>
+        </div>
+      </section>
 
-          <div className="contact-form-wrap">
-            <h1>Contact for SEO Work</h1>
-
-            <form onSubmit={handleSubmit} className="contact-form">
-              <div className="form-row d-flex gap-3">
-                <input type="text" name="name" placeholder="Your Name" required />
-                <input type="email" name="email" placeholder="Your Email" required />
+      <section className="contact-inner-page-wrapper" style={{ marginTop: 0 }}>
+        <div className="container">
+          <div className="row align-items-center">
+            <div className="col-xl-5 col-lg-5">
+              <div className="contact-image">
+                <img src={`${LIVE}/contact.png`} alt="Sawon Saha" />
+                <ul>
+                  <li>3+ Years <b>SEO Experience</b></li>
+                  <li>80+ Projects <b>Delivered</b></li>
+                </ul>
               </div>
-              <div className="form-row d-flex gap-3">
-                <input type="text" name="subject" placeholder="Subject" />
-                <input type="tel" name="phone" placeholder="Phone" />
-              </div>
+            </div>
 
-              <div className="project-budget">
-                <span className="label">monthly SEO budget</span>
-                <div className="budget-options d-flex gap-2">
-                  {BUDGETS.map((b) => (
-                    <label key={b} className="budget-option">
-                      <input
-                        type="radio"
-                        name="budget"
-                        value={b}
-                        checked={budget === b}
-                        onChange={() => setBudget(b)}
-                      />
-                      {b}
-                    </label>
-                  ))}
+            <div className="col-xl-7 col-lg-7">
+              <form onSubmit={handleSubmit}>
+                <div className="form-clt">
+                  <div className="row g-3">
+                    <div className="col-md-6">
+                      <input type="text" name="name" placeholder="Your Name" required />
+                    </div>
+                    <div className="col-md-6">
+                      <input type="email" name="email" placeholder="Your Email" required />
+                    </div>
+                    <div className="col-md-6">
+                      <input type="text" name="subject" placeholder="Subject" />
+                    </div>
+                    <div className="col-md-6">
+                      <input type="tel" name="phone" placeholder="Phone Number" />
+                    </div>
+                    <div className="col-12">
+                      <div className="budget-item">
+                        <h4>Monthly Budget</h4>
+                        <div className="budget-button">
+                          {BUDGETS.map((b) => (
+                            <button
+                              key={b}
+                              type="button"
+                              className={`budget-btn${budget === b ? ' active' : ''}`}
+                              onClick={() => setBudget(b)}
+                            >
+                              {b}
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-12">
+                      <textarea name="message" placeholder="Tell me about your SEO goals..." />
+                    </div>
+                    <div className="col-12">
+                      <button type="submit" className="theme-btn" disabled={status === 'sending'}>
+                        {status === 'sending' ? 'sending…' : 'send message'}
+                        <i aria-hidden="true" className="fa-solid fa-arrow-up-right"></i>
+                      </button>
+                    </div>
+                    {status === 'sent' && (
+                      <div className="col-12">
+                        <p style={{ color: 'var(--theme)' }}>Message sent — I&apos;ll reply within 24 hours!</p>
+                      </div>
+                    )}
+                    {status === 'error' && (
+                      <div className="col-12">
+                        <p style={{ color: '#ff4444' }}>Something went wrong. Email me at sawon.s907@gmail.com</p>
+                      </div>
+                    )}
+                  </div>
                 </div>
-              </div>
-
-              <textarea name="message" placeholder="Tell me about your SEO goals..." rows={5} />
-
-              <button type="submit" className="theme-btn" disabled={status === 'sending'}>
-                {status === 'sending' ? 'sending…' : 'send message'}
-              </button>
-
-              {status === 'sent' && <p className="form-note success">Message sent — I&apos;ll get back to you within 24 hours!</p>}
-              {status === 'error' && <p className="form-note error">Something went wrong. Please email me directly at sawon.s907@gmail.com</p>}
-            </form>
+              </form>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="contact-map">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3632.937219038!2d88.9523!3d24.8103!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDQ4JzM3LjEiTiA4OMKwNTcnMDguMyJF!5e0!3m2!1sen!2sbd!4v1641984054261!5m2!1sen!2sbd"
-          width="100%"
-          height="450"
-          style={{ border: 0 }}
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          title="Naogaon, Bangladesh"
-        />
+      <section className="googpemap-2">
+        <div className="container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3632.937219038!2d88.9523!3d24.8103!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDQ4JzM3LjEiTiA4OMKwNTcnMDguMyJF!5e0!3m2!1sen!2sbd!4v1641984054261!5m2!1sen!2sbd"
+            style={{ border: 0 }}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Naogaon, Bangladesh"
+          />
+        </div>
       </section>
     </main>
   );

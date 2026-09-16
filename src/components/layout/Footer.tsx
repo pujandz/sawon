@@ -9,7 +9,7 @@ export default function Footer() {
             <li><Link href="/">home</Link></li>
             <li><Link href="/about-me">ABOUT ME</Link></li>
             <li><Link href="/services">SERVICES</Link></li>
-            <li><Link href="/portfolio-grid">PORTFOLIO</Link></li>
+            <li><Link href="/portfolio">PORTFOLIO</Link></li>
             <li><Link href="/blog">news &amp; blog</Link></li>
             <li><Link href="/contact-us">CONTACT US</Link></li>
           </ul>

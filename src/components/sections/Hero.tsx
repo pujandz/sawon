@@ -28,7 +28,7 @@ export default function Hero() {
               </h1>
 
               <a
-                href="/portfolio-grid"
+                href="/portfolio"
                 className="theme-btn wow fadeInUp"
                 data-wow-delay=".5s"
               >
@@ -46,11 +46,14 @@ export default function Hero() {
 
           <div className="col-xl-4 order-2 order-xl-1">
             <div className="hero-image image-wrapper">
-              <img
-                className="animated-image"
-                src={`${LIVE}/hero-image.png`}
-                alt="Sawon Saha – SEO Specialist"
-              />
+              <picture>
+                <source srcSet="/assets/img/Sawon-Saha.webp" type="image/webp" />
+                <img
+                  className="animated-image"
+                  src="/assets/img/Sawon-Saha.png"
+                  alt="Sawon Saha – SEO Specialist"
+                />
+              </picture>
             </div>
           </div>
 

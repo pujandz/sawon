@@ -1,77 +1,88 @@
-const LIVE = 'https://revox.baseecom.com/wp-content/uploads/2026/01';
+const LIVE = 'https://revox.baseecom.com/wp-content/uploads/2026/01'; // line-shape decorative image
 
-const PREVIEW_IMAGES = ['c1.png', 'c2.png', 'c7.png', 'c4.png', 'c2.png', 'c3.png', 'c6.png'];
+const COMPANIES = [
+  '/assets/img/companies/Algomindz.png',
+  '/assets/img/companies/Digitomark.png',
+  '/assets/img/companies/Dcastalia.png',
+];
 
-const EXPERIENCE = [
+const EXPERIENCE: {
+  company: string;
+  period: string;
+  location: string;
+  role: string;
+  img: string;
+  alt: string;
+  desc?: string;
+}[] = [
   {
     company: 'Algomindz',
-    period: 'Mar 2023 – Present',
+    period: 'Feb 2025 – Present',
+    location: 'Dhaka, Bangladesh (Remote)',
     role: 'SEO Team Lead',
-    img: 'info-1.png',
+    img: COMPANIES[0],
     alt: 'Algomindz',
-    points: [
-      'Lead a team of SEO specialists delivering multi-client organic growth campaigns.',
-      'Built AI-powered AEO strategies to capture Google AI Overview placements.',
-    ],
+    desc: 'Algomindz helps top-tier businesses maximise visibility across AI platforms and traditional search engines through a strategic blend of AEO and data-driven SEO.',
   },
   {
-    company: 'Freelance / Agency',
-    period: 'Jan 2022 – Feb 2023',
-    role: 'Senior SEO Consultant',
-    img: 'info-2.png',
-    alt: 'Freelance',
-    points: [
-      'Delivered 320%+ organic traffic growth for e-commerce clients in 8 months.',
-      'Executed full-funnel keyword mapping and topic cluster strategies for SaaS brands.',
-    ],
-  },
-  {
-    company: 'Digital Marketing Agency',
-    period: 'Jun 2021 – Dec 2021',
+    company: 'Digitomark',
+    period: 'Mar 2022 – Jan 2025',
+    location: 'Dhaka, Bangladesh (Remote)',
     role: 'SEO Specialist',
-    img: 'info-6.png',
-    alt: 'Agency',
-    points: [
-      'Managed on-page SEO and technical audits for 15+ client websites simultaneously.',
-      'Increased Google Maps rankings from page 3 to top 3 for local service businesses.',
-    ],
+    img: COMPANIES[1],
+    alt: 'Digitomark',
+    desc: 'Managed SEO projects end-to-end — strategy, technical audits, competitor analysis, and client reporting — driving measurable organic growth for multiple clients.',
   },
   {
-    company: 'Content & SEO Studio',
-    period: 'Jan 2021 – May 2021',
-    role: 'SEO Analyst',
-    img: 'info-4.png',
-    alt: 'Studio',
-    points: [
-      'Conducted competitive gap analyses using Ahrefs and SEMrush.',
-      'Produced monthly performance reports tracking KPIs across 10+ client accounts.',
-    ],
+    company: 'Dcastalia Limited',
+    period: 'Jan 2022 – Apr 2023',
+    location: 'Dhaka, Bangladesh',
+    role: 'SEO Executive',
+    img: COMPANIES[2],
+    alt: 'Dcastalia Limited',
+    desc: 'A transparent, result-driven software development company in Bangladesh delivering tailored digital solutions.',
   },
 ];
 
 export default function WorkExperience() {
   return (
-    <section className="work-experience-section-1 style-2 fix section-padding pt-0">
+    <section className="work-experience-section-1 style-2 section-padding">
       <div className="line-shape">
         <img src={`${LIVE}/line-shape.png`} alt="Line Shape" />
       </div>
 
       <div className="container">
         <div className="section-title text-center">
-          <h6 className="before-none">Work Experience</h6>
+          <h6>work experience</h6>
           <h2 className="hero_title tv_hero_title hero_title_1">
             A proven SEO specialist <span>with 3+ years</span> of expertise
           </h2>
         </div>
 
-        <div className="feature-work-experience-wrap fix">
-          <div className="feature-work-experience-preview">
+        <div className="feature-work-experience-wrap fix" style={{ position: 'relative' }}>
+          {/* Static always-visible company balls — one per arc position */}
+          {([
+            { src: COMPANIES[0], alt: EXPERIENCE[0].company, style: { left: '7%',  top: '42%' } },
+            { src: COMPANIES[1], alt: EXPERIENCE[1].company, style: { left: '25%', top: '8%'  } },
+            { src: COMPANIES[2], alt: EXPERIENCE[2].company, style: { left: '67%', top: '8%'  } },
+          ] as const).map(({ src, alt, style }) => (
+            <div key={alt} style={{
+              position: 'absolute', ...style,
+              width: 60, height: 60, borderRadius: '50%', overflow: 'hidden',
+              background: '#1c1c1c', border: '2px solid rgba(255,255,255,0.12)', zIndex: 5,
+            }}>
+              <img src={src} alt={alt} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+            </div>
+          ))}
+
+          {/* Keep hidden for main.js Swiper init — do not remove */}
+          <div className="feature-work-experience-preview" style={{ display: 'none' }}>
             <div className="feature-work-experience-preview-slider fw_preview_slider_active">
               <div className="swiper-wrapper">
-                {PREVIEW_IMAGES.map((img, i) => (
+                {COMPANIES.map((src, i) => (
                   <div key={i} className="swiper-slide">
-                    <div className="feature-work-experience-preview-slider-item wa-fix wa-img-cover">
-                      <img src={`${LIVE}/${img}`} alt={`Experience ${i + 1}`} />
+                    <div className="feature-work-experience-preview-slider-item">
+                      <img src={src} alt={EXPERIENCE[i].company} />
                     </div>
                   </div>
                 ))}
@@ -86,20 +97,18 @@ export default function WorkExperience() {
                   <div className="feature-work-experience-main-slider-single">
                     <div className="client-info-items">
                       <div className="client-img">
-                        <img src={`${LIVE}/${e.img}`} alt={e.alt} />
+                        <img src={e.img} alt={e.alt} />
                       </div>
                       <div className="info-content">
                         <h3>{e.company}</h3>
-                        <span>{e.period}</span>
+                        <span>{e.period} &nbsp;·&nbsp; {e.location}</span>
                       </div>
                     </div>
 
                     <div className="info-item">
                       <h5>{e.role}</h5>
                       <div className="text-cont">
-                        {e.points.map((p, i) => (
-                          <p key={i} className={i < e.points.length - 1 ? 'mb-4' : ''}>{p}</p>
-                        ))}
+                        {e.desc && <p>{e.desc}</p>}
                       </div>
                     </div>
                   </div>

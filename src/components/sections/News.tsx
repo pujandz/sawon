@@ -1,15 +1,36 @@
 import Link from 'next/link';
 
-interface Post {
-  title: string;
-  slug: string;
-  category: string;
-  date: string;
-  img: string;
-  excerpt?: string;
-}
+const LIVE = 'https://revox.baseecom.com/wp-content/uploads/2026/01';
+const LIVE_NEWS = 'https://revox.baseecom.com/wp-content/uploads/2025/11';
 
-export default function News({ posts = [] as Post[] }) {
+const POSTS = [
+  {
+    id: 1,
+    title: 'How to Build a Winning SEO Strategy That Drives Organic Growth in 2025',
+    slug: 'blog',
+    category: 'SEO Strategy',
+    date: 'Jan 15, 2025',
+    img: `${LIVE_NEWS}/news-img-1-1.jpg`,
+  },
+  {
+    id: 2,
+    title: 'AEO vs SEO: What Every Marketer Needs to Know About AI Search',
+    slug: 'blog',
+    category: 'AEO',
+    date: 'Feb 03, 2025',
+    img: `${LIVE_NEWS}/news-img-2-1.jpg`,
+  },
+  {
+    id: 3,
+    title: 'Technical SEO Audit Checklist: 30 Steps to a Perfectly Optimised Site',
+    slug: 'blog',
+    category: 'Technical SEO',
+    date: 'Mar 20, 2025',
+    img: `${LIVE_NEWS}/news-img-3-1.jpg`,
+  },
+];
+
+export default function News() {
   return (
     <section className="news-section section-padding fix">
       <div className="container">
@@ -31,31 +52,39 @@ export default function News({ posts = [] as Post[] }) {
 
         <div className="tp-service-pin">
           <div className="row">
-            {posts.length === 0 ? (
-              <div className="col-xl-12">
-                <p>New articles coming soon.</p>
+            {POSTS.map((p) => (
+              <div key={p.id} className="col-xl-12">
+                <article className="news-main-box-items tp-service-panel">
+                  <div className="news-content">
+                    <h3>
+                      <Link href={`/${p.slug}`}>{p.title}</Link>
+                    </h3>
+                    <ul>
+                      <li>
+                        <div className="client-info">
+                          <img src={`${LIVE}/client-1.png`} alt="Sawon Saha" />
+                          <div className="client-content">
+                            <span className="name">Sawon Saha</span>
+                            <p>Authored By</p>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <span>{p.category}</span>
+                      </li>
+                      <li>
+                        <span className="color-2">{p.date}</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="news-image">
+                    <Link href={`/${p.slug}`}>
+                      <img src={p.img} alt={p.title} width={430} height={260} />
+                    </Link>
+                  </div>
+                </article>
               </div>
-            ) : (
-              posts.map((p) => (
-                <div key={p.slug} className="col-xl-4 col-lg-6">
-                  <article className="news-main-box-items tp-service-panel">
-                    <div className="news-content">
-                      <h3>
-                        <Link href={`/${p.slug}`} className="tp_text_invert">{p.title}</Link>
-                      </h3>
-                      <ul>
-                        <li className="client-info">
-                          <span>{p.category}</span> &middot; <span>{p.date}</span>
-                        </li>
-                      </ul>
-                    </div>
-                    <div className="news-image">
-                      <img src={p.img} alt={p.title} width={360} height={240} />
-                    </div>
-                  </article>
-                </div>
-              ))
-            )}
+            ))}
           </div>
         </div>
       </div>
