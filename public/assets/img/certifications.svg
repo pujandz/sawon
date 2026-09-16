@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 480" fill="none">
+  <!-- Background glow blobs -->
+  <ellipse cx="260" cy="300" rx="200" ry="130" fill="#b5f23d" fill-opacity="0.06"/>
+  <ellipse cx="380" cy="160" rx="90" ry="90" fill="#b5f23d" fill-opacity="0.10"/>
+
+  <!-- Grid lines -->
+  <g stroke="#ffffff" stroke-opacity="0.06" stroke-width="1">
+    <line x1="60" y1="380" x2="460" y2="380"/>
+    <line x1="60" y1="310" x2="460" y2="310"/>
+    <line x1="60" y1="240" x2="460" y2="240"/>
+    <line x1="60" y1="170" x2="460" y2="170"/>
+    <line x1="60" y1="100" x2="460" y2="100"/>
+  </g>
+
+  <!-- Y-axis -->
+  <line x1="60" y1="90" x2="60" y2="385" stroke="#ffffff" stroke-opacity="0.15" stroke-width="1.5"/>
+  <!-- X-axis -->
+  <line x1="55" y1="380" x2="465" y2="380" stroke="#ffffff" stroke-opacity="0.15" stroke-width="1.5"/>
+
+  <!-- Area fill under chart line -->
+  <path d="M60 370 L160 320 L230 270 L300 210 L370 155 L440 100 L440 380 L60 380 Z"
+        fill="url(#chartGrad)" fill-opacity="0.18"/>
+
+  <!-- Chart line -->
+  <path d="M60 370 L160 320 L230 270 L300 210 L370 155 L440 100"
+        stroke="#b5f23d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Data point dots -->
+  <circle cx="60"  cy="370" r="5" fill="#b5f23d"/>
+  <circle cx="160" cy="320" r="5" fill="#b5f23d"/>
+  <circle cx="230" cy="270" r="5" fill="#b5f23d"/>
+  <circle cx="300" cy="210" r="5" fill="#b5f23d"/>
+  <circle cx="370" cy="155" r="5" fill="#b5f23d"/>
+  <circle cx="440" cy="100" r="5" fill="#b5f23d"/>
+
+  <!-- Year labels -->
+  <text x="55"  y="400" fill="#888" font-size="12" font-family="sans-serif" text-anchor="middle">2021</text>
+  <text x="160" y="400" fill="#888" font-size="12" font-family="sans-serif" text-anchor="middle">2022</text>
+  <text x="260" y="400" fill="#888" font-size="12" font-family="sans-serif" text-anchor="middle">2023</text>
+  <text x="360" y="400" fill="#888" font-size="12" font-family="sans-serif" text-anchor="middle">2024</text>
+  <text x="440" y="400" fill="#888" font-size="12" font-family="sans-serif" text-anchor="middle">2025</text>
+
+  <!-- Certification badge 1 — GAIQ (top left area) -->
+  <g transform="translate(95, 115)">
+    <circle cx="0" cy="0" r="34" fill="#1a1a1a" stroke="#b5f23d" stroke-width="2"/>
+    <circle cx="0" cy="0" r="26" fill="none" stroke="#b5f23d" stroke-width="1" stroke-dasharray="4 3"/>
+    <!-- checkmark -->
+    <path d="M-10 0 L-3 8 L12 -7" stroke="#b5f23d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <text x="0" y="22" fill="#b5f23d" font-size="7" font-family="sans-serif" text-anchor="middle" font-weight="bold">GAIQ</text>
+  </g>
+
+  <!-- Certification badge 2 — SEMrush (mid) -->
+  <g transform="translate(260, 175)">
+    <circle cx="0" cy="0" r="34" fill="#1a1a1a" stroke="#b5f23d" stroke-width="2"/>
+    <circle cx="0" cy="0" r="26" fill="none" stroke="#b5f23d" stroke-width="1" stroke-dasharray="4 3"/>
+    <!-- star -->
+    <path d="M0,-14 L3.3,-4.3 L13.3,-4.3 L5.6,1.6 L8.2,11.4 L0,5.8 L-8.2,11.4 L-5.6,1.6 L-13.3,-4.3 L-3.3,-4.3 Z"
+          fill="#b5f23d"/>
+    <text x="0" y="24" fill="#b5f23d" font-size="6.5" font-family="sans-serif" text-anchor="middle" font-weight="bold">SEMrush</text>
+  </g>
+
+  <!-- Milestone badge 3 — Team Lead (top right) -->
+  <g transform="translate(410, 68)">
+    <circle cx="0" cy="0" r="34" fill="#1a1a1a" stroke="#b5f23d" stroke-width="2"/>
+    <circle cx="0" cy="0" r="26" fill="none" stroke="#b5f23d" stroke-width="1" stroke-dasharray="4 3"/>
+    <!-- upward arrow -->
+    <path d="M0,-12 L8,0 L3,0 L3,12 L-3,12 L-3,0 L-8,0 Z" fill="#b5f23d"/>
+    <text x="0" y="26" fill="#b5f23d" font-size="6" font-family="sans-serif" text-anchor="middle" font-weight="bold">TEAM LEAD</text>
+  </g>
+
+  <!-- Gradient definition -->
+  <defs>
+    <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#b5f23d" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#b5f23d" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+</svg>

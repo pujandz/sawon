@@ -1,5 +1,3 @@
-const LIVE = 'https://revox.baseecom.com/wp-content/uploads/2026/01';
-
 const ACHIEVEMENTS = [
   { year: '2021', text: 'Google Analytics Individual Qualification (GAIQ) certified' },
   { year: '2022', text: 'SEMrush SEO Toolkit Certification — advanced level' },
@@ -15,7 +13,7 @@ export default function Award() {
           <div className="row g-4 align-items-center">
             <div className="col-lg-6">
               <div className="section-title">
-                <h6>award winning</h6>
+                <h6>certified &amp; recognised</h6>
                 <h2 className="hero_title tv_hero_title hero_title_1">
                   Certifications <span>&amp; Milestones</span>
                 </h2>
@@ -33,7 +31,7 @@ export default function Award() {
 
             <div className="col-lg-6">
               <div className="award-image">
-                <img src={`${LIVE}/award.png`} alt="Achievements" />
+                <img src="/assets/img/certifications.svg" alt="Certifications and Milestones" />
               </div>
             </div>
           </div>
