@@ -12,6 +12,18 @@ html { scroll-behavior: smooth; }
    so text stays invisible permanently. Force all wow elements visible. */
 .wow { visibility: visible !important; }
 
+/* Work-experience section heading: GSAP SplitText splits the h2 into
+   .char elements and animates them. During the ScrollTrigger pin the
+   animation progress reverses, hiding the chars. Force them visible. */
+.work-experience-section-1 .section-title h2,
+.work-experience-section-1 .section-title h2 .char,
+.work-experience-section-1 .section-title h2 .word,
+.work-experience-section-1 .section-title h6 {
+  opacity: 1 !important;
+  transform: none !important;
+  visibility: visible !important;
+}
+
 /* Reserve line height for typing text so layout never shifts when empty */
 #typing-text {
   display: inline-block;

@@ -60,16 +60,35 @@ export default function WorkExperience() {
         </div>
 
         <div className="feature-work-experience-wrap fix" style={{ position: 'relative' }}>
-          {/* Static always-visible company balls — one per arc position */}
+          {/*
+            Thumbs Swiper: main.js needs .fw_preview_slider_active to init
+            the main slider with fade + thumbs. We omit the
+            feature-work-experience-preview-slider class so main.js does NOT
+            run the circular GSAP positioning that scatters balls outside the dome.
+          */}
+          <div style={{ position: 'absolute', width: 0, height: 0, overflow: 'hidden', zIndex: -1 }}>
+            <div className="fw_preview_slider_active">
+              <div className="swiper-wrapper">
+                {COMPANIES.map((src, i) => (
+                  <div key={i} className="swiper-slide">
+                    <img src={src} alt="" aria-hidden="true" />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Static always-visible company balls at fixed arc positions */}
           {([
-            { src: COMPANIES[0], alt: EXPERIENCE[0].company, style: { left: '10%', top: '38%' } },
-            { src: COMPANIES[1], alt: EXPERIENCE[1].company, style: { left: '28%', top: '7%'  } },
-            { src: COMPANIES[2], alt: EXPERIENCE[2].company, style: { left: '62%', top: '7%'  } },
-          ] as const).map(({ src, alt, style }) => (
+            { src: COMPANIES[0], alt: EXPERIENCE[0].company, left: '8%',  top: '42%' },
+            { src: COMPANIES[1], alt: EXPERIENCE[1].company, left: '26%', top: '9%'  },
+            { src: COMPANIES[2], alt: EXPERIENCE[2].company, left: '63%', top: '9%'  },
+          ]).map(({ src, alt, left, top }) => (
             <div key={alt} style={{
-              position: 'absolute', ...style,
+              position: 'absolute', left, top,
               width: 60, height: 60, borderRadius: '50%', overflow: 'hidden',
-              background: '#1c1c1c', border: '2px solid rgba(255,255,255,0.12)', zIndex: 5,
+              background: '#1c1c1c', border: '2px solid rgba(255,255,255,0.12)',
+              zIndex: 5,
             }}>
               <img src={src} alt={alt} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
             </div>
