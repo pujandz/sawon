@@ -54,7 +54,7 @@ export default function WorkExperience() {
       <div className="container">
         <div className="section-title text-center">
           <h6>work experience</h6>
-          <h2 className="hero_title tv_hero_title hero_title_1">
+          <h2 className="hero_title">
             A proven SEO specialist <span>with 3+ years</span> of expertise
           </h2>
         </div>
