@@ -23,6 +23,19 @@ html { scroll-behavior: smooth; }
   }
 }
 
+/* Work experience: company logos inside circular balls must show in full,
+   not be zoomed-in/cropped. object-fit:contain keeps the entire logo
+   visible within the 60×60px preview circles and the centre client-img. */
+.feature-work-experience-preview-slider-item img {
+  object-fit: contain !important;
+  background: transparent;
+}
+.feature-work-experience-main-slider .client-img img {
+  object-fit: contain !important;
+  width: 100%;
+  height: 100%;
+}
+
 /* budget-btn active state (contact page) */
 .contact-inner-page-wrapper form .form-clt .budget-item .budget-button .budget-btn.active {
   background-color: var(--theme);
