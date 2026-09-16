@@ -32,6 +32,14 @@ html { scroll-behavior: smooth; }
   background: transparent;
 }
 
+/* Force all 3 preview balls visible — GSAP/Swiper thumbs can set opacity:0
+   on the active slide; override so every ball stays on the arc. */
+.feature-work-experience-preview-slider .swiper-slide,
+.feature-work-experience-preview-slider .swiper-slide-thumb-active {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
 /* Centre client-img — constrain to 120px circle matching the theme design */
 .feature-work-experience-main-slider .client-img {
   width: 120px;

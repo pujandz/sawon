@@ -14,7 +14,6 @@ const EXPERIENCE: {
   img: string;
   alt: string;
   desc?: string;
-  points?: string[];
 }[] = [
   {
     company: 'Algomindz',
@@ -32,13 +31,7 @@ const EXPERIENCE: {
     role: 'SEO Specialist',
     img: COMPANIES[1],
     alt: 'Digitomark',
-    desc: 'A leading full-service digital marketing agency in Bangladesh known for innovative, result-driven campaigns.',
-    points: [
-      'SEO project management & client consulting',
-      'Developing and implementing SEO strategies',
-      'Technical SEO & on-site optimisation',
-      'Competitor analysis & performance reporting',
-    ],
+    desc: 'Managed SEO projects end-to-end — strategy, technical audits, competitor analysis, and client reporting — driving measurable organic growth for multiple clients.',
   },
   {
     company: 'Dcastalia Limited',
@@ -99,14 +92,7 @@ export default function WorkExperience() {
                     <div className="info-item">
                       <h5>{e.role}</h5>
                       <div className="text-cont">
-                        {e.desc && <p className={e.points ? 'mb-4' : ''}>{e.desc}</p>}
-                        {e.points && (
-                          <ul style={{ listStyle: 'disc', paddingLeft: '1.25em', margin: 0 }}>
-                            {e.points.map((p, i) => (
-                              <li key={i} style={{ marginBottom: '6px' }}>{p}</li>
-                            ))}
-                          </ul>
-                        )}
+                        {e.desc && <p>{e.desc}</p>}
                       </div>
                     </div>
                   </div>
