@@ -59,13 +59,29 @@ export default function WorkExperience() {
           </h2>
         </div>
 
-        <div className="feature-work-experience-wrap fix">
-          <div className="feature-work-experience-preview">
+        <div className="feature-work-experience-wrap fix" style={{ position: 'relative' }}>
+          {/* Static always-visible company balls — one per arc position */}
+          {([
+            { src: COMPANIES[0], alt: EXPERIENCE[0].company, style: { left: '7%',  top: '42%' } },
+            { src: COMPANIES[1], alt: EXPERIENCE[1].company, style: { left: '25%', top: '8%'  } },
+            { src: COMPANIES[2], alt: EXPERIENCE[2].company, style: { left: '67%', top: '8%'  } },
+          ] as const).map(({ src, alt, style }) => (
+            <div key={alt} style={{
+              position: 'absolute', ...style,
+              width: 60, height: 60, borderRadius: '50%', overflow: 'hidden',
+              background: '#1c1c1c', border: '2px solid rgba(255,255,255,0.12)', zIndex: 5,
+            }}>
+              <img src={src} alt={alt} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+            </div>
+          ))}
+
+          {/* Keep hidden for main.js Swiper init — do not remove */}
+          <div className="feature-work-experience-preview" style={{ display: 'none' }}>
             <div className="feature-work-experience-preview-slider fw_preview_slider_active">
               <div className="swiper-wrapper">
                 {COMPANIES.map((src, i) => (
                   <div key={i} className="swiper-slide">
-                    <div className="feature-work-experience-preview-slider-item wa-fix wa-img-cover">
+                    <div className="feature-work-experience-preview-slider-item">
                       <img src={src} alt={EXPERIENCE[i].company} />
                     </div>
                   </div>

@@ -33,16 +33,12 @@
     var scrollPerSlide = window.innerHeight * 1.5;
 
     ScrollTrigger.create({
-      // Use the semicircle wrap as the trigger so "bottom bottom" fires
-      // exactly when the VISUAL arc bottom reaches the viewport bottom —
-      // i.e. the full semicircle is in view before any slide advances.
-      trigger : wrap,
-      start   : 'bottom bottom',
+      // Pin when the section top reaches the viewport top so the heading
+      // stays visible for the entire duration.
+      trigger : section,
+      start   : 'top top',
       end     : '+=' + (total - 1) * scrollPerSlide,
-      // Pin the whole section (not just the wrap).
       pin     : section,
-      // scrub:1 ties the progress smoothly to the scroll wheel — feels like
-      // the slide is "attached" to the finger/wheel rather than snapping.
       scrub   : 1,
       snap    : {
         // Snap to each slide's exact position after the user stops scrolling.
