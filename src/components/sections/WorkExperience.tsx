@@ -54,12 +54,12 @@ export default function WorkExperience() {
       <div className="container">
         <div className="section-title text-center">
           <h6>work experience</h6>
-          <h2 className="hero_title">
+          <h2 className="hero_title tv_hero_title hero_title_1">
             A proven SEO specialist <span>with 3+ years</span> of expertise
           </h2>
         </div>
 
-        <div className="feature-work-experience-wrap fix" style={{ position: 'relative' }}>
+        <div className="feature-work-experience-wrap" style={{ position: 'relative' }}>
           {/*
             Thumbs Swiper: main.js needs .fw_preview_slider_active to init
             the main slider with fade + thumbs. We omit the
@@ -78,15 +78,15 @@ export default function WorkExperience() {
             </div>
           </div>
 
-          {/* Static always-visible company balls at fixed arc positions */}
+          {/* Static company balls at 9, 12, 3 o'clock arc positions */}
           {([
-            { src: COMPANIES[0], alt: EXPERIENCE[0].company, left: '8%',  top: '42%' },
-            { src: COMPANIES[1], alt: EXPERIENCE[1].company, left: '26%', top: '9%'  },
-            { src: COMPANIES[2], alt: EXPERIENCE[2].company, left: '63%', top: '9%'  },
+            { src: COMPANIES[0], alt: EXPERIENCE[0].company, left: 'calc(18% - 36px)', top: 'calc(42% - 36px)' },
+            { src: COMPANIES[1], alt: EXPERIENCE[1].company, left: 'calc(50% - 36px)', top: '-20px'            },
+            { src: COMPANIES[2], alt: EXPERIENCE[2].company, left: 'calc(82% - 36px)', top: 'calc(42% - 36px)' },
           ]).map(({ src, alt, left, top }) => (
             <div key={alt} style={{
               position: 'absolute', left, top,
-              width: 60, height: 60, borderRadius: '50%', overflow: 'hidden',
+              width: 72, height: 72, borderRadius: '50%', overflow: 'hidden',
               background: '#1c1c1c', border: '2px solid rgba(255,255,255,0.12)',
               zIndex: 5,
             }}>

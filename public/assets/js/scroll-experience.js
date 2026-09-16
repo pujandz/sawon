@@ -33,9 +33,9 @@
     var scrollPerSlide = window.innerHeight * 1.5;
 
     ScrollTrigger.create({
-      // Pin when the section top reaches the viewport top so the heading
-      // stays visible for the entire duration.
-      trigger : section,
+      // Pin when the dome (wrap) top reaches the viewport top — the heading
+      // sits above the pinned area, with its last line peeking at the top edge.
+      trigger : wrap,
       start   : 'top top',
       end     : '+=' + (total - 1) * scrollPerSlide,
       pin     : section,
