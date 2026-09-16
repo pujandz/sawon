@@ -19,6 +19,23 @@ function loadGroup(srcs: string[]): Promise<void> {
   return Promise.all(srcs.map(loadScript)).then(() => undefined);
 }
 
+// Dismiss the preloader if main.js missed the window.load event.
+// This happens when window.load fires before Phase 4 scripts are
+// registered — the $(window).on("load") handler never runs and the
+// preloader div blocks the page permanently.
+function safelyDismissPreloader() {
+  const el = document.querySelector('.preloader') as HTMLElement | null;
+  if (!el) return;
+  // main.js already handled it (set display:none / zIndex:-1)
+  if (el.style.display === 'none' || el.style.zIndex === '-1') return;
+  const computed = window.getComputedStyle(el);
+  if (computed.display === 'none') return;
+  // Force-dismiss with a quick fade
+  el.style.transition = 'opacity 0.4s ease';
+  el.style.opacity = '0';
+  setTimeout(() => { el.style.display = 'none'; el.style.zIndex = '-1'; }, 420);
+}
+
 export default function ScriptLoader() {
   const pathname = usePathname();
 
@@ -79,6 +96,11 @@ export default function ScriptLoader() {
       // Phase 4b — scroll-linked experience slider (needs Swiper from main.js)
       await loadScript('/assets/js/scroll-experience.js');
 
+      // Failsafe: if window.load already fired before main.js registered
+      // its $(window).on("load") handler, the preloader never got dismissed.
+      // Give main.js 300ms to run its own animation; then force-dismiss.
+      setTimeout(safelyDismissPreloader, 300);
+
       // Phase 5 — three.js (1.8 MB) and webgl.js loaded last, non-blocking.
       // Does not delay any user-visible content.
       loadScript('/assets/js/three.js').then(() =>
@@ -86,7 +108,9 @@ export default function ScriptLoader() {
       );
     }
 
-    boot();
+    // Hard cap: preloader must be gone within 5 seconds no matter what.
+    const hardCap = setTimeout(safelyDismissPreloader, 5000);
+    boot().finally(() => clearTimeout(hardCap));
   }, []);
 
   return null;
