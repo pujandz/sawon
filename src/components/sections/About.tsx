@@ -1,11 +1,12 @@
 const D = '/assets/img/decorations';
+const T = '/assets/img/tools';
 
 const SKILLS = [
-  { label: 'Ahrefs', pct: 95, extra: 'pl-none' },
-  { label: 'SEMrush', pct: 93, extra: '' },
-  { label: 'Screaming Frog', pct: 88, extra: '' },
-  { label: 'Search Console', pct: 98, extra: 'pl-none' },
-  { label: 'Moz Pro', pct: 85, extra: '' },
+  { label: 'Ahrefs', pct: 95, extra: 'pl-none', icon: `${T}/ahrefs.webp` },
+  { label: 'SEMrush', pct: 93, extra: '', icon: `${T}/semrush.webp` },
+  { label: 'Screaming Frog', pct: 88, extra: '', icon: `${T}/screaming-frog.webp` },
+  { label: 'Search Console', pct: 98, extra: 'pl-none', icon: `${T}/search-console.webp` },
+  { label: 'Moz Pro', pct: 85, extra: '', icon: `${T}/moz.webp` },
 ];
 
 export default function About() {
@@ -47,6 +48,14 @@ export default function About() {
                 </div>
 
                 <h4 className="title"><span>My</span> Favorite SEO Tools</h4>
+
+                <div className="tools-icon-list">
+                  {SKILLS.map((s) => (
+                    <div key={s.label} className="tools-icon-item" title={s.label}>
+                      <img src={s.icon} alt={s.label} width={48} height={48} loading="lazy" decoding="async" />
+                    </div>
+                  ))}
+                </div>
 
                 <div className="vec-shape">
                   <img src={`${D}/vec-shape.png`} alt="Vector shape" />
