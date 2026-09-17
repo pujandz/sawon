@@ -216,9 +216,70 @@ body { overflow-x: hidden; }
 /* About: hide absolute vec-shape on mobile so it doesn't create an empty gap */
 @media (max-width: 991px) {
   .about-wrapper .about-left-items .vec-shape { display: none; }
-  /* Tools icon row: allow up to 3 per row on narrow screens */
-  .tools-icon-list { gap: 10px; }
-  .tools-icon-item { width: 46px; height: 46px; }
+}
+
+/* ── Top-text pill cards (About section) ───────────────────────── */
+.top-text {
+  display: flex !important;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0 !important;
+  list-style: none !important;
+  margin-top: 24px !important;
+  margin-bottom: 28px !important;
+}
+.top-text li {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.09) !important;
+  border-radius: 14px !important;
+  padding: 18px 24px !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.10em !important;
+  text-transform: uppercase !important;
+  color: rgba(255, 255, 255, 0.85) !important;
+  line-height: 1 !important;
+  /* remove any pseudo-element bullets the theme adds */
+  display: block !important;
+}
+.top-text li::before { display: none !important; }
+.top-text li span {
+  color: var(--theme) !important;
+  margin-right: 0.25em;
+}
+
+/* ── Skill counter with tool icon (About section) ──────────────── */
+.skill-counter.skill-counter-icon {
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  padding: 0 !important;
+  background: none !important;
+  border: none !important;
+}
+.skill-counter.skill-counter-icon .skill-tool-icon {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.skill-counter.skill-counter-icon .skill-tool-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.skill-counter.skill-counter-icon .content {
+  padding: 0 !important;
+}
+.skill-counter.skill-counter-icon .content h2 {
+  margin-bottom: 2px !important;
+  line-height: 1 !important;
+}
+@media (max-width: 575px) {
+  .skill-counter.skill-counter-icon { gap: 10px !important; }
+  .skill-counter.skill-counter-icon .skill-tool-icon { width: 36px; height: 36px; }
 }
 
 /* ── Award Visual — animated certificate (Award section) ─────── */
