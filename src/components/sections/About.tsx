@@ -1,18 +1,18 @@
-const CDN = 'https://revox.baseecom.com/wp-content/uploads/2026/01';
+const D = '/assets/img/decorations';
 
 const SKILLS = [
-  { icon: 'figma.png', label: 'Ahrefs', pct: 95, extra: 'pl-none' },
-  { icon: 'ps.png', label: 'SEMrush', pct: 93, extra: '' },
-  { icon: 'ai.png', label: 'Screaming Frog', pct: 88, extra: '' },
-  { icon: 'sketch.png', label: 'Search Console', pct: 98, extra: 'pl-none' },
-  { icon: 'xd.png', label: 'Moz Pro', pct: 85, extra: '' },
+  { label: 'Ahrefs', pct: 95, extra: 'pl-none' },
+  { label: 'SEMrush', pct: 93, extra: '' },
+  { label: 'Screaming Frog', pct: 88, extra: '' },
+  { label: 'Search Console', pct: 98, extra: 'pl-none' },
+  { label: 'Moz Pro', pct: 85, extra: '' },
 ];
 
 export default function About() {
   return (
     <section className="about-section section-padding">
       <div className="circle-shape">
-        <img src={`${CDN}/circle-shape.png`} alt="Circle shape" />
+        <img src={`${D}/circle-shape.png`} alt="Circle shape" />
       </div>
 
       <div className="container">
@@ -33,7 +33,6 @@ export default function About() {
                   {SKILLS.map((s) => (
                     <div key={s.label} className="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-6">
                       <div className={`skill-counter${s.extra ? ' ' + s.extra : ''}`}>
-                        <img src={`${CDN}/${s.icon}`} alt="Skill icon" />
                         <div className="content">
                           <h2><span className="count">{s.pct}</span>%</h2>
                           <p>{s.label}</p>
@@ -50,7 +49,7 @@ export default function About() {
                 <h4 className="title"><span>My</span> Favorite SEO Tools</h4>
 
                 <div className="vec-shape">
-                  <img src={`${CDN}/vec-shape.png`} alt="Vector shape" />
+                  <img src={`${D}/vec-shape.png`} alt="Vector shape" />
                 </div>
               </div>
             </div>

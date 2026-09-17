@@ -114,8 +114,8 @@ export default function RootLayout({
         <link rel="stylesheet" href="/assets/css/slick.css" />
         <link rel="stylesheet" href="/assets/css/main.css" />
 
-        <link rel="icon" href="/assets/img/logo/white-icon.png" type="image/png" />
-        <link rel="apple-touch-icon" href="/assets/img/logo/white-icon.png" />
+        <link rel="icon" href="/assets/img/logo/white-icon.webp" type="image/webp" />
+        <link rel="apple-touch-icon" href="/assets/img/logo/white-icon.webp" />
         <link rel="manifest" href="/manifest.json" />
 
         <script

@@ -1,7 +1,5 @@
 import Link from 'next/link';
 
-const CDN = 'https://revox.baseecom.com/wp-content/uploads/2026/01';
-
 const POSTS = [
   {
     id: 1,
@@ -58,7 +56,7 @@ export default function News() {
                     <ul>
                       <li>
                         <div className="client-info">
-                          <img src={`${CDN}/client-1.png`} alt="Sawon Saha" />
+                          <img src="/assets/img/decorations/contact.png" alt="Sawon Saha" />
                           <div className="client-content">
                             <span className="name">Sawon Saha</span>
                             <p>Authored By</p>

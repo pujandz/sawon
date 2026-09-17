@@ -8,7 +8,7 @@ export default function Header() {
           <div className="mega-menu-wrapper">
             <div className="header-main">
               <Link href="/" className="offcanvas__logo">
-                <img src="/assets/img/logo/white-icon.png" alt="Sawon Saha" />
+                <img src="/assets/img/logo/white-icon.webp" alt="Sawon Saha" />
               </Link>
 
               <div className="header-right justify-content-end align-items-center">
@@ -31,7 +31,7 @@ export default function Header() {
         <div className="header-offcanvas-border">
           <div className="offcanvas__info">
             <Link href="/" className="offcanvas__logo">
-              <img src="/assets/img/logo/white-icon.png" alt="Sawon Saha" />
+              <img src="/assets/img/logo/white-icon.webp" alt="Sawon Saha" />
             </Link>
             <div className="offcanvas__close">
               <button>
