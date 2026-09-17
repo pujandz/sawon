@@ -108,8 +108,8 @@ export default function ScriptLoader() {
       );
     }
 
-    // Hard cap: preloader must be gone within 3 seconds no matter what.
-    const hardCap = setTimeout(safelyDismissPreloader, 3000);
+    // Hard cap: preloader must be gone within 2 seconds no matter what.
+    const hardCap = setTimeout(safelyDismissPreloader, 2000);
     boot().finally(() => clearTimeout(hardCap));
   }, []);
 

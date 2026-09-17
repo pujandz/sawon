@@ -1,4 +1,4 @@
-const CDN = 'https://revox.baseecom.com/wp-content/uploads/2026/01';
+const D = '/assets/img/decorations';
 
 const COMPANIES = [
   '/assets/img/companies/Algomindz.png',
@@ -52,7 +52,7 @@ export default function WorkExperience() {
   return (
     <section className="work-experience-section-1 style-2 section-padding">
       <div className="line-shape">
-        <img src={`${CDN}/line-shape.png`} alt="Line Shape" />
+        <img src={`${D}/line-shape.png`} alt="Line Shape" />
       </div>
 
       <div className="container">

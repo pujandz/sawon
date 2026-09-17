@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-const CDN = 'https://revox.baseecom.com/wp-content/uploads/2026/01';
+const D = '/assets/img/decorations';
 
 const STARTER_FEATURES = [
   'Technical SEO Audit',
@@ -61,11 +61,11 @@ export default function Pricing() {
                 </h2>
               </div>
               <div className="shape-1">
-                <img src={`${CDN}/vec-shape.png`} alt="Shape" />
+                <img src={`${D}/vec-shape.png`} alt="Shape" />
               </div>
               <div className="client-info">
                 <div className="client-image">
-                  <img src={`${CDN}/info.png`} alt="Happy customers" />
+                  <img src={`${D}/info.png`} alt="Happy customers" />
                 </div>
                 <p>join 5 000+ <br />happy customers</p>
               </div>
