@@ -132,6 +132,11 @@ function css(scope: string) {
 .dark .${scope} .pbm-light-only,
 [data-theme="dark"] .${scope} .pbm-light-only { display: none; }
 
+/* Light mode: visible border on light backgrounds */
+[data-theme="light"] .${scope} .pbm-card {
+  border-color: rgba(108, 93, 250, 0.2);
+}
+
 /* Dark mode: OS setting, only when the page has not declared itself light. */
 @media (prefers-color-scheme: dark) {
   :root:not(.light):not([data-theme="light"]) .${scope} .pbm-has-black {
