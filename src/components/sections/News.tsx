@@ -47,45 +47,50 @@ export default function News() {
           </Link>
         </div>
 
-        <div className="blog-list">
-          {POSTS.map((p) => (
-            <article key={p.id} className="blog-card">
-              <div className="blog-card__body">
-                <h3 className="blog-card__title">
-                  <Link href={`/${p.slug}`}>{p.title}</Link>
-                </h3>
+        {/* tp-service-pin/panel restore GSAP scroll-pin stacking animation */}
+        <div className="tp-service-pin blog-list">
+          <div className="row">
+            {POSTS.map((p) => (
+              <div key={p.id} className="col-xl-12">
+                <article className="news-main-box-items tp-service-panel blog-card">
+                  <div className="blog-card__body news-content">
+                    <h3 className="blog-card__title">
+                      <Link href={`/${p.slug}`}>{p.title}</Link>
+                    </h3>
 
-                <div className="blog-card__meta">
-                  <div className="blog-card__author">
-                    <img
-                      src="/assets/img/decorations/contact.png"
-                      alt="Sawon Saha"
-                      className="blog-card__avatar"
-                    />
-                    <div>
-                      <span className="blog-card__author-name">Sawon Saha</span>
-                      <span className="blog-card__authored-by">Authored By</span>
+                    <div className="blog-card__meta">
+                      <div className="blog-card__author">
+                        <img
+                          src="/assets/img/decorations/contact.png"
+                          alt="Sawon Saha"
+                          className="blog-card__avatar"
+                        />
+                        <div>
+                          <span className="blog-card__author-name">Sawon Saha</span>
+                          <span className="blog-card__authored-by">Authored By</span>
+                        </div>
+                      </div>
+
+                      <div className="blog-card__badges">
+                        <span className="blog-badge blog-badge--cat">{p.category}</span>
+                        <span className="blog-badge blog-badge--date">{p.date}</span>
+                      </div>
                     </div>
                   </div>
 
-                  <div className="blog-card__badges">
-                    <span className="blog-badge blog-badge--cat">{p.category}</span>
-                    <span className="blog-badge blog-badge--date">{p.date}</span>
+                  <div className="blog-card__image news-image">
+                    {p.img ? (
+                      <img src={p.img} alt={p.title} loading="lazy" />
+                    ) : (
+                      <div className="blog-card__placeholder" aria-hidden="true">
+                        <span>800 × 450</span>
+                      </div>
+                    )}
                   </div>
-                </div>
+                </article>
               </div>
-
-              <div className="blog-card__image">
-                {p.img ? (
-                  <img src={p.img} alt={p.title} loading="lazy" />
-                ) : (
-                  <div className="blog-card__placeholder" aria-hidden="true">
-                    <span>800 × 450</span>
-                  </div>
-                )}
-              </div>
-            </article>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

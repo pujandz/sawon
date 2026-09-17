@@ -120,7 +120,8 @@ export default function RootLayout({
           :root { --theme: #6C5DFA !important; }
           .marquee-section { background-color: #6C5DFA !important; }
           .cta-text-items h3, .cta-text-items h3 a { color: #6C5DFA !important; border-color: #6C5DFA !important; }
-          .theme-btn { background-color: #6C5DFA !important; border-color: #6C5DFA !important; }
+          .theme-btn { background-color: #6C5DFA !important; border-color: #6C5DFA !important; color: #fff !important; }
+          .theme-btn i { color: #fff !important; }
           .marquee-star i { color: #6C5DFA !important; }
           .news-main-box-items .news-content ul li span { background: #6C5DFA !important; }
         ` }} />

@@ -4,6 +4,22 @@
 /* Primary brand colour override */
 :root { --theme: #6C5DFA !important; }
 
+/* Buttons — white text on purple fill; icon inherits */
+.theme-btn {
+  color: #fff !important;
+}
+.theme-btn i { color: inherit !important; }
+
+/* About section — force visible: GSAP SplitText holds tv_hero_title at
+   opacity:0 via inline style; !important overrides inline styles */
+.about-section .about-content h2,
+.about-section .about-content p,
+.about-section .about-content .about-btn,
+.about-section .about-content .about-btn a {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
 /* Scroll progress bar — fixed at top of viewport */
 #scroll-progress-bar {
   position: fixed;
@@ -543,9 +559,48 @@ body { overflow-x: hidden; }
   object-fit: contain;
 }
 
+/* ── Hero LinkedIn badge ── */
+.hero-linkedin-badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--white, #fff);
+}
+.hero-linkedin-badge i {
+  font-size: 38px;
+  color: #0A66C2;
+  flex-shrink: 0;
+}
+.hero-linkedin-badge span {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.3;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--white, #fff);
+}
+.hero-linkedin-badge:hover i { color: #378FE9; }
+.hero-linkedin-badge:hover span { color: rgba(255,255,255,0.8); }
+
 /* ── Blog card list (News section) ── */
 .blog-list {
   margin-top: 40px;
+}
+
+/* Override news-main-box-items flex defaults so blog-card layout wins */
+.news-main-box-items.blog-card {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  align-items: stretch !important;
+  background-color: transparent !important;
+}
+@media (min-width: 992px) {
+  .news-main-box-items.blog-card {
+    flex-direction: row !important;
+    align-items: center !important;
+  }
 }
 
 .blog-card {

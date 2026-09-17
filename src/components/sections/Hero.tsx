@@ -8,8 +8,16 @@ export default function Hero() {
       </div>
 
       <div className="hero-info">
-        <img src={`${D}/info.png`} alt="Hero Info" />
-        <span>trusted clients <br /> world wide</span>
+        <a
+          href="https://www.linkedin.com/in/sawonsaha/details/recommendations/"
+          target="_blank"
+          rel="noreferrer"
+          className="hero-linkedin-badge"
+          aria-label="View Sawon Saha LinkedIn Recommendations"
+        >
+          <i className="fa-brands fa-linkedin" aria-hidden="true"></i>
+          <span>LinkedIn <br /> Recommendations</span>
+        </a>
       </div>
 
       <div className="vec-shape float-bob-x">
