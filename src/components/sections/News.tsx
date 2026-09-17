@@ -50,26 +50,28 @@ export default function News() {
         <div className="blog-list">
           {POSTS.map((p) => (
             <article key={p.id} className="blog-card">
-              <h3 className="blog-card__title">
-                <Link href={`/${p.slug}`}>{p.title}</Link>
-              </h3>
+              <div className="blog-card__body">
+                <h3 className="blog-card__title">
+                  <Link href={`/${p.slug}`}>{p.title}</Link>
+                </h3>
 
-              <div className="blog-card__meta">
-                <div className="blog-card__author">
-                  <img
-                    src="/assets/img/decorations/contact.png"
-                    alt="Sawon Saha"
-                    className="blog-card__avatar"
-                  />
-                  <div>
-                    <span className="blog-card__author-name">Sawon Saha</span>
-                    <span className="blog-card__authored-by">Authored By</span>
+                <div className="blog-card__meta">
+                  <div className="blog-card__author">
+                    <img
+                      src="/assets/img/decorations/contact.png"
+                      alt="Sawon Saha"
+                      className="blog-card__avatar"
+                    />
+                    <div>
+                      <span className="blog-card__author-name">Sawon Saha</span>
+                      <span className="blog-card__authored-by">Authored By</span>
+                    </div>
                   </div>
-                </div>
 
-                <div className="blog-card__badges">
-                  <span className="blog-badge blog-badge--cat">{p.category}</span>
-                  <span className="blog-badge blog-badge--date">{p.date}</span>
+                  <div className="blog-card__badges">
+                    <span className="blog-badge blog-badge--cat">{p.category}</span>
+                    <span className="blog-badge blog-badge--date">{p.date}</span>
+                  </div>
                 </div>
               </div>
 
@@ -78,7 +80,7 @@ export default function News() {
                   <img src={p.img} alt={p.title} loading="lazy" />
                 ) : (
                   <div className="blog-card__placeholder" aria-hidden="true">
-                    <span>800 × 400</span>
+                    <span>800 × 450</span>
                   </div>
                 )}
               </div>
