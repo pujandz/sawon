@@ -2,11 +2,11 @@ const D = '/assets/img/decorations';
 const T = '/assets/img/tools';
 
 const SKILLS = [
-  { label: 'Ahrefs', pct: 95, extra: 'pl-none', icon: `${T}/ahrefs.webp` },
-  { label: 'SEMrush', pct: 93, extra: '', icon: `${T}/semrush.webp` },
-  { label: 'Screaming Frog', pct: 88, extra: '', icon: `${T}/screaming-frog.webp` },
-  { label: 'Search Console', pct: 98, extra: 'pl-none', icon: `${T}/search-console.webp` },
-  { label: 'Moz Pro', pct: 85, extra: '', icon: `${T}/moz.webp` },
+  { label: 'Ahrefs',          pct: 95, icon: `${T}/ahrefs.webp` },
+  { label: 'SEMrush',         pct: 93, icon: `${T}/semrush.webp` },
+  { label: 'Screaming Frog',  pct: 88, icon: `${T}/screaming-frog.webp` },
+  { label: 'Search Console',  pct: 98, icon: `${T}/search-console.webp` },
+  { label: 'Moz Pro',         pct: 85, icon: `${T}/moz.webp` },
 ];
 
 export default function About() {
@@ -30,29 +30,18 @@ export default function About() {
                   <li><span>80+ successfully</span> projects done</li>
                 </ul>
 
-                <div className="row g-4 wow fadeInUp" data-wow-delay=".7s">
+                <div className="row g-3 wow fadeInUp" data-wow-delay=".7s">
                   {SKILLS.map((s) => (
-                    <div key={s.label} className="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-6">
-                      <div className={`skill-counter${s.extra ? ' ' + s.extra : ''}`}>
+                    <div key={s.label} className="col-6">
+                      <div className="skill-counter skill-counter-icon">
+                        <div className="skill-tool-icon">
+                          <img src={s.icon} alt="" aria-hidden="true" width={44} height={44} loading="lazy" decoding="async" />
+                        </div>
                         <div className="content">
                           <h2><span className="count">{s.pct}</span>%</h2>
                           <p>{s.label}</p>
                         </div>
                       </div>
-                    </div>
-                  ))}
-
-                  <div className="col-xl-12 d-none d-xxl-block">
-                    <div className="middle-line"></div>
-                  </div>
-                </div>
-
-                <h4 className="title"><span>My</span> Favorite SEO Tools</h4>
-
-                <div className="tools-icon-list">
-                  {SKILLS.map((s) => (
-                    <div key={s.label} className="tools-icon-item" title={s.label}>
-                      <img src={s.icon} alt={s.label} width={48} height={48} loading="lazy" decoding="async" />
                     </div>
                   ))}
                 </div>
