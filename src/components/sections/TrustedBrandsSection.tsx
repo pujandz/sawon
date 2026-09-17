@@ -206,7 +206,7 @@ export function TrustedBrandsSection() {
       <style dangerouslySetInnerHTML={{ __html: css(scope) }} />
 
       <div className="section-title text-center" style={{ marginBottom: '3rem' }}>
-        <h2 className="hero_title">Trusted by</h2>
+        <h6>trusted by</h6>
         <h2 className="hero_title">Worldwide <span>Valuable Clients</span></h2>
       </div>
 
