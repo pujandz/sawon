@@ -132,17 +132,17 @@ export default function WorkDetailPage({ params }: Props) {
               <span>{project.cat}</span>
               <h3>Client: {project.client}</h3>
 
-              <p style={{ fontSize: '0.9rem', marginBottom: '1rem', lineHeight: 1.7 }}>
-                <strong>Challenge:</strong> {project.challenge}
+              <p style={{ color: '#888', fontSize: '0.9rem', marginBottom: '1rem', lineHeight: 1.7 }}>
+                <strong style={{ color: 'rgba(255,255,255,0.8)' }}>Challenge:</strong> {project.challenge}
               </p>
-              <p style={{ fontSize: '0.9rem', marginBottom: '1.5rem', lineHeight: 1.7 }}>
-                <strong>Solution:</strong> {project.solution}
+              <p style={{ color: '#888', fontSize: '0.9rem', marginBottom: '1.5rem', lineHeight: 1.7 }}>
+                <strong style={{ color: 'rgba(255,255,255,0.8)' }}>Solution:</strong> {project.solution}
               </p>
 
               {project.results.map((r) => (
                 <div key={r.metric} style={{ marginBottom: '0.75rem' }}>
                   <span style={{ color: 'var(--theme)', fontWeight: 700, fontSize: '1.1rem' }}>{r.change}</span>
-                  <span style={{ fontSize: '0.85rem', marginLeft: '0.5rem' }}>
+                  <span style={{ color: '#888', fontSize: '0.85rem', marginLeft: '0.5rem' }}>
                     {r.metric}{r.period ? ` · ${r.period}` : ''}
                   </span>
                 </div>
@@ -154,9 +154,10 @@ export default function WorkDetailPage({ params }: Props) {
                     key={t}
                     style={{
                       padding: '0.2rem 0.7rem',
-                      border: '1px solid rgba(0,0,0,0.2)',
+                      border: '1px solid rgba(255,255,255,0.2)',
                       borderRadius: '999px',
                       fontSize: '0.78rem',
+                      color: 'rgba(255,255,255,0.6)',
                     }}
                   >
                     {t}

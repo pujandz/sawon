@@ -77,7 +77,7 @@ export default function PortfolioPage() {
                     <h3>
                       <Link href={`/works/${p.slug}`}>{p.title}</Link>
                     </h3>
-                    <span style={{ fontSize: '0.85rem' }}>{p.result}</span>
+                    <span style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.6)' }}>{p.result}</span>
                   </div>
                 </div>
               </div>

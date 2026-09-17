@@ -113,7 +113,7 @@ function css(scope: string) {
 .${scope} .pbm-card {
   flex-shrink: 0; display: flex; align-items: center; justify-content: center;
   width: ${CARD_W}px; height: ${CARD_H}px; padding: .75rem; margin: 0 .5rem;
-  border-radius: 0.375rem; border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 0.375rem; border: 1px solid rgba(255, 255, 255, 0.15);
   background: transparent;
   transition: border-color .2s ease, transform .2s ease;
 }
