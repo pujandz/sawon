@@ -859,8 +859,17 @@
         })
     });
 
-     
-    
+    /* Pin work-experience section when dome bottom reaches viewport bottom */
+    if ($('.work-experience-section-1').length && $('.feature-work-experience-wrap').length) {
+        ScrollTrigger.create({
+            trigger: '.feature-work-experience-wrap',
+            start: 'bottom bottom',
+            end: '+=500',
+            pin: '.work-experience-section-1',
+            pinSpacing: true,
+            markers: false,
+        });
+    }
 
     /* ================================
        Project Anim Js Start
