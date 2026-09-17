@@ -39,6 +39,10 @@ html { scroll-behavior: smooth; }
   display: inline-block;
   min-height: 1.2em;
 }
+@media (max-width: 575px) {
+  #typing-text { max-width: 100%; overflow: hidden; white-space: nowrap; }
+  .hero-content h1 { word-break: break-word; }
+}
 
 /* Offcanvas: reduce padding so all nav links fit at any screen height */
 .style-offcanvas-2 .offcanvas__info {
@@ -93,6 +97,15 @@ body { overflow-x: hidden; }
 }
 .hero-section.hero-1 > .container { width: 100%; }
 
+/* Portrait: CSS-only fade-in so GSAP can't hold it at opacity:0 on mobile */
+@keyframes hero-portrait-in {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.hero-portrait {
+  animation: hero-portrait-in 1s ease 0.5s both;
+}
+
 /* Portrait: fills from content top to section bottom edge */
 .hero-1 .hero-image {
   max-height: calc(100dvh - 80px);
@@ -118,14 +131,22 @@ body { overflow-x: hidden; }
   }
   .hero-1 .hero-image {
     max-height: 60vw;
+    align-items: flex-start;
+    overflow: hidden;
+  }
+  .hero-1 .hero-image img {
+    max-height: 60vw;
+    width: auto;
   }
 }
 @media (max-width: 767px) {
   .hero-section.hero-1 { padding-top: 110px; }
   .hero-1 .hero-image { max-height: 80vw; }
+  .hero-1 .hero-image img { max-height: 80vw; }
 }
 @media (max-width: 575px) {
   .hero-1 .hero-image { max-height: 100vw; max-width: 100% !important; }
+  .hero-1 .hero-image img { max-height: 100vw; }
 }
 
 /* Portrait width caps — 20% larger than theme defaults */
@@ -179,6 +200,146 @@ body { overflow-x: hidden; }
 }
 
 /* Override iframe restriction set by old X-Frame-Options: DENY */
+
+/* ── Work Experience: prevent h5 from breaking into 3 lines on mobile ── */
+@media (max-width: 767px) {
+  .feature-work-experience-main-slider .info-item {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .feature-work-experience-main-slider .info-item h5 {
+    max-width: 100% !important;
+    font-size: 16px;
+  }
+}
+
+/* About: hide absolute vec-shape on mobile so it doesn't create an empty gap */
+@media (max-width: 991px) {
+  .about-wrapper .about-left-items .vec-shape { display: none; }
+  /* Tools icon row: allow up to 3 per row on narrow screens */
+  .tools-icon-list { gap: 10px; }
+  .tools-icon-item { width: 46px; height: 46px; }
+}
+
+/* ── Certificate cards (Award section) ────────────────────────── */
+.cert-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+@media (max-width: 575px) {
+  .cert-grid { grid-template-columns: 1fr; }
+}
+
+.cert-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(108, 93, 250, 0.2);
+  border-radius: 12px;
+  padding: 20px;
+  overflow: hidden;
+  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  /* inner double-border glow via box-shadow */
+  box-shadow: inset 0 0 0 1px rgba(108, 93, 250, 0.06);
+}
+.cert-card:hover {
+  border-color: rgba(108, 93, 250, 0.5);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(108, 93, 250, 0.18), inset 0 0 0 1px rgba(108, 93, 250, 0.12);
+}
+
+/* Top stripe — coloured per cert accent */
+.cert-stripe {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  border-radius: 12px 12px 0 0;
+}
+
+/* Header: icon + year */
+.cert-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+.cert-icon-wrap {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+.cert-year {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 2px 8px;
+  border-radius: 20px;
+}
+
+/* Certificate label — small caps watermark-style */
+.cert-label {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(108, 93, 250, 0.6);
+  margin: 0 0 6px;
+}
+
+/* Certificate name */
+.cert-name {
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.4;
+  margin: 0 0 6px;
+}
+
+/* Issuer */
+.cert-issuer {
+  font-size: 11px;
+  font-weight: 600;
+  margin: 0 0 14px;
+}
+
+/* Footer: verified badge + decorative dots */
+.cert-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 12px;
+}
+.cert-seal {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 10px;
+  font-weight: 600;
+  color: #6C5DFA;
+}
+.cert-seal i { font-size: 12px; }
+.cert-dots {
+  display: flex;
+  gap: 4px;
+}
+.cert-dots span {
+  display: block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(108, 93, 250, 0.3);
+}
+.cert-dots span:last-child { background: rgba(108, 93, 250, 0.7); }
+
 
 /* Favorite SEO tools icon row in About section */
 .tools-icon-list {
