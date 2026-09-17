@@ -127,26 +127,27 @@ body { overflow-x: hidden; }
     min-height: 100dvh;
     align-items: flex-start;
     padding-top: 130px;
-    padding-bottom: 60px;
+    padding-bottom: 0;
   }
   .hero-1 .hero-image {
-    max-height: 60vw;
-    align-items: flex-start;
+    max-height: 80vw;
+    align-items: flex-end;
     overflow: hidden;
+    margin-bottom: 0 !important;
   }
   .hero-1 .hero-image img {
-    max-height: 60vw;
+    max-height: 80vw;
     width: auto;
   }
 }
 @media (max-width: 767px) {
-  .hero-section.hero-1 { padding-top: 110px; }
-  .hero-1 .hero-image { max-height: 80vw; }
-  .hero-1 .hero-image img { max-height: 80vw; }
+  .hero-section.hero-1 { padding-top: 110px; padding-bottom: 0; }
+  .hero-1 .hero-image { max-height: 90vw; }
+  .hero-1 .hero-image img { max-height: 90vw; }
 }
 @media (max-width: 575px) {
-  .hero-1 .hero-image { max-height: 100vw; max-width: 100% !important; }
-  .hero-1 .hero-image img { max-height: 100vw; }
+  .hero-1 .hero-image { max-height: 110vw; max-width: 100% !important; margin-bottom: 0 !important; }
+  .hero-1 .hero-image img { max-height: 110vw; }
 }
 
 /* Portrait width caps — 20% larger than theme defaults */
