@@ -7,6 +7,7 @@ const POSTS = [
     slug: 'blog',
     category: 'SEO Strategy',
     date: 'Jan 15, 2025',
+    img: null,
   },
   {
     id: 2,
@@ -14,6 +15,7 @@ const POSTS = [
     slug: 'blog',
     category: 'AEO',
     date: 'Feb 03, 2025',
+    img: null,
   },
   {
     id: 3,
@@ -21,6 +23,7 @@ const POSTS = [
     slug: 'blog',
     category: 'Technical SEO',
     date: 'Mar 20, 2025',
+    img: null,
   },
 ];
 
@@ -44,37 +47,43 @@ export default function News() {
           </Link>
         </div>
 
-        <div className="tp-service-pin">
-          <div className="row">
-            {POSTS.map((p) => (
-              <div key={p.id} className="col-xl-12">
-                <article className="news-main-box-items tp-service-panel">
-                  <div className="news-content" style={{ width: '100%' }}>
-                    <h3 style={{ color: 'var(--theme)' }}>
-                      <Link href={`/${p.slug}`}>{p.title}</Link>
-                    </h3>
-                    <ul>
-                      <li>
-                        <div className="client-info">
-                          <img src="/assets/img/decorations/contact.png" alt="Sawon Saha" />
-                          <div className="client-content">
-                            <span className="name">Sawon Saha</span>
-                            <p>Authored By</p>
-                          </div>
-                        </div>
-                      </li>
-                      <li>
-                        <span>{p.category}</span>
-                      </li>
-                      <li>
-                        <span className="color-2">{p.date}</span>
-                      </li>
-                    </ul>
+        <div className="blog-list">
+          {POSTS.map((p) => (
+            <article key={p.id} className="blog-card">
+              <h3 className="blog-card__title">
+                <Link href={`/${p.slug}`}>{p.title}</Link>
+              </h3>
+
+              <div className="blog-card__meta">
+                <div className="blog-card__author">
+                  <img
+                    src="/assets/img/decorations/contact.png"
+                    alt="Sawon Saha"
+                    className="blog-card__avatar"
+                  />
+                  <div>
+                    <span className="blog-card__author-name">Sawon Saha</span>
+                    <span className="blog-card__authored-by">Authored By</span>
                   </div>
-                </article>
+                </div>
+
+                <div className="blog-card__badges">
+                  <span className="blog-badge blog-badge--cat">{p.category}</span>
+                  <span className="blog-badge blog-badge--date">{p.date}</span>
+                </div>
               </div>
-            ))}
-          </div>
+
+              <div className="blog-card__image">
+                {p.img ? (
+                  <img src={p.img} alt={p.title} loading="lazy" />
+                ) : (
+                  <div className="blog-card__placeholder" aria-hidden="true">
+                    <span>800 × 400</span>
+                  </div>
+                )}
+              </div>
+            </article>
+          ))}
         </div>
       </div>
     </section>
