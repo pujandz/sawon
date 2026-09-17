@@ -1,5 +1,7 @@
 import Link from 'next/link';
 
+const CDN = 'https://revox.baseecom.com/wp-content/uploads/2026/01';
+
 const POSTS = [
   {
     id: 1,
@@ -7,7 +9,6 @@ const POSTS = [
     slug: 'blog',
     category: 'SEO Strategy',
     date: 'Jan 15, 2025',
-    img: '/assets/img/portfolio/project-01-4.jpg',
   },
   {
     id: 2,
@@ -15,7 +16,6 @@ const POSTS = [
     slug: 'blog',
     category: 'AEO',
     date: 'Feb 03, 2025',
-    img: '/assets/img/portfolio/project-02-3.jpg',
   },
   {
     id: 3,
@@ -23,7 +23,6 @@ const POSTS = [
     slug: 'blog',
     category: 'Technical SEO',
     date: 'Mar 20, 2025',
-    img: '/assets/img/portfolio/project-03-4.jpg',
   },
 ];
 
@@ -49,35 +48,30 @@ export default function News() {
 
         <div className="tp-service-pin">
           <div className="row">
-            {POSTS.map((p, idx) => (
+            {POSTS.map((p) => (
               <div key={p.id} className="col-xl-12">
                 <article className="news-main-box-items tp-service-panel">
-                  <div className="news-content">
-                    <h3>
+                  <div className="news-content" style={{ width: '100%' }}>
+                    <h3 style={{ color: 'var(--theme)' }}>
                       <Link href={`/${p.slug}`}>{p.title}</Link>
                     </h3>
-                    {idx === POSTS.length - 1 && (
-                      <ul>
-                        <li>
-                          <div className="client-info">
-                            <img src={"/assets/img/decorations/contact.png"} alt="Sawon Saha" />
-                            <div className="client-content">
-                              <span className="name">Sawon Saha</span>
-                              <p>Authored By</p>
-                            </div>
+                    <ul>
+                      <li>
+                        <div className="client-info">
+                          <img src={`${CDN}/client-1.png`} alt="Sawon Saha" />
+                          <div className="client-content">
+                            <span className="name">Sawon Saha</span>
+                            <p>Authored By</p>
                           </div>
-                        </li>
-                        <li>
-                          <span>{p.category}</span>
-                        </li>
-                        <li>
-                          <span className="color-2">{p.date}</span>
-                        </li>
-                      </ul>
-                    )}
-                  </div>
-                  <div className="news-image">
-                    <img src={p.img} alt={p.title} />
+                        </div>
+                      </li>
+                      <li>
+                        <span>{p.category}</span>
+                      </li>
+                      <li>
+                        <span className="color-2">{p.date}</span>
+                      </li>
+                    </ul>
                   </div>
                 </article>
               </div>

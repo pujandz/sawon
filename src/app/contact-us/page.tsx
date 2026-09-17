@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 
+const CDN = 'https://revox.baseecom.com/wp-content/uploads/2026/01';
 
 export default function ContactUsPage() {
   const [status, setStatus] = useState<null | 'sending' | 'sent' | 'error'>(null);
@@ -39,7 +40,7 @@ export default function ContactUsPage() {
           <div className="row align-items-center">
             <div className="col-xl-5 col-lg-5">
               <div className="contact-image">
-                <img src={"/assets/img/decorations/contact.png"} alt="Sawon Saha" />
+                <img src={`${CDN}/contact.png`} alt="Sawon Saha" />
                 <ul>
                   <li>3+ Years <b>SEO Experience</b></li>
                   <li>80+ Projects <b>Delivered</b></li>

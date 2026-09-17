@@ -113,7 +113,7 @@ function css(scope: string) {
 .${scope} .pbm-card {
   flex-shrink: 0; display: flex; align-items: center; justify-content: center;
   width: ${CARD_W}px; height: ${CARD_H}px; padding: .75rem; margin: 0 .5rem;
-  border-radius: 0.375rem; border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 0.375rem; border: 1px solid rgba(255, 255, 255, 0.15);
   background: transparent;
   transition: border-color .2s ease, transform .2s ease;
 }
@@ -206,7 +206,7 @@ export function TrustedBrandsSection() {
       <style dangerouslySetInnerHTML={{ __html: css(scope) }} />
 
       <div className="section-title text-center" style={{ marginBottom: '3rem' }}>
-        <h6>Trusted by</h6>
+        <h2 className="hero_title">Trusted by</h2>
         <h2 className="hero_title">Worldwide <span>Valuable Clients</span></h2>
       </div>
 
