@@ -221,124 +221,208 @@ body { overflow-x: hidden; }
   .tools-icon-item { width: 46px; height: 46px; }
 }
 
-/* ── Certificate cards (Award section) ────────────────────────── */
-.cert-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
-@media (max-width: 575px) {
-  .cert-grid { grid-template-columns: 1fr; }
-}
+/* ── Award Visual — animated certificate (Award section) ─────── */
 
-.cert-card {
+/* Card frame */
+.av-card {
   position: relative;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(108, 93, 250, 0.2);
-  border-radius: 12px;
-  padding: 20px;
+  background: linear-gradient(135deg, rgba(108,93,250,0.07) 0%, rgba(108,93,250,0.02) 100%);
+  border: 1px solid rgba(108,93,250,0.18);
+  border-radius: 20px;
+  padding: 28px 24px 22px;
   overflow: hidden;
-  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
-  /* inner double-border glow via box-shadow */
-  box-shadow: inset 0 0 0 1px rgba(108, 93, 250, 0.06);
-}
-.cert-card:hover {
-  border-color: rgba(108, 93, 250, 0.5);
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(108, 93, 250, 0.18), inset 0 0 0 1px rgba(108, 93, 250, 0.12);
 }
 
-/* Top stripe — coloured per cert accent */
-.cert-stripe {
+/* Shimmer sweep across the card */
+@keyframes av-shimmer {
+  0%   { transform: translateX(-120%) skewX(-15deg); }
+  100% { transform: translateX(220%)  skewX(-15deg); }
+}
+.av-card::before {
+  content: '';
   position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 3px;
-  border-radius: 12px 12px 0 0;
+  inset: 0;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(108,93,250,0.06) 45%,
+    rgba(167,139,250,0.10) 50%,
+    rgba(108,93,250,0.06) 55%,
+    transparent 100%);
+  animation: av-shimmer 5s ease-in-out 1s infinite;
+  pointer-events: none;
 }
 
-/* Header: icon + year */
-.cert-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 14px;
-}
-.cert-icon-wrap {
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-  border: 1px solid;
+/* Corner bracket decorations */
+.av-corner { position: absolute; }
+.av-corner-tl { top: 0;    left: 0;  }
+.av-corner-tr { top: 0;    right: 0; }
+.av-corner-bl { bottom: 0; left: 0;  }
+.av-corner-br { bottom: 0; right: 0; }
+
+/* Header row */
+.av-header {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
+  gap: 6px;
+  margin-bottom: 22px;
 }
-.cert-year {
+.av-dot {
+  display: inline-block;
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: var(--theme);
+  opacity: 0.55;
+}
+.av-label {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(108,93,250,0.65);
+}
+
+/* Ring outer: extra padding so overflow badges show */
+.av-ring-outer { padding: 20px 0; }
+
+/* Ring wrapper: positioning context for SVG + badges */
+.av-ring-wrap {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  overflow: visible;
+}
+.av-ring-svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+/* Animated ring draw */
+@keyframes av-ring-draw {
+  to { stroke-dashoffset: 0; }
+}
+.av-ring-progress {
+  animation: av-ring-draw 2.2s cubic-bezier(0.25, 1, 0.5, 1) 0.6s forwards;
+}
+
+/* Floating badge on ring circumference */
+@keyframes av-float {
+  0%, 100% { transform: translateY(0px);  }
+  50%       { transform: translateY(-6px); }
+}
+.av-badge {
+  position: absolute;
+  width: 36px; height: 36px;
+  border-radius: 10px;
+  background: rgba(108,93,250,0.15);
+  border: 1px solid rgba(108,93,250,0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  color: var(--theme);
+  animation: av-float 3.2s ease-in-out infinite;
+  backdrop-filter: blur(4px);
+}
+
+/* Centre overlay */
+.av-center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  pointer-events: none;
+}
+@keyframes av-star-pulse {
+  0%, 100% { transform: scale(1);    opacity: 0.75; }
+  50%       { transform: scale(1.18); opacity: 1;    }
+}
+.av-star {
+  font-size: 20px;
+  color: var(--theme);
+  margin-bottom: 6px;
+  animation: av-star-pulse 2.8s ease-in-out infinite;
+}
+.av-center-title {
+  display: block;
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.08em;
-  color: rgba(255, 255, 255, 0.35);
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 2px 8px;
-  border-radius: 20px;
-}
-
-/* Certificate label — small caps watermark-style */
-.cert-label {
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(108, 93, 250, 0.6);
-  margin: 0 0 6px;
-}
-
-/* Certificate name */
-.cert-name {
-  font-size: 13px;
-  font-weight: 700;
   color: #fff;
-  line-height: 1.4;
-  margin: 0 0 6px;
+  line-height: 1.2;
 }
-
-/* Issuer */
-.cert-issuer {
-  font-size: 11px;
+.av-center-sub {
+  display: block;
+  font-size: 12px;
   font-weight: 600;
-  margin: 0 0 14px;
+  color: rgba(108,93,250,0.8);
+  margin-top: 3px;
 }
 
-/* Footer: verified badge + decorative dots */
-.cert-footer {
+/* Cert chips */
+.av-chips {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-  padding-top: 12px;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+  margin-bottom: 20px;
 }
-.cert-seal {
-  display: flex;
-  align-items: center;
-  gap: 5px;
+.av-chip {
   font-size: 10px;
   font-weight: 600;
-  color: #6C5DFA;
+  color: rgba(255,255,255,0.6);
+  background: rgba(108,93,250,0.09);
+  border: 1px solid rgba(108,93,250,0.22);
+  border-radius: 20px;
+  padding: 3px 10px;
+  white-space: nowrap;
 }
-.cert-seal i { font-size: 12px; }
-.cert-dots {
+
+/* Stats row */
+.av-stats {
   display: flex;
-  gap: 4px;
+  justify-content: space-around;
+  border-top: 1px solid rgba(255,255,255,0.07);
+  padding-top: 16px;
+  margin-bottom: 14px;
 }
-.cert-dots span {
-  display: block;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: rgba(108, 93, 250, 0.3);
+.av-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
 }
-.cert-dots span:last-child { background: rgba(108, 93, 250, 0.7); }
+.av-stat strong {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--theme);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.av-stat span {
+  font-size: 10px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.38);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* Verified footer */
+.av-verified {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  justify-content: center;
+  font-size: 10px;
+  color: rgba(255,255,255,0.28);
+}
+.av-verified i { color: var(--theme); font-size: 11px; }
 
 
 /* Favorite SEO tools icon row in About section */
