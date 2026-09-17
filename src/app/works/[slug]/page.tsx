@@ -2,14 +2,14 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 
-const P = '/assets/img/portfolio';
+const UP = 'https://server1.liushibd.com/wp-content/uploads/2025/11';
 
 const PROJECTS = [
   {
     slug: 'ecommerce-seo-recovery',
     title: 'E-Commerce SEO Recovery',
     cat: 'E-Commerce SEO',
-    img: `${P}/project-01-4.jpg`,
+    img: `${UP}/project-05-2.jpg`,
     client: 'E-Commerce Brand',
     challenge: 'Organic traffic had dropped 40% after a Google algorithm update.',
     solution: 'Full technical audit, content pruning, E-E-A-T improvements, and high-authority link building.',
@@ -24,7 +24,7 @@ const PROJECTS = [
     slug: 'saas-brand-authority',
     title: 'SaaS Brand Authority Building',
     cat: 'SaaS SEO',
-    img: `${P}/project-02-3.jpg`,
+    img: `${UP}/project-04-3.jpg`,
     client: 'SaaS Company',
     challenge: 'Brand-new website with zero domain authority in a crowded niche.',
     solution: 'Topic cluster strategy, programmatic SEO, digital PR, and conversion-focused landing pages.',
@@ -39,7 +39,7 @@ const PROJECTS = [
     slug: 'local-service-maps-ranking',
     title: 'Local Service Business Maps Ranking',
     cat: 'Local SEO',
-    img: `${P}/project-03-4.jpg`,
+    img: `${UP}/project-03-2-1024x460.jpg`,
     client: 'Local Home Services',
     challenge: 'Invisible in local search; competitors dominating Google Maps.',
     solution: 'Google Business Profile optimization, local citation building, review strategy, and local content.',
@@ -54,7 +54,7 @@ const PROJECTS = [
     slug: 'fintech-content-strategy',
     title: 'Fintech Content Strategy',
     cat: 'SaaS SEO',
-    img: `${P}/project-04-4.jpg`,
+    img: `${UP}/project-02-4.jpg`,
     client: 'Fintech Startup',
     challenge: 'Low organic visibility competing against established financial brands.',
     solution: 'Topical authority mapping, expert-authored long-form content, and E-E-A-T optimization.',
@@ -69,7 +69,7 @@ const PROJECTS = [
     slug: 'bangladesh-retail-local-seo',
     title: 'Bangladesh Retail Chain Local SEO',
     cat: 'Local SEO',
-    img: `${P}/project-05-4.jpg`,
+    img: `${UP}/project-01-4.jpg`,
     client: 'Multi-location Retail Chain',
     challenge: 'Multiple locations not appearing in local pack despite strong brand presence.',
     solution: 'Multi-location GBP management, NAP consistency audit, review campaigns, and local schema markup.',
@@ -84,7 +84,7 @@ const PROJECTS = [
     slug: 'fashion-ecommerce-growth',
     title: 'Fashion E-Commerce Growth',
     cat: 'E-Commerce SEO',
-    img: `${P}/project-01-4.jpg`,
+    img: `${UP}/project-01-5-1024x460.jpg`,
     client: 'Fashion E-Commerce Brand',
     challenge: 'High bounce rate and low conversion from organic traffic.',
     solution: 'Technical UX audit, Core Web Vitals improvements, category page optimization, and structured data for products.',

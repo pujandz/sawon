@@ -7,47 +7,49 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
+const PH = '/assets/img/placeholder.svg';
+
 const PROJECTS = [
   {
     title: 'E-Commerce SEO Recovery',
     slug: 'ecommerce-seo-recovery',
     cat: 'E-Commerce SEO',
-    img: '/assets/img/portfolio/project-01-4.jpg',
+    img: PH,
     result: '+320% organic traffic in 8 months',
   },
   {
     title: 'SaaS Brand Authority Building',
     slug: 'saas-brand-authority',
     cat: 'SaaS SEO',
-    img: '/assets/img/portfolio/project-02-3.jpg',
+    img: PH,
     result: 'DA 0 → 42 in 12 months',
   },
   {
     title: 'Local Service Business Maps Ranking',
     slug: 'local-service-maps-ranking',
     cat: 'Local SEO',
-    img: '/assets/img/portfolio/project-03-4.jpg',
+    img: PH,
     result: 'Page 3 → #1 in Google Maps',
   },
   {
     title: 'Fintech Content Strategy',
     slug: 'fintech-content-strategy',
     cat: 'SaaS SEO',
-    img: '/assets/img/portfolio/project-04-4.jpg',
+    img: PH,
     result: '+890% organic sign-ups',
   },
   {
     title: 'Bangladesh Retail Chain Local SEO',
     slug: 'bangladesh-retail-local-seo',
     cat: 'Local SEO',
-    img: '/assets/img/portfolio/project-05-4.jpg',
+    img: PH,
     result: '+560% calls from Google Maps',
   },
   {
     title: 'Fashion E-Commerce Growth',
     slug: 'fashion-ecommerce-growth',
     cat: 'E-Commerce SEO',
-    img: '/assets/img/portfolio/project-01-4.jpg',
+    img: PH,
     result: '+180 keywords in Top 10',
   },
 ];

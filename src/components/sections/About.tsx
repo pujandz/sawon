@@ -1,17 +1,19 @@
+const D = '/assets/img/decorations';
+const T = '/assets/img/tools';
 
 const SKILLS = [
-  { icon: 'figma.png', label: 'Ahrefs', pct: 95, extra: 'pl-none' },
-  { icon: 'ps.png', label: 'SEMrush', pct: 93, extra: '' },
-  { icon: 'ai.png', label: 'Screaming Frog', pct: 88, extra: '' },
-  { icon: 'sketch.png', label: 'Search Console', pct: 98, extra: 'pl-none' },
-  { icon: 'xd.png', label: 'Moz Pro', pct: 85, extra: '' },
+  { label: 'Ahrefs', pct: 95, extra: 'pl-none', icon: `${T}/ahrefs.webp` },
+  { label: 'SEMrush', pct: 93, extra: '', icon: `${T}/semrush.webp` },
+  { label: 'Screaming Frog', pct: 88, extra: '', icon: `${T}/screaming-frog.webp` },
+  { label: 'Search Console', pct: 98, extra: 'pl-none', icon: `${T}/search-console.webp` },
+  { label: 'Moz Pro', pct: 85, extra: '', icon: `${T}/moz.webp` },
 ];
 
 export default function About() {
   return (
     <section className="about-section section-padding">
       <div className="circle-shape">
-        <img src={"/assets/img/decorations/circle-shape.png"} alt="Circle shape" />
+        <img src={`${D}/circle-shape.png`} alt="Circle shape" />
       </div>
 
       <div className="container">
@@ -32,7 +34,6 @@ export default function About() {
                   {SKILLS.map((s) => (
                     <div key={s.label} className="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-6">
                       <div className={`skill-counter${s.extra ? ' ' + s.extra : ''}`}>
-                        <img src={`/assets/img/decorations/${s.icon}`} alt="Skill icon" />
                         <div className="content">
                           <h2><span className="count">{s.pct}</span>%</h2>
                           <p>{s.label}</p>
@@ -48,8 +49,16 @@ export default function About() {
 
                 <h4 className="title"><span>My</span> Favorite SEO Tools</h4>
 
+                <div className="tools-icon-list">
+                  {SKILLS.map((s) => (
+                    <div key={s.label} className="tools-icon-item" title={s.label}>
+                      <img src={s.icon} alt={s.label} width={48} height={48} loading="lazy" decoding="async" />
+                    </div>
+                  ))}
+                </div>
+
                 <div className="vec-shape">
-                  <img src={"/assets/img/decorations/vec-shape.png"} alt="Vector shape" />
+                  <img src={`${D}/vec-shape.png`} alt="Vector shape" />
                 </div>
               </div>
             </div>

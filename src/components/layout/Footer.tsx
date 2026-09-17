@@ -39,7 +39,7 @@ export default function Footer() {
           <p>Copyright &copy; <span>Sawon Saha</span></p>
 
           <Link href="/" className="footer-logo">
-            <img src="/assets/img/logo/white-icon.png" alt="Sawon Saha" />
+            <img src="/assets/img/logo/white-icon.webp" alt="Sawon Saha" />
           </Link>
 
           <ul>

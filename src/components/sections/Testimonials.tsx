@@ -1,3 +1,5 @@
+const D = '/assets/img/decorations';
+const TI = '/assets/img/testimonials';
 
 const TESTIMONIALS = [
   {
@@ -48,7 +50,7 @@ export default function Testimonials() {
                 <div key={t.name} className="swiper-slide">
                   <div className="testimonial-box-items">
                     <div className="thumb">
-                      <img src={`/assets/img/testimonials/${t.img}`} alt={t.name} />
+                      <img src={`${TI}/${t.img}`} alt={t.name} />
                       <div className="info-title">
                         <h4>{t.name}</h4>
                         <span>{t.role}</span>
@@ -57,11 +59,11 @@ export default function Testimonials() {
 
                     <div className="content">
                       <div className="quote-icon">
-                        <img src={"/assets/img/decorations/quote-icon.png"} alt="Quote Icon" />
+                        <img src={`${D}/quote-icon.png`} alt="Quote Icon" />
                       </div>
                       <p>{t.quote}</p>
                       <div className="clutech-image">
-                        <img src={"/assets/img/decorations/clutech.png"} alt="Company Logo" />
+                        <img src={`${D}/clutech.png`} alt="Company Logo" />
                       </div>
                     </div>
                   </div>

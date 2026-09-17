@@ -1,3 +1,4 @@
+const D = '/assets/img/decorations';
 
 const SERVICES = [
   {
@@ -67,7 +68,7 @@ export default function Services() {
               <div className="choose-us-image fix">
                 <img
                   data-speed=".7"
-                  src={"/assets/img/decorations/choose-us.png"}
+                  src={`${D}/choose-us.png`}
                   alt="SEO Services"
                 />
               </div>

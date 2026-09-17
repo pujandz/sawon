@@ -1,4 +1,3 @@
-
 export default function VideoCta() {
   return (
     <div className="video-section fix">
@@ -6,7 +5,7 @@ export default function VideoCta() {
         <div className="video-thumb fix">
           <img
             data-speed="0.8"
-            src={"/assets/img/decorations/video-image.jpg"}
+            src="/assets/img/decorations/video-image.jpg"
             alt="Video Background"
           />
           <div className="video">

@@ -1,18 +1,19 @@
+const D = '/assets/img/decorations';
 
 export default function Hero() {
   return (
     <section className="hero-section hero-1 hero-section1 fix">
       <div className="line-shape">
-        <img src={"/assets/img/decorations/line-shape.png"} alt="Line Shape" />
+        <img src={`${D}/line-shape.png`} alt="Line Shape" />
       </div>
 
       <div className="hero-info">
-        <img src={"/assets/img/decorations/info.png"} alt="Hero Info" />
+        <img src={`${D}/info.png`} alt="Hero Info" />
         <span>trusted clients <br /> world wide</span>
       </div>
 
       <div className="vec-shape float-bob-x">
-        <img src={"/assets/img/decorations/vec-shape.png"} alt="Vector Shape" />
+        <img src={`${D}/vec-shape.png`} alt="Vector Shape" />
       </div>
 
       <div className="container">
@@ -43,12 +44,12 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="col-xl-4 order-2 order-xl-1">
+          <div className="col-xl-4 order-1">
             <div className="hero-image image-wrapper">
               <picture>
                 <source srcSet="/assets/img/sawon-saha.webp" type="image/webp" />
                 <img
-                  className="animated-image"
+                  className="hero-portrait"
                   src="/assets/img/Sawon%20Saha.png"
                   alt="Sawon Saha – SEO Specialist"
                   fetchPriority="high"
@@ -58,7 +59,7 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="col-xl-3 order-1 order-xl-2">
+          <div className="col-xl-3 order-2">
             <div className="content wow fadeInUp" data-wow-delay=".3s">
               <p>A results-driven SEO Team Lead &amp; AEO Specialist with 3+ years of experience crafting search strategies that drive measurable organic growth.</p>
 
