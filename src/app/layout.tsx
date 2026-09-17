@@ -104,15 +104,15 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Kanit:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
         />
 
-        <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
-        <link rel="stylesheet" href="/assets/css/all.min.css" />
-        <link rel="stylesheet" href="/assets/css/animate.css" />
-        <link rel="stylesheet" href="/assets/css/magnific-popup.css" />
-        <link rel="stylesheet" href="/assets/css/meanmenu.css" />
-        <link rel="stylesheet" href="/assets/css/swiper-bundle.min.css" />
-        <link rel="stylesheet" href="/assets/css/nice-select.css" />
-        <link rel="stylesheet" href="/assets/css/slick.css" />
-        <link rel="stylesheet" href="/assets/css/main.css" />
+        <link rel="stylesheet" href="/assets/css/bootstrap.min.css?v=2" />
+        <link rel="stylesheet" href="/assets/css/all.min.css?v=2" />
+        <link rel="stylesheet" href="/assets/css/animate.css?v=2" />
+        <link rel="stylesheet" href="/assets/css/magnific-popup.css?v=2" />
+        <link rel="stylesheet" href="/assets/css/meanmenu.css?v=2" />
+        <link rel="stylesheet" href="/assets/css/swiper-bundle.min.css?v=2" />
+        <link rel="stylesheet" href="/assets/css/nice-select.css?v=2" />
+        <link rel="stylesheet" href="/assets/css/slick.css?v=2" />
+        <link rel="stylesheet" href="/assets/css/main.css?v=2" />
 
         <link rel="icon" href="/assets/img/logo/white-icon.webp" type="image/webp" />
         <link rel="apple-touch-icon" href="/assets/img/logo/white-icon.webp" />
