@@ -1,3 +1,4 @@
+const CDN = 'https://revox.baseecom.com/wp-content/uploads/2026/01';
 
 export default function VideoCta() {
   return (
@@ -6,7 +7,7 @@ export default function VideoCta() {
         <div className="video-thumb fix">
           <img
             data-speed="0.8"
-            src={"/assets/img/decorations/video-image.jpg"}
+            src={`${CDN}/video-image.jpg`}
             alt="Video Background"
           />
           <div className="video">

@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-const P = '/assets/img/portfolio';
+const PH = '/assets/img/placeholder.svg';
 
 export default function Portfolio() {
   return (
@@ -17,7 +17,7 @@ export default function Portfolio() {
             <div className="col-xl-6 col-lg-6 col-md-6">
               <div className="project-box-items design-choose-item-1">
                 <div className="thumb">
-                  <img src={`${P}/project-01-4.jpg`} alt="E-Commerce SEO" />
+                  <img src={PH} alt="E-Commerce SEO" />
                   <div className="content">
                     <p>E-Commerce / SEO</p>
                     <h3><Link href="/portfolio">BDShop BD</Link></h3>
@@ -31,7 +31,7 @@ export default function Portfolio() {
             <div className="col-xl-6 col-lg-6 col-md-6">
               <div className="project-box-items design-choose-item-2">
                 <div className="thumb">
-                  <img src={`${P}/project-02-3.jpg`} alt="Local SEO" />
+                  <img src={PH} alt="Local SEO" />
                   <div className="content">
                     <p>Local / SEO</p>
                     <h3><Link href="/portfolio">AlgoMindz</Link></h3>
@@ -50,7 +50,7 @@ export default function Portfolio() {
           <div className="col-xl-12">
             <div className="project-box-items top_view">
               <div className="thumb fix">
-                <img src={`${P}/project-03-4.jpg`} alt="Technical SEO Audit" />
+                <img src={PH} alt="Technical SEO Audit" />
                 <div className="content">
                   <p>Technical / SEO</p>
                   <h3><Link href="/portfolio">Technical SEO Audit</Link></h3>
@@ -69,7 +69,7 @@ export default function Portfolio() {
             <div className="col-xl-6 col-lg-6 col-md-6">
               <div className="project-box-items design-choose-item-1">
                 <div className="thumb">
-                  <img src={`${P}/project-04-4.jpg`} alt="AEO Strategy" />
+                  <img src={PH} alt="AEO Strategy" />
                   <div className="content">
                     <p>AEO / Strategy</p>
                     <h3><Link href="/portfolio">AEO Strategy</Link></h3>
@@ -83,7 +83,7 @@ export default function Portfolio() {
             <div className="col-xl-6 col-lg-6 col-md-6">
               <div className="project-box-items design-choose-item-2">
                 <div className="thumb">
-                  <img src={`${P}/project-05-4.jpg`} alt="Link Building" />
+                  <img src={PH} alt="Link Building" />
                   <div className="content">
                     <p>Link Building / SEO</p>
                     <h3><Link href="/portfolio">Link Building</Link></h3>

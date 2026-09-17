@@ -1,18 +1,19 @@
+const CDN = 'https://revox.baseecom.com/wp-content/uploads/2026/01';
 
 export default function Hero() {
   return (
     <section className="hero-section hero-1 hero-section1 fix">
       <div className="line-shape">
-        <img src={"/assets/img/decorations/line-shape.png"} alt="Line Shape" />
+        <img src={`${CDN}/line-shape.png`} alt="Line Shape" />
       </div>
 
       <div className="hero-info">
-        <img src={"/assets/img/decorations/info.png"} alt="Hero Info" />
+        <img src={`${CDN}/info.png`} alt="Hero Info" />
         <span>trusted clients <br /> world wide</span>
       </div>
 
       <div className="vec-shape float-bob-x">
-        <img src={"/assets/img/decorations/vec-shape.png"} alt="Vector Shape" />
+        <img src={`${CDN}/vec-shape.png`} alt="Vector Shape" />
       </div>
 
       <div className="container">
