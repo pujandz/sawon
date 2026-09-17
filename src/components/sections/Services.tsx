@@ -1,4 +1,4 @@
-const CDN = 'https://revox.baseecom.com/wp-content/uploads/2026/01';
+const D = '/assets/img/decorations';
 
 const SERVICES = [
   {
@@ -68,7 +68,7 @@ export default function Services() {
               <div className="choose-us-image fix">
                 <img
                   data-speed=".7"
-                  src={`${CDN}/choose-us.png`}
+                  src={`${D}/choose-us.png`}
                   alt="SEO Services"
                 />
               </div>

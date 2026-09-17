@@ -1,27 +1,27 @@
 import Link from 'next/link';
 
-const CDN = 'https://revox.baseecom.com/wp-content/uploads/2026/01';
+const D = '/assets/img/decorations';
 
 export default function Cta() {
   return (
     <section className="cta-section section-padding fix">
       <div className="shape-1">
-        <img src={`${CDN}/line-shape.png`} alt="Shape 1" />
+        <img src={`${D}/line-shape.png`} alt="Shape 1" />
       </div>
       <div className="shape-2">
-        <img src={`${CDN}/shape-1.png`} alt="Shape 2" />
+        <img src={`${D}/shape-1.png`} alt="Shape 2" />
       </div>
       <div className="shape-3">
-        <img src={`${CDN}/shape-2.png`} alt="Shape 3" />
+        <img src={`${D}/shape-2.png`} alt="Shape 3" />
       </div>
       <div className="shape-4">
-        <img src={`${CDN}/shape-3.png`} alt="Shape 4" />
+        <img src={`${D}/shape-3.png`} alt="Shape 4" />
       </div>
       <div className="shape-5">
-        <img src={`${CDN}/shape-4.png`} alt="Shape 5" />
+        <img src={`${D}/shape-4.png`} alt="Shape 5" />
       </div>
       <div className="shape-6">
-        <img src={`${CDN}/shape-5.png`} alt="Shape 6" />
+        <img src={`${D}/shape-5.png`} alt="Shape 6" />
       </div>
 
       <div className="row">
