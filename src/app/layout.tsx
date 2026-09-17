@@ -86,6 +86,8 @@ export default function RootLayout({
   return (
     <html lang="en" dir="ltr">
       <head>
+        {/* Theme: read localStorage before hydration to prevent flash */}
+        <script dangerouslySetInnerHTML={{ __html: `try{var t=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',t);}catch(e){}` }} />
         {/* Fonts — single Google Fonts request for both families.
             Big Shoulders Display: heading weights 700/800/900.
             Kanit: body weights 400/500/600/700 (was 18 weights, now 8).

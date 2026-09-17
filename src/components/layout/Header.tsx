@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import ThemeToggle from './ThemeToggle';
 
 export default function Header() {
   return (
@@ -12,6 +13,7 @@ export default function Header() {
               </Link>
 
               <div className="header-right justify-content-end align-items-center">
+                <ThemeToggle />
                 <Link href="/contact-us" className="theme-btn">
                   Hire Me <i className="fa-solid fa-arrow-up-right"></i>
                 </Link>

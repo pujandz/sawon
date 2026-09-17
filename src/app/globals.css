@@ -755,3 +755,218 @@ body { overflow-x: hidden; }
   font-family: monospace;
   letter-spacing: 0.05em;
 }
+
+/* ══════════════════════════════════════════════════════════════
+   THEME TOGGLE BUTTON
+══════════════════════════════════════════════════════════════ */
+.theme-toggle-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease, transform 0.2s ease;
+  margin-right: 16px;
+  flex-shrink: 0;
+}
+.theme-toggle-btn:hover {
+  background: rgba(108, 93, 250, 0.25);
+  border-color: rgba(108, 93, 250, 0.5);
+  transform: rotate(20deg);
+}
+[data-theme="light"] .theme-toggle-btn {
+  border-color: rgba(108, 93, 250, 0.25);
+  background: rgba(108, 93, 250, 0.08);
+  color: #6C5DFA;
+}
+[data-theme="light"] .theme-toggle-btn:hover {
+  background: rgba(108, 93, 250, 0.15);
+  border-color: rgba(108, 93, 250, 0.4);
+}
+
+/* ══════════════════════════════════════════════════════════════
+   DAY / LIGHT THEME  —  data-theme="light" on <html>
+   Primary: #6C5DFA  ·  Bg: #F0EFFE  ·  Text: #120F2D
+   Marquee, CTA, Footer keep their deep-purple signature.
+══════════════════════════════════════════════════════════════ */
+[data-theme="light"] {
+  --body:       #F0EFFE;
+  --black:      #120F2D;
+  --white:      #120F2D;
+  --theme:      #6C5DFA;
+  --header:     #120F2D;
+  --text:       #6B6487;
+  --border:     rgba(108, 93, 250, 0.18);
+  --bg:         #FFFFFF;
+  --bg2:        #EAE6FF;
+  --bg3:        #F5F3FF;
+  --box-shadow: 0px 4px 24px rgba(108, 93, 250, 0.08);
+}
+
+/* ── Base ── */
+[data-theme="light"] body {
+  background-color: #F0EFFE;
+  color: #120F2D;
+}
+
+/* ── Typography ── */
+[data-theme="light"] h1,
+[data-theme="light"] h2,
+[data-theme="light"] h3,
+[data-theme="light"] h4,
+[data-theme="light"] h5,
+[data-theme="light"] h6 { color: #120F2D; }
+[data-theme="light"] p  { color: #6B6487; }
+[data-theme="light"] a  { color: #120F2D; }
+[data-theme="light"] .section-title h6 { color: #6C5DFA; }
+[data-theme="light"] .subtitle-icon    { color: #6C5DFA !important; }
+[data-theme="light"] .section-title h2 span { color: #6C5DFA; }
+
+/* ── Header ── */
+[data-theme="light"] #header-sticky {
+  background-color: rgba(240, 238, 254, 0.96) !important;
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(108, 93, 250, 0.12);
+  box-shadow: 0 2px 24px rgba(108, 93, 250, 0.08);
+}
+[data-theme="light"] .header-1 .offcanvas__logo img,
+[data-theme="light"] .sidebar__toggle img,
+[data-theme="light"] .header__hamburger img {
+  filter: brightness(0) saturate(100%) invert(8%) sepia(20%) saturate(2000%) hue-rotate(225deg);
+}
+
+/* ── Hero ── */
+[data-theme="light"] .hero-section.hero-1 {
+  background: linear-gradient(150deg, #EAE6FF 0%, #F5F3FF 60%, #EEEAFF 100%);
+}
+[data-theme="light"] .hero-content p { color: #6B6487; }
+[data-theme="light"] .hero-content h1 b,
+[data-theme="light"] .hero-content h1 strong { color: #120F2D; }
+[data-theme="light"] .social-link a { color: #5E5882; }
+[data-theme="light"] .social-link a:hover { color: #6C5DFA; }
+[data-theme="light"] .hero-1 .line-shape img {
+  opacity: 0.12;
+  filter: hue-rotate(220deg) saturate(0.6);
+}
+[data-theme="light"] .hero-1 .vec-shape { display: none; }
+[data-theme="light"] .hero-linkedin-badge span { color: #120F2D !important; }
+[data-theme="light"] .col-xl-3.order-1 p { color: #6B6487; }
+
+/* ── Marquee — UNCHANGED (purple stays as brand anchor) ── */
+
+/* ── About ── */
+[data-theme="light"] .about-section { background-color: #FFFFFF; }
+[data-theme="light"] .about-section .circle-shape img {
+  opacity: 0.08;
+  filter: hue-rotate(220deg);
+}
+[data-theme="light"] .about-section .vec-shape { display: none; }
+[data-theme="light"] .top-text li {
+  background: rgba(108, 93, 250, 0.06) !important;
+  border: 1px solid rgba(108, 93, 250, 0.18) !important;
+  color: #120F2D !important;
+}
+[data-theme="light"] .top-text li span { color: #6C5DFA !important; }
+[data-theme="light"] .skill-counter.skill-counter-icon .skill-tool-icon {
+  background: rgba(108, 93, 250, 0.07) !important;
+  border-color: rgba(108, 93, 250, 0.16) !important;
+}
+[data-theme="light"] .skill-counter .content p { color: #6B6487; }
+[data-theme="light"] .about-content p    { color: #6B6487 !important; }
+[data-theme="light"] .about-content h2   { color: #120F2D !important; }
+[data-theme="light"] .about-content h2 span { color: #6C5DFA !important; }
+[data-theme="light"] .about-btn a.theme-btn { color: #fff !important; }
+
+/* ── Work Experience ── */
+[data-theme="light"] .work-experience-section-1 { background-color: #F5F3FF; }
+[data-theme="light"] .work-experience-section-1 .line-shape img {
+  opacity: 0.1;
+  filter: hue-rotate(220deg);
+}
+[data-theme="light"] .feature-work-experience-main-slider .client-img {
+  background: #EAE6FF;
+  border: 2px solid rgba(108, 93, 250, 0.2) !important;
+}
+[data-theme="light"] .feature-work-experience-preview-slider-item {
+  border-color: rgba(108, 93, 250, 0.15) !important;
+  background: rgba(108, 93, 250, 0.05) !important;
+}
+
+/* ── Trusted Brands ── */
+[data-theme="light"] .trusted-brands-section { background-color: #FFFFFF; }
+
+/* ── Portfolio ── */
+[data-theme="light"] .project-section { background-color: #F5F3FF; }
+
+/* ── Award ── */
+[data-theme="light"] .award-section { background-color: #EAE6FF; }
+[data-theme="light"] .section-bg    { background-color: #EAE6FF !important; }
+
+/* ── Testimonials ── */
+[data-theme="light"] .testimonial-section { background-color: #FFFFFF; }
+
+/* ── News / Blog ── */
+[data-theme="light"] .news-section { background-color: #F5F3FF; }
+[data-theme="light"] .news-main-box-items.blog-card,
+[data-theme="light"] .blog-card {
+  background: #FFFFFF !important;
+  border-top-color: rgba(108, 93, 250, 0.12) !important;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(108, 93, 250, 0.07);
+  padding-left: 28px !important;
+  padding-right: 28px !important;
+}
+[data-theme="light"] .blog-card__title,
+[data-theme="light"] .blog-card__title a { color: #120F2D !important; }
+[data-theme="light"] .blog-card__author-name { color: #120F2D; }
+[data-theme="light"] .blog-card__authored-by { color: #6B6487; }
+[data-theme="light"] .blog-card__avatar { border-color: rgba(108, 93, 250, 0.2) !important; }
+[data-theme="light"] .blog-card__placeholder {
+  background: rgba(108, 93, 250, 0.04) !important;
+  border-color: rgba(108, 93, 250, 0.18) !important;
+}
+[data-theme="light"] .blog-card__placeholder span { color: rgba(108, 93, 250, 0.35) !important; }
+[data-theme="light"] .section-title-area .theme-btn { color: #fff !important; }
+
+/* ── CTA — deep electric purple for dramatic contrast ── */
+[data-theme="light"] .cta-section { background-color: #2C1EA6; }
+/* CTA text/shapes already white — unchanged */
+
+/* ── Footer — stays deep dark (professional anchor) ── */
+[data-theme="light"] .footer-section { background-color: #0E0B1F; }
+[data-theme="light"] .footer-section h1,
+[data-theme="light"] .footer-section h2,
+[data-theme="light"] .footer-section h3,
+[data-theme="light"] .footer-section h4,
+[data-theme="light"] .footer-section h5,
+[data-theme="light"] .footer-section h6,
+[data-theme="light"] .footer-section p,
+[data-theme="light"] .footer-section a,
+[data-theme="light"] .footer-section li { color: #fff; }
+[data-theme="light"] .footer-logo img { filter: none !important; }
+
+/* ── Scroll progress ── */
+[data-theme="light"] #scroll-progress-bar { background: #6C5DFA; }
+
+/* ── Back to top ── */
+[data-theme="light"] #back-top {
+  background: #6C5DFA !important;
+  border-color: #6C5DFA !important;
+  color: #fff !important;
+}
+
+/* ── Offcanvas stays dark in both modes ── */
+[data-theme="light"] .fix-area.style-offcanvas-2 .offcanvas__info { background: #0E0B1F; }
+[data-theme="light"] .fix-area.style-offcanvas-2 h1,
+[data-theme="light"] .fix-area.style-offcanvas-2 h2,
+[data-theme="light"] .fix-area.style-offcanvas-2 h3,
+[data-theme="light"] .fix-area.style-offcanvas-2 p,
+[data-theme="light"] .fix-area.style-offcanvas-2 a,
+[data-theme="light"] .fix-area.style-offcanvas-2 span,
+[data-theme="light"] .fix-area.style-offcanvas-2 li { color: #fff; }
