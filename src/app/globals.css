@@ -178,6 +178,26 @@ body { overflow-x: hidden; }
   object-fit: contain;
 }
 
+/* CTA "LET'S TALK" — hardcoded purple so it never picks up a cached green --theme */
+.cta-text-items h3,
+.cta-text-items h3 a,
+.cta-text-items h3 a:hover,
+.cta-text-items h3 a:visited {
+  color: #6C5DFA !important;
+  border-color: #6C5DFA !important;
+  -webkit-text-stroke-color: #6C5DFA;
+}
+
+/* CTA floating decoration blobs — desaturate to white/grey so they don't clash */
+.cta-section .shape-1 img,
+.cta-section .shape-2 img,
+.cta-section .shape-3 img,
+.cta-section .shape-4 img,
+.cta-section .shape-5 img,
+.cta-section .shape-6 img {
+  filter: grayscale(1) brightness(2) opacity(0.35) !important;
+}
+
 /* CTA icon — flex-centre the FA envelope in the circle */
 .cta-text-items .icon {
   display: flex !important;
