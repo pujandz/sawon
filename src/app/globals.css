@@ -258,12 +258,17 @@ body { overflow-x: hidden; }
   border: none !important;
 }
 .skill-counter.skill-counter-icon .skill-tool-icon {
-  width: 48px;
-  height: 48px;
+  width: 64px;
+  height: 64px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 10px;
+  box-sizing: border-box;
 }
 .skill-counter.skill-counter-icon .skill-tool-icon img {
   width: 100%;
@@ -279,7 +284,7 @@ body { overflow-x: hidden; }
 }
 @media (max-width: 575px) {
   .skill-counter.skill-counter-icon { gap: 10px !important; }
-  .skill-counter.skill-counter-icon .skill-tool-icon { width: 36px; height: 36px; }
+  .skill-counter.skill-counter-icon .skill-tool-icon { width: 52px; height: 52px; padding: 8px; }
 }
 
 /* ── Award Visual — animated certificate (Award section) ─────── */
