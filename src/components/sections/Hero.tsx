@@ -44,7 +44,15 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="col-xl-4 order-1">
+          {/* Description: comes right after content on mobile (order-1), moves to last column on xl */}
+          <div className="col-xl-3 order-1 order-xl-2">
+            <div className="content wow fadeInUp" data-wow-delay=".3s">
+              <p>A results-driven SEO Team Lead &amp; AEO Specialist with 3+ years of experience crafting search strategies that drive measurable organic growth.</p>
+            </div>
+          </div>
+
+          {/* Portrait: always last on mobile (order-2), moves to centre column on xl */}
+          <div className="col-xl-4 order-2 order-xl-1">
             <div className="hero-image image-wrapper">
               <picture>
                 <source srcSet="/assets/img/sawon-saha.webp" type="image/webp" />
@@ -56,13 +64,6 @@ export default function Hero() {
                   loading="eager"
                 />
               </picture>
-            </div>
-          </div>
-
-          <div className="col-xl-3 order-2">
-            <div className="content wow fadeInUp" data-wow-delay=".3s">
-              <p>A results-driven SEO Team Lead &amp; AEO Specialist with 3+ years of experience crafting search strategies that drive measurable organic growth.</p>
-
             </div>
           </div>
         </div>
