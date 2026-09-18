@@ -981,6 +981,76 @@ body { overflow-x: hidden; }
   color: #fff !important;
 }
 
+/* ── Portfolio button wrapper — remove dark pill ── */
+[data-theme="light"] .project-section .project-btn-all {
+  background: rgba(108, 93, 250, 0.08) !important;
+  border: 1px solid rgba(108, 93, 250, 0.18);
+}
+[data-theme="light"] .project-section .project-btn-all .theme-btn {
+  background: #6C5DFA !important;
+  border-color: #6C5DFA !important;
+  color: #fff !important;
+}
+
+/* ── CTA email icon circle — white on deep purple bg ── */
+[data-theme="light"] .cta-text-items .icon {
+  background-color: rgba(255, 255, 255, 0.15) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+[data-theme="light"] .cta-text-items .icon i { color: #fff !important; }
+
+/* ── Footer social icon circles — purple on bright footer ── */
+[data-theme="light"] .footer-wrapper .icon-items-area .icon-items .icon {
+  background-color: #6C5DFA !important;
+  border: none;
+}
+[data-theme="light"] .footer-wrapper .icon-items-area .icon-items .icon i { color: #fff !important; }
+[data-theme="light"] .footer-wrapper .icon-items-area .icon-items a { color: #120F2D !important; }
+[data-theme="light"] .footer-wrapper .icon-items-area .icon-items a:hover { color: #6C5DFA !important; }
+
+/* ── Award card — fix low-contrast white text on lavender bg ── */
+[data-theme="light"] .av-card {
+  background: rgba(255, 255, 255, 0.7) !important;
+  border-color: rgba(108, 93, 250, 0.25) !important;
+}
+[data-theme="light"] .av-center-title { color: #120F2D !important; }
+[data-theme="light"] .av-center-sub   { color: #6B6487 !important; }
+[data-theme="light"] .av-counter-num  { color: #120F2D !important; }
+[data-theme="light"] .av-counter-label { color: #6B6487 !important; }
+[data-theme="light"] .av-verified-text { color: #6B6487 !important; }
+[data-theme="light"] .av-cert-tag {
+  color: #120F2D !important;
+  background: rgba(108, 93, 250, 0.1) !important;
+  border-color: rgba(108, 93, 250, 0.25) !important;
+}
+[data-theme="light"] .av-divider { border-top-color: rgba(108, 93, 250, 0.12) !important; }
+[data-theme="light"] .av-icon-box {
+  background: rgba(108, 93, 250, 0.12) !important;
+  border-color: rgba(108, 93, 250, 0.3) !important;
+}
+
+/* ── Inner pages — section backgrounds ── */
+[data-theme="light"] .about-section-inner { background-color: #F5F3FF; }
+[data-theme="light"] .faq-inner-page-wrapper { background-color: #FFFFFF; }
+[data-theme="light"] .project-inner-page-wrapper { background-color: #F5F3FF; }
+[data-theme="light"] .contact-inner-page-wrapper { background-color: #FFFFFF; }
+[data-theme="light"] .project-section-555 { background-color: #F5F3FF; }
+[data-theme="light"] .project-box-items-555 {
+  background: #FFFFFF !important;
+  border-color: rgba(108, 93, 250, 0.14) !important;
+  box-shadow: 0 4px 20px rgba(108, 93, 250, 0.07) !important;
+}
+[data-theme="light"] .faq-inner-page-wrapper .accordion-box .block {
+  border-color: rgba(108, 93, 250, 0.14) !important;
+  background: #FFFFFF !important;
+}
+[data-theme="light"] .faq-inner-page-wrapper .accordion-box .block .acc-btn {
+  color: #120F2D !important;
+}
+[data-theme="light"] .faq-inner-page-wrapper .accordion-box .block .acc-content .content p {
+  color: #6B6487 !important;
+}
+
 /* ── Icons — restore colour throughout light mode ── */
 
 /* circle-icon buttons (portfolio, services, pricing) */
