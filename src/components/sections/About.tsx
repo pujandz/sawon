@@ -30,13 +30,9 @@ export default function About() {
                   <li><span>80+ successfully</span> projects done</li>
                 </ul>
 
-                <h3 className="favorite-tools-heading wow fadeInUp" data-wow-delay=".6s">
-                  <span>my</span> favorite tools
-                </h3>
-
                 <div className="row g-3 wow fadeInUp" data-wow-delay=".7s">
                   {SKILLS.map((s) => (
-                    <div key={s.label} className="col-6">
+                    <div key={s.label} className="col-4">
                       <div className="skill-counter skill-counter-icon">
                         <div className="skill-tool-icon">
                           <img src={s.icon} alt="" aria-hidden="true" width={44} height={44} loading="lazy" decoding="async" />
@@ -49,6 +45,12 @@ export default function About() {
                     </div>
                   ))}
                 </div>
+
+                <div className="middle-line"></div>
+
+                <h3 className="title wow fadeInUp" data-wow-delay=".8s">
+                  <span>my</span> favorite tools
+                </h3>
 
                 <div className="vec-shape">
                   <img src={`${D}/vec-shape.png`} alt="Vector shape" />
