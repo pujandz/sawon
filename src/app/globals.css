@@ -835,10 +835,11 @@ body { overflow-x: hidden; }
   border-bottom: none !important;
   box-shadow: none !important;
 }
+/* Original white logo/hamburger — no filter in light mode */
 [data-theme="light"] .header-1 .offcanvas__logo img,
 [data-theme="light"] .sidebar__toggle img,
 [data-theme="light"] .header__hamburger img {
-  filter: brightness(0) saturate(100%) invert(8%) sepia(20%) saturate(2000%) hue-rotate(225deg);
+  filter: none !important;
 }
 
 /* ── Hero ── */
@@ -979,6 +980,52 @@ body { overflow-x: hidden; }
   border-color: #6C5DFA !important;
   color: #fff !important;
 }
+
+/* ── Icons — restore colour throughout light mode ── */
+
+/* circle-icon buttons (portfolio, services, pricing) */
+[data-theme="light"] .circle-icon {
+  background: #6C5DFA !important;
+  border-color: #6C5DFA !important;
+  color: #fff !important;
+}
+[data-theme="light"] .circle-icon i { color: #fff !important; }
+
+/* section subtitle icons (has-icon / subtitle-icon) */
+[data-theme="light"] .has-icon i,
+[data-theme="light"] .section-title h6 i { color: #6C5DFA !important; }
+
+/* hero social links */
+[data-theme="light"] .social-link a,
+[data-theme="light"] .social-link a i { color: #5E5882 !important; }
+[data-theme="light"] .social-link a:hover,
+[data-theme="light"] .social-link a:hover i { color: #6C5DFA !important; }
+
+/* LinkedIn badge icon in hero */
+[data-theme="light"] .hero-linkedin-badge i { color: #6C5DFA !important; }
+
+/* Award section — floating tool icons & decorative stars/checks */
+[data-theme="light"] .av-icon-box i,
+[data-theme="light"] .av-icon-area i,
+[data-theme="light"] .av-star i,
+[data-theme="light"] .fa-star,
+[data-theme="light"] .av-star { color: #6C5DFA !important; }
+[data-theme="light"] .fa-circle-check { color: #6C5DFA !important; }
+
+/* Testimonial quote arrows */
+[data-theme="light"] .testimonial-section .fa-arrow-up-left,
+[data-theme="light"] .testimonial-section .fa-arrow-down-right { color: #6C5DFA !important; }
+
+/* Work experience slider icons */
+[data-theme="light"] .feature-work-experience-main-slider i { color: #6C5DFA !important; }
+
+/* Generic: any standalone FA icon not inside a themed container */
+[data-theme="light"] i.fa-solid:not(.theme-btn i):not(.subtitle-icon),
+[data-theme="light"] i.fa-brands:not(.theme-btn i),
+[data-theme="light"] i.fa-regular:not(.theme-btn i) { color: inherit; }
+
+/* Footer social icons stay white (footer stays white on dark bg — but footer is now bright) */
+[data-theme="light"] .footer-section .social-icon a i { color: #6C5DFA !important; }
 
 /* ── Offcanvas stays dark in both modes ── */
 [data-theme="light"] .fix-area.style-offcanvas-2 .offcanvas__info { background: #0E0B1F; }
