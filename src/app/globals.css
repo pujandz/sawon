@@ -1,5 +1,6 @@
 /* Site-level overrides — loaded via <link> tags in layout.tsx.
-   Kept minimal: no Tailwind base reset (Bootstrap handles it). */
+   Kept minimal: no Tailwind base reset (Bootstrap handles it).
+   Last updated: about section layout + vec-shape light-mode fix. */
 
 /* Primary brand colour override + dark-mode base variables */
 :root {
