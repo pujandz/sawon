@@ -1008,26 +1008,33 @@ body { overflow-x: hidden; }
 [data-theme="light"] .footer-wrapper .icon-items-area .icon-items a { color: #120F2D !important; }
 [data-theme="light"] .footer-wrapper .icon-items-area .icon-items a:hover { color: #6C5DFA !important; }
 
-/* ── Award card — fix low-contrast white text on lavender bg ── */
+/* ── Award card — fix all white/invisible text on lavender bg ── */
 [data-theme="light"] .av-card {
-  background: rgba(255, 255, 255, 0.7) !important;
+  background: rgba(255, 255, 255, 0.85) !important;
   border-color: rgba(108, 93, 250, 0.25) !important;
 }
+/* "CERTIFICATE OF EXCELLENCE" header label */
+[data-theme="light"] .av-label { color: #6C5DFA !important; }
+/* Center circle text */
 [data-theme="light"] .av-center-title { color: #120F2D !important; }
-[data-theme="light"] .av-center-sub   { color: #6B6487 !important; }
-[data-theme="light"] .av-counter-num  { color: #120F2D !important; }
-[data-theme="light"] .av-counter-label { color: #6B6487 !important; }
-[data-theme="light"] .av-verified-text { color: #6B6487 !important; }
-[data-theme="light"] .av-cert-tag {
+[data-theme="light"] .av-center-sub   { color: #6C5DFA !important; }
+/* Cert chip pills */
+[data-theme="light"] .av-chip {
   color: #120F2D !important;
   background: rgba(108, 93, 250, 0.1) !important;
-  border-color: rgba(108, 93, 250, 0.25) !important;
+  border-color: rgba(108, 93, 250, 0.28) !important;
 }
-[data-theme="light"] .av-divider { border-top-color: rgba(108, 93, 250, 0.12) !important; }
-[data-theme="light"] .av-icon-box {
-  background: rgba(108, 93, 250, 0.12) !important;
-  border-color: rgba(108, 93, 250, 0.3) !important;
+/* Stats divider border */
+[data-theme="light"] .av-stats {
+  border-top-color: rgba(108, 93, 250, 0.15) !important;
 }
+/* Stats labels (Certifications / Years Exp. / Projects) */
+[data-theme="light"] .av-stat span { color: #6B6487 !important; }
+/* Verified footer text */
+[data-theme="light"] .av-verified { color: #6B6487 !important; }
+/* Achievement timeline items (left column) */
+[data-theme="light"] .award-wrapper .award-content .award-list-items span { color: #6B6487 !important; }
+[data-theme="light"] .award-wrapper .award-content .award-list-items p { color: #6C5DFA !important; }
 
 /* ── Inner pages — section backgrounds ── */
 [data-theme="light"] .about-section-inner { background-color: #F5F3FF; }
