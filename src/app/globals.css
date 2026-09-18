@@ -1,8 +1,13 @@
 /* Site-level overrides — loaded via <link> tags in layout.tsx.
    Kept minimal: no Tailwind base reset (Bootstrap handles it). */
 
-/* Primary brand colour override */
-:root { --theme: #6C5DFA !important; }
+/* Primary brand colour override + dark-mode base variables */
+:root {
+  --theme: #6C5DFA !important;
+  --bg-alt: #111111;
+  --border: rgba(255, 255, 255, 0.15);
+  --border-strong: rgba(255, 255, 255, 0.3);
+}
 
 /* Buttons — white text on purple fill; icon inherits */
 .theme-btn {
@@ -250,6 +255,24 @@ body { overflow-x: hidden; }
     font-size: 16px;
   }
 }
+
+/* "my favorite tools" sub-heading above skill counters in About left column */
+.favorite-tools-heading {
+  font-size: 28px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  color: var(--white, #fff);
+}
+.favorite-tools-heading span { color: #888; margin-right: 0.3em; }
+[data-theme="light"] .favorite-tools-heading { color: #120F2D !important; }
+[data-theme="light"] .favorite-tools-heading span { color: #6B6487 !important; }
+
+/* Strengthen vec-shape hide in light mode */
+[data-theme="light"] .vec-shape,
+[data-theme="light"] .about-wrapper .about-left-items .vec-shape { display: none !important; }
 
 /* About: hide absolute vec-shape on mobile so it doesn't create an empty gap */
 @media (max-width: 991px) {
@@ -583,6 +606,31 @@ body { overflow-x: hidden; }
 .hero-linkedin-badge:hover i { color: #378FE9; }
 .hero-linkedin-badge:hover span { color: rgba(255,255,255,0.8); }
 
+/* Testimonials LinkedIn badge (same layout, adapts to section bg) */
+.testimonial-linkedin-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--white, #fff);
+}
+.testimonial-linkedin-badge i {
+  font-size: 32px;
+  color: #0A66C2;
+  flex-shrink: 0;
+}
+.testimonial-linkedin-badge span {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.3;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--white, #fff);
+}
+.testimonial-linkedin-badge:hover i { color: #378FE9; }
+.testimonial-linkedin-badge:hover span { color: rgba(255,255,255,0.75); }
+[data-theme="light"] .testimonial-linkedin-badge span { color: #120F2D !important; }
+
 /* ── Blog card list (News section) ── */
 .blog-list {
   margin-top: 40px;
@@ -796,17 +844,19 @@ body { overflow-x: hidden; }
    Marquee, CTA, Footer keep their deep-purple signature.
 ══════════════════════════════════════════════════════════════ */
 [data-theme="light"] {
-  --body:       #F0EFFE;
-  --black:      #120F2D;
-  --white:      #120F2D;
-  --theme:      #6C5DFA;
-  --header:     #120F2D;
-  --text:       #6B6487;
-  --border:     rgba(108, 93, 250, 0.18);
-  --bg:         #FFFFFF;
-  --bg2:        #EAE6FF;
-  --bg3:        #F5F3FF;
-  --box-shadow: 0px 4px 24px rgba(108, 93, 250, 0.08);
+  --body:          #F0EFFE;
+  --black:         #120F2D;
+  --white:         #120F2D;
+  --theme:         #6C5DFA;
+  --header:        #120F2D;
+  --text:          #6B6487;
+  --border:        rgba(108, 93, 250, 0.18);
+  --border-strong: rgba(108, 93, 250, 0.35);
+  --bg-alt:        #F5F3FF;
+  --bg:            #FFFFFF;
+  --bg2:           #EAE6FF;
+  --bg3:           #F5F3FF;
+  --box-shadow:    0px 4px 24px rgba(108, 93, 250, 0.08);
 }
 
 /* ── Base ── */
@@ -835,11 +885,14 @@ body { overflow-x: hidden; }
   border-bottom: none !important;
   box-shadow: none !important;
 }
-/* Original white logo/hamburger — no filter in light mode */
-[data-theme="light"] .header-1 .offcanvas__logo img,
+/* Original white logo — no filter in light mode */
+[data-theme="light"] .header-1 .offcanvas__logo img {
+  filter: none !important;
+}
+/* Hamburger bars: make dark/purple so they show on the light hero bg */
 [data-theme="light"] .sidebar__toggle img,
 [data-theme="light"] .header__hamburger img {
-  filter: none !important;
+  filter: brightness(0) saturate(100%) invert(26%) sepia(60%) saturate(2000%) hue-rotate(230deg) !important;
 }
 
 /* ── Hero ── */
@@ -847,8 +900,11 @@ body { overflow-x: hidden; }
   background: linear-gradient(150deg, #EAE6FF 0%, #F5F3FF 60%, #EEEAFF 100%);
 }
 [data-theme="light"] .hero-content p { color: #6B6487; }
+[data-theme="light"] .hero-content h1 { color: #120F2D !important; }
+[data-theme="light"] .hero-content h1 .char { color: #120F2D !important; }
 [data-theme="light"] .hero-content h1 b,
 [data-theme="light"] .hero-content h1 strong { color: #120F2D; }
+[data-theme="light"] .hero-content h1 span { color: #6C5DFA !important; }
 [data-theme="light"] .social-link a { color: #5E5882; }
 [data-theme="light"] .social-link a:hover { color: #6C5DFA; }
 [data-theme="light"] .hero-1 .line-shape img {
@@ -897,6 +953,9 @@ body { overflow-x: hidden; }
 [data-theme="light"] .feature-work-experience-preview-slider-item {
   border-color: rgba(108, 93, 250, 0.15) !important;
   background: rgba(108, 93, 250, 0.05) !important;
+}
+[data-theme="light"] .feature-work-experience-wrap::before {
+  background: linear-gradient(180deg, #6C5DFA 0%, #4B3FD8 100%) !important;
 }
 
 /* ── Trusted Brands ── */
@@ -1103,6 +1162,111 @@ body { overflow-x: hidden; }
 
 /* Footer social icons stay white (footer stays white on dark bg — but footer is now bright) */
 [data-theme="light"] .footer-section .social-icon a i { color: #6C5DFA !important; }
+
+/* ── Services (choose-us-section) ── */
+[data-theme="light"] .choose-us-section {
+  background-color: #FFFFFF !important;
+}
+[data-theme="light"] .choose-us-wrapper .choose-us-box-list li {
+  border-top-color: rgba(108, 93, 250, 0.15) !important;
+}
+[data-theme="light"] .choose-us-wrapper .choose-us-box-list li .content h2 a {
+  color: #120F2D !important;
+}
+[data-theme="light"] .choose-us-wrapper .choose-us-box-list li .content h2 a:hover { color: #6C5DFA !important; }
+[data-theme="light"] .choose-us-wrapper .choose-us-box-list li .arrow-icon {
+  border-color: rgba(108, 93, 250, 0.25) !important;
+}
+
+/* ── Pricing ── */
+[data-theme="light"] .pricing-box-items {
+  background: #FFFFFF !important;
+  border-color: rgba(108, 93, 250, 0.15) !important;
+}
+[data-theme="light"] .pricing-box-items h2 { color: #120F2D !important; }
+[data-theme="light"] .pricing-box-items .pricing-header h2 { color: #6B6487 !important; }
+[data-theme="light"] .pricing-box-items.active,
+[data-theme="light"] .pricing-box-items:hover {
+  background: #6C5DFA !important;
+  border-color: #6C5DFA !important;
+}
+[data-theme="light"] .pricing-box-items.active h2,
+[data-theme="light"] .pricing-box-items:hover h2 { color: #fff !important; }
+[data-theme="light"] .pricing-box-items.active .pricing-header h2,
+[data-theme="light"] .pricing-box-items:hover .pricing-header h2 { color: rgba(255,255,255,0.8) !important; }
+[data-theme="light"] .pricing-box-items.active ul li,
+[data-theme="light"] .pricing-box-items:hover ul li { color: rgba(255,255,255,0.85) !important; }
+
+/* ── Work Experience — keep dome text white on purple bg ── */
+[data-theme="light"] .feature-work-experience-main-slider .client-info-items .info-content h3 { color: #fff !important; }
+[data-theme="light"] .feature-work-experience-main-slider .client-info-items .info-content {
+  border-bottom-color: rgba(255, 255, 255, 0.25) !important;
+}
+[data-theme="light"] .feature-work-experience-main-slider .client-info-items .info-content span {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+[data-theme="light"] .feature-work-experience-main-slider .info-item h5 { color: #fff !important; }
+[data-theme="light"] .feature-work-experience-main-slider .info-item p { color: rgba(255,255,255,0.82) !important; }
+
+/* ── Testimonials — fix info-title box in light mode ── */
+[data-theme="light"] .testimonial-box-items .thumb .info-title {
+  background-color: #fff !important;
+}
+[data-theme="light"] .testimonial-box-items .thumb .info-title h4 { color: #120F2D !important; }
+[data-theme="light"] .testimonial-box-items .thumb .info-title span { color: #6B6487 !important; }
+
+/* ── About Me inner page ── */
+[data-theme="light"] .about-section-inner .about-head {
+  border-bottom-color: rgba(108, 93, 250, 0.15) !important;
+}
+[data-theme="light"] .about-section-inner .about-head h1 { color: #120F2D !important; }
+[data-theme="light"] .about-section-inner .about-sub { color: #120F2D !important; }
+[data-theme="light"] .about-section-inner .about-sub span { color: #6B6487 !important; }
+
+/* ── Inner page h1s — force dark text ── */
+[data-theme="light"] .project-inner-page-wrapper h1 { color: #120F2D !important; }
+
+/* ── Works case study box ── */
+[data-theme="light"] .project-inner-page-wrapper .project-inner-page-box {
+  background: #FFFFFF !important;
+  border-color: rgba(108, 93, 250, 0.15) !important;
+}
+[data-theme="light"] .project-inner-page-wrapper .project-inner-page-box .content h3 { color: #120F2D !important; }
+
+/* ── Inner page case study content ── */
+.cs-label { color: rgba(255, 255, 255, 0.85); }
+.cs-tag {
+  display: inline-block;
+  padding: 0.2rem 0.7rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+.project-result { color: rgba(255, 255, 255, 0.6); font-size: 0.85rem; }
+.blog-coming-soon { color: rgba(255, 255, 255, 0.6); margin-top: 1.5rem !important; }
+
+[data-theme="light"] .cs-label { color: #120F2D !important; }
+[data-theme="light"] .cs-tag {
+  color: #6B6487 !important;
+  border-color: rgba(108, 93, 250, 0.2) !important;
+}
+[data-theme="light"] .project-result { color: #6B6487 !important; }
+[data-theme="light"] .blog-coming-soon { color: #6B6487 !important; }
+
+/* ── Journey section ── */
+[data-theme="light"] #journey { background-color: #F5F3FF !important; }
+[data-theme="light"] #journey .card {
+  background-color: #FFFFFF !important;
+  border-color: rgba(108, 93, 250, 0.12) !important;
+}
+[data-theme="light"] #journey .text-white { color: #120F2D !important; }
+[data-theme="light"] #journey .text-gray-400,
+[data-theme="light"] #journey .text-gray-500,
+[data-theme="light"] #journey .text-gray-600 { color: #6B6487 !important; }
+[data-theme="light"] #journey .section-label { color: #6C5DFA !important; }
+[data-theme="light"] #journey .section-title { color: #120F2D !important; }
+[data-theme="light"] #journey .gradient-text { color: #6C5DFA !important; }
 
 /* ── Offcanvas stays dark in both modes ── */
 [data-theme="light"] .fix-area.style-offcanvas-2 .offcanvas__info { background: #0E0B1F; }

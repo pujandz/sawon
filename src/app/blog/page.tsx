@@ -12,7 +12,7 @@ export default function BlogPage() {
       <section className="project-inner-page-wrapper section-padding fix">
         <div className="container">
           <h1>SEO Blog</h1>
-          <p style={{ marginTop: '1.5rem', color: 'rgba(255,255,255,0.6)' }}>
+          <p className="blog-coming-soon">
             New articles coming soon. Follow on{' '}
             <a href="https://medium.com/@sawon.s907" target="_blank" rel="noreferrer" style={{ color: 'var(--theme)' }}>
               Medium

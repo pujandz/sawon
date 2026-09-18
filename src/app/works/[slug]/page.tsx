@@ -132,11 +132,11 @@ export default function WorkDetailPage({ params }: Props) {
               <span>{project.cat}</span>
               <h3>Client: {project.client}</h3>
 
-              <p style={{ color: '#888', fontSize: '0.9rem', marginBottom: '1rem', lineHeight: 1.7 }}>
-                <strong style={{ color: 'rgba(255,255,255,0.8)' }}>Challenge:</strong> {project.challenge}
+              <p style={{ color: 'var(--text)', fontSize: '0.9rem', marginBottom: '1rem', lineHeight: 1.7 }}>
+                <strong className="cs-label">Challenge:</strong> {project.challenge}
               </p>
-              <p style={{ color: '#888', fontSize: '0.9rem', marginBottom: '1.5rem', lineHeight: 1.7 }}>
-                <strong style={{ color: 'rgba(255,255,255,0.8)' }}>Solution:</strong> {project.solution}
+              <p style={{ color: 'var(--text)', fontSize: '0.9rem', marginBottom: '1.5rem', lineHeight: 1.7 }}>
+                <strong className="cs-label">Solution:</strong> {project.solution}
               </p>
 
               {project.results.map((r) => (
@@ -150,16 +150,7 @@ export default function WorkDetailPage({ params }: Props) {
 
               <div className="d-flex flex-wrap gap-2" style={{ marginBottom: '2rem', marginTop: '1rem' }}>
                 {project.tags.map((t) => (
-                  <span
-                    key={t}
-                    style={{
-                      padding: '0.2rem 0.7rem',
-                      border: '1px solid rgba(255,255,255,0.2)',
-                      borderRadius: '999px',
-                      fontSize: '0.78rem',
-                      color: 'rgba(255,255,255,0.6)',
-                    }}
-                  >
+                  <span key={t} className="cs-tag">
                     {t}
                   </span>
                 ))}

@@ -63,7 +63,16 @@ export default function Testimonials() {
                       </div>
                       <p>{t.quote}</p>
                       <div className="clutech-image">
-                        <img src={`${D}/clutech.png`} alt="Company Logo" />
+                        <a
+                          href="https://www.linkedin.com/in/sawonsaha/details/recommendations/"
+                          target="_blank"
+                          rel="noreferrer"
+                          className="testimonial-linkedin-badge"
+                          aria-label="View LinkedIn Recommendations"
+                        >
+                          <i className="fa-brands fa-linkedin" aria-hidden="true"></i>
+                          <span>LinkedIn<br />Recommendations</span>
+                        </a>
                       </div>
                     </div>
                   </div>

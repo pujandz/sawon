@@ -30,6 +30,10 @@ export default function About() {
                   <li><span>80+ successfully</span> projects done</li>
                 </ul>
 
+                <h3 className="favorite-tools-heading wow fadeInUp" data-wow-delay=".6s">
+                  <span>my</span> favorite tools
+                </h3>
+
                 <div className="row g-3 wow fadeInUp" data-wow-delay=".7s">
                   {SKILLS.map((s) => (
                     <div key={s.label} className="col-6">
