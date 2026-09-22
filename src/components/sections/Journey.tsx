@@ -53,6 +53,24 @@ const EDUCATION = [
       'Complemented academic studies with extensive self-learning in digital marketing and SEO.',
     ],
   },
+  {
+    degree: 'HSC – Science Group',
+    institution: 'Dummy College Name',
+    period: '2016 – 2018',
+    location: 'Naogaon, Rajshahi, Bangladesh',
+    details: [
+      'Higher Secondary Certificate in Science with strong foundation in analytical thinking.',
+    ],
+  },
+  {
+    degree: 'SSC – Science Group',
+    institution: 'Dummy School Name',
+    period: '2014 – 2016',
+    location: 'Naogaon, Rajshahi, Bangladesh',
+    details: [
+      'Secondary School Certificate in Science with distinction.',
+    ],
+  },
 ];
 
 const CERTIFICATIONS = [
